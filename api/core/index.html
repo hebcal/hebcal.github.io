@@ -21,14 +21,14 @@ and <a href="https://hebcal.github.io/api/hdate/classes/HDate.html">HDate</a> in
 <ul>
 <li><code>dist/bundle.min.js</code>: This includes all dependencies in a single JS file.  It's quite large (174KB minified), and should only be used if you aren't using a bundler.</li>
 <li><code>dist/index.cjs</code>: This includes all of this package's code in a single bundle.</li>
-<li><code>dist/es/</code>: This directory contains ES modules for each source file in the package.  If you're using Rollup, Vite, or another bundler, you should import from here to reduce output sizes.
+<li><code>dist/esm/</code>: This directory contains ES modules for each source file in the package.  If you're using Rollup, Vite, or another bundler, you should import from here to reduce output sizes.
 <ul>
 <li>
 <p>These files do not include polyfills; if you want to support older browsers, use <a href="https://github.com/rollup/plugins/tree/master/packages/babel#babelhelpers">https://github.com/rollup/plugins/tree/master/packages/babel#babelhelpers</a></p>
 </li>
 <li>
 <p>To make tree-shaking work better, import from the most specific file possible; avoid importing from <code>index</code> or <code>hebcal</code>.  Some APIs may still need to be moved to specific files.  For example:</p>
-<pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">getHolidaysOnDate</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core/dist/es/holidays&#39;</span><span class="hl-1">;</span>
+<pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">getHolidaysOnDate</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core/dist/esm/holidays&#39;</span><span class="hl-1">;</span>
 </code><button type="button">Copy</button></pre>
 
 </li>
