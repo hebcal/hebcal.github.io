@@ -11,10 +11,21 @@
 <li><a href="" aria-current="page">months</a></li></ul>
 <h1>Enumeration months<code class="tsd-tag">Readonly</code></h1></div>
 <section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography"><p>Hebrew months of the year (NISAN=1, TISHREI=7)</p>
-</div></section><aside class="tsd-sources">
+<div class="tsd-comment tsd-typography"><p>Hebrew months of the year (NISAN=1, TISHREI=7).</p>
+<p>Months are numbered from Nisan, the first month of the ecclesiastical
+year, even though the civil year begins with Tishrei on Rosh Hashanah
+(see <a href="../classes/HDate.html#gettishreimonth" class="tsd-kind-method">HDate.getTishreiMonth</a> for Tishrei-based numbering).</p>
+<p>In a common year month 12 is Adar; in a leap year month 12 is Adar I
+and month 13 is Adar II.</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-example">
+<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">months</span><span class="hl-1">, </span><span class="hl-4">getMonthName</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/hdate&#39;</span><span class="hl-1">;</span><br/><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">TISHREI</span><span class="hl-1">;                     </span><span class="hl-8">// 7</span><br/><span class="hl-0">getMonthName</span><span class="hl-1">(</span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">ADAR_I</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">);  </span><span class="hl-8">// &#39;Adar I&#39; (5784 is a leap year)</span><br/><span class="hl-0">getMonthName</span><span class="hl-1">(</span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">ADAR_I</span><span class="hl-1">, </span><span class="hl-7">5783</span><span class="hl-1">);  </span><span class="hl-8">// &#39;Adar&#39;</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div></section><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:6</li></ul></aside>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:18</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -45,91 +56,91 @@
 <div class="tsd-comment tsd-typography"><p>Adar or Adar Rishon / אדר</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:30</li></ul></aside></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:42</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="adar_ii"><span>ADAR_<wbr/>II</span><a href="#adar_ii" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-enum-member">ADAR_II</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">13</span></div>
 <div class="tsd-comment tsd-typography"><p>Adar Sheini (only on leap years) / אדר ב׳</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:32</li></ul></aside></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:44</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="av"><span>AV</span><a href="#av" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-enum-member">AV</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">5</span></div>
 <div class="tsd-comment tsd-typography"><p>Av / אב</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:16</li></ul></aside></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:28</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="cheshvan"><span>CHESHVAN</span><a href="#cheshvan" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-enum-member">CHESHVAN</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">8</span></div>
 <div class="tsd-comment tsd-typography"><p>Cheshvan / חשון</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:22</li></ul></aside></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:34</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="elul"><span>ELUL</span><a href="#elul" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-enum-member">ELUL</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">6</span></div>
 <div class="tsd-comment tsd-typography"><p>Elul / אלול</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:18</li></ul></aside></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:30</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="iyyar"><span>IYYAR</span><a href="#iyyar" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-enum-member">IYYAR</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">2</span></div>
 <div class="tsd-comment tsd-typography"><p>Iyyar / אייר</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:10</li></ul></aside></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:22</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="kislev"><span>KISLEV</span><a href="#kislev" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-enum-member">KISLEV</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">9</span></div>
 <div class="tsd-comment tsd-typography"><p>Kislev / כסלו</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:24</li></ul></aside></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:36</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="nisan"><span>NISAN</span><a href="#nisan" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-enum-member">NISAN</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">1</span></div>
 <div class="tsd-comment tsd-typography"><p>Nissan / ניסן</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:8</li></ul></aside></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:20</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="shvat"><span>SHVAT</span><a href="#shvat" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-enum-member">SHVAT</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">11</span></div>
 <div class="tsd-comment tsd-typography"><p>Sh'vat / שבט</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:28</li></ul></aside></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:40</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="sivan"><span>SIVAN</span><a href="#sivan" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-enum-member">SIVAN</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">3</span></div>
 <div class="tsd-comment tsd-typography"><p>Sivan / סיון</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:12</li></ul></aside></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:24</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="tamuz"><span>TAMUZ</span><a href="#tamuz" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-enum-member">TAMUZ</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">4</span></div>
 <div class="tsd-comment tsd-typography"><p>Tamuz (sometimes Tammuz) / תמוז</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:14</li></ul></aside></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:26</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="tevet"><span>TEVET</span><a href="#tevet" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-enum-member">TEVET</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">10</span></div>
 <div class="tsd-comment tsd-typography"><p>Tevet / טבת</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:26</li></ul></aside></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:38</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="tishrei"><span>TISHREI</span><a href="#tishrei" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-enum-member">TISHREI</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">7</span></div>
 <div class="tsd-comment tsd-typography"><p>Tishrei / תִּשְׁרֵי</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:20</li></ul></aside></section></section></details></div>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:32</li></ul></aside></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

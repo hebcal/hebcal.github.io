@@ -13,14 +13,14 @@
 <section class="tsd-panel tsd-comment">
 <div class="tsd-comment tsd-typography"><p>Represents Mevarchim haChodesh, the announcement of the new month</p>
 </div></section>
-<section class="tsd-panel tsd-hierarchy" data-refl="1528">
+<section class="tsd-panel tsd-hierarchy" data-refl="1538">
 <h4>Hierarchy (<a href="../hierarchy.html#MevarchimChodeshEvent">View Summary</a>)</h4>
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><a href="Event.html" class="tsd-signature-type tsd-kind-class">Event</a>
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><span class="tsd-hierarchy-target">MevarchimChodeshEvent</span></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/MevarchimChodeshEvent.ts#L10">src/MevarchimChodeshEvent.ts:10</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/MevarchimChodeshEvent.ts#L10">src/MevarchimChodeshEvent.ts:10</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -63,7 +63,7 @@
 <h3 class="tsd-anchor-link" id="constructor"><span>constructor</span><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
-<div class="tsd-signature tsd-anchor-link" id="constructormevarchimchodeshevent"><span class="tsd-signature-keyword">new</span> <span class="tsd-kind-constructor-signature">MevarchimChodeshEvent</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">date</span><span class="tsd-signature-symbol">:</span> <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">monthName</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">memo</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">locale</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type tsd-kind-class">MevarchimChodeshEvent</a><a href="#constructormevarchimchodeshevent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-signature tsd-anchor-link" id="constructormevarchimchodeshevent"><span class="tsd-signature-keyword">new</span> <span class="tsd-kind-constructor-signature">MevarchimChodeshEvent</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">date</span><span class="tsd-signature-symbol">:</span> <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">monthName</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">memo</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">locale</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type tsd-kind-class">MevarchimChodeshEvent</a><a href="#constructormevarchimchodeshevent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Constructs Mevarchim haChodesh event</p>
 </div>
@@ -76,14 +76,17 @@
 <li><span><span class="tsd-kind-parameter">monthName</span>: <span class="tsd-signature-type">string</span></span>
 <div class="tsd-comment tsd-typography"><p>Hebrew month name (not translated)</p>
 </div></li>
-<li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">memo</span>: <span class="tsd-signature-type">string</span></span></li>
+<li><span><span class="tsd-kind-parameter">memo</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>text for the event memo. When falsy, a memo announcing the
+molad of the upcoming month is generated automatically</p>
+</div></li>
 <li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">locale</span>: <span class="tsd-signature-type">string</span></span>
 <div class="tsd-comment tsd-typography"><p>Optional locale name</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">MevarchimChodeshEvent</a></h4><aside class="tsd-sources">
 <p>Overrides <a href="Event.html">Event</a>.<a href="Event.html#constructor">constructor</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/MevarchimChodeshEvent.ts#L19">src/MevarchimChodeshEvent.ts:19</a></li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/MevarchimChodeshEvent.ts#L20">src/MevarchimChodeshEvent.ts:20</a></li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="properties-1">Properties<a href="#properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -94,7 +97,7 @@
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#alarm">alarm</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L124">src/event.ts:124</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L122">src/event.ts:122</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="date"><code class="tsd-tag">Readonly</code><span>date</span><a href="#date" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">date</span><span class="tsd-signature-symbol">:</span> <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a></div>
@@ -102,7 +105,7 @@
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#date">date</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L109">src/event.ts:109</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L107">src/event.ts:107</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="desc"><code class="tsd-tag">Readonly</code><span>desc</span><a href="#desc" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">desc</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -113,7 +116,7 @@ To get the title of the event in another language, use the
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#desc">desc</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L116">src/event.ts:116</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L114">src/event.ts:114</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="emoji"><code class="tsd-tag">Optional</code><span>emoji</span><a href="#emoji" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">emoji</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -121,15 +124,15 @@ To get the title of the event in another language, use the
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#emoji">emoji</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L120">src/event.ts:120</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L118">src/event.ts:118</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="mask"><code class="tsd-tag">Readonly</code><span>mask</span><a href="#mask" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">mask</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-<div class="tsd-comment tsd-typography"><p>Bitmask of optional event flags. See <a href="../enums/flags.html" class="tsd-kind-enum">flags</a></p>
+<div class="tsd-comment tsd-typography"><p>Bitmask of optional event flags. See <a href="../variables/flags.html" class="tsd-kind-variable">flags</a></p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#mask">mask</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L118">src/event.ts:118</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L116">src/event.ts:116</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="memo"><code class="tsd-tag">Optional</code><span>memo</span><a href="#memo" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">memo</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -137,12 +140,12 @@ To get the title of the event in another language, use the
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#memo">memo</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L122">src/event.ts:122</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L120">src/event.ts:120</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="monthname"><code class="tsd-tag">Readonly</code><span>month<wbr/>Name</span><a href="#monthname" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">monthName</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/MevarchimChodeshEvent.ts#L11">src/MevarchimChodeshEvent.ts:11</a></li></ul></aside></section></section></details>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/MevarchimChodeshEvent.ts#L11">src/MevarchimChodeshEvent.ts:11</a></li></ul></aside></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -167,7 +170,7 @@ For many events the basename and the event description are identical.</p>
 </div></div><aside class="tsd-sources">
 <p>Overrides <a href="Event.html">Event</a>.<a href="Event.html#basename">basename</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/MevarchimChodeshEvent.ts#L34">src/MevarchimChodeshEvent.ts:34</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/MevarchimChodeshEvent.ts#L35">src/MevarchimChodeshEvent.ts:35</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="getcategories"><span>get<wbr/>Categories</span><a href="#getcategories" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -175,7 +178,7 @@ For many events the basename and the event description are identical.</p>
 <div class="tsd-signature tsd-anchor-link" id="getcategories-1"><span class="tsd-kind-call-signature">getCategories</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><a href="#getcategories-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Returns an array of category strings classifying this event, derived
-from its <a href="../enums/flags.html" class="tsd-kind-enum">flags</a> bitmask. The first element is the broad category
+from its <a href="../variables/flags.html" class="tsd-kind-variable">flags</a> bitmask. The first element is the broad category
 (e.g. <code>'holiday'</code>, <code>'roshchodesh'</code>, <code>'parashat'</code>, <code>'omer'</code>), followed
 by zero or more refinements (e.g. <code>'major'</code>, <code>'minor'</code>, <code>'fast'</code>).</p>
 <p>Returns <code>['unknown']</code> if no flag maps to a known category.</p>
@@ -183,13 +186,13 @@ by zero or more refinements (e.g. <code>'major'</code>, <code>'minor'</code>, <c
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">Event</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">, </span><span class="hl-4">flags</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Event</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">10</span><span class="hl-1">, </span><span class="hl-2">&#39;Tishrei&#39;</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">), </span><span class="hl-2">&#39;Yom Kippur&#39;</span><span class="hl-1">, </span><span class="hl-4">flags</span><span class="hl-1">.</span><span class="hl-6">MAJOR_FAST</span><span class="hl-1">)</span><br/><span class="hl-1">  .</span><span class="hl-0">getCategories</span><span class="hl-1">(); </span><span class="hl-8">// [&#39;holiday&#39;, &#39;major&#39;, &#39;fast&#39;]</span><br/><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Event</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-2">&#39;Shvat&#39;</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">), </span><span class="hl-2">&#39;Rosh Chodesh Sh</span><span class="hl-9">\&#39;</span><span class="hl-2">vat&#39;</span><span class="hl-1">, </span><span class="hl-4">flags</span><span class="hl-1">.</span><span class="hl-6">ROSH_CHODESH</span><span class="hl-1">)</span><br/><span class="hl-1">  .</span><span class="hl-0">getCategories</span><span class="hl-1">(); </span><span class="hl-8">// [&#39;roshchodesh&#39;]</span>
+<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">Event</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">, </span><span class="hl-4">flags</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Event</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">10</span><span class="hl-1">, </span><span class="hl-2">&#39;Tishrei&#39;</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">), </span><span class="hl-2">&#39;Yom Kippur&#39;</span><span class="hl-1">, </span><span class="hl-4">flags</span><span class="hl-1">.</span><span class="hl-6">MAJOR_FAST</span><span class="hl-1">)</span><br/><span class="hl-1">  .</span><span class="hl-0">getCategories</span><span class="hl-1">(); </span><span class="hl-8">// [&#39;holiday&#39;, &#39;major&#39;, &#39;fast&#39;]</span><br/><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Event</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-2">&#39;Shvat&#39;</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">), </span><span class="hl-2">&#39;Rosh Chodesh Sh</span><span class="hl-10">\&#39;</span><span class="hl-2">vat&#39;</span><span class="hl-1">, </span><span class="hl-4">flags</span><span class="hl-1">.</span><span class="hl-6">ROSH_CHODESH</span><span class="hl-1">)</span><br/><span class="hl-1">  .</span><span class="hl-0">getCategories</span><span class="hl-1">(); </span><span class="hl-8">// [&#39;roshchodesh&#39;]</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#getcategories">getCategories</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L287">src/event.ts:287</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L286">src/event.ts:286</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="getdate"><span>get<wbr/>Date</span><a href="#getdate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -201,7 +204,7 @@ by zero or more refinements (e.g. <code>'major'</code>, <code>'minor'</code>, <c
 <h4 class="tsd-returns-title">Returns <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a></h4><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#getdate">getDate</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L148">src/event.ts:148</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L147">src/event.ts:147</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="getdesc"><span>get<wbr/>Desc</span><a href="#getdesc" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -216,7 +219,7 @@ To get the title of the event in another language, use the
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#getdesc">getDesc</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L163">src/event.ts:163</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L162">src/event.ts:162</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="getemoji"><span>get<wbr/>Emoji</span><a href="#getemoji" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -230,19 +233,19 @@ Subclasses override this to provide holiday-specific emoji.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#getemoji">getEmoji</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L206">src/event.ts:206</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L205">src/event.ts:205</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="getflags"><span>get<wbr/>Flags</span><a href="#getflags" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
 <li class="tsd-is-inherited">
 <div class="tsd-signature tsd-anchor-link" id="getflags-1"><span class="tsd-kind-call-signature">getFlags</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><a href="#getflags-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Bitmask of optional event flags. See <a href="../enums/flags.html" class="tsd-kind-enum">flags</a></p>
+<div class="tsd-comment tsd-typography"><p>Bitmask of optional event flags. See <a href="../variables/flags.html" class="tsd-kind-variable">flags</a></p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#getflags">getFlags</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L169">src/event.ts:169</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L168">src/event.ts:168</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="greg"><span>greg</span><a href="#greg" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -254,7 +257,7 @@ Subclasses override this to provide holiday-specific emoji.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#greg">greg</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L154">src/event.ts:154</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L153">src/event.ts:153</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="observedin"><span>observed<wbr/>In</span><a href="#observedin" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -276,7 +279,7 @@ Subclasses override this to provide holiday-specific emoji.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#observedin">observedIn</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L270">src/event.ts:270</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L269">src/event.ts:269</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="observedindiaspora"><span>observed<wbr/>In<wbr/>Diaspora</span><a href="#observedindiaspora" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -294,7 +297,7 @@ Subclasses override this to provide holiday-specific emoji.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#observedindiaspora">observedInDiaspora</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L256">src/event.ts:256</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L255">src/event.ts:255</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="observedinisrael"><span>observed<wbr/>In<wbr/>Israel</span><a href="#observedinisrael" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -312,7 +315,7 @@ Subclasses override this to provide holiday-specific emoji.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#observedinisrael">observedInIsrael</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L245">src/event.ts:245</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L244">src/event.ts:244</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="render"><span>render</span><a href="#render" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -330,7 +333,7 @@ Subclasses override this to provide holiday-specific emoji.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <p>Overrides <a href="Event.html">Event</a>.<a href="Event.html#render">render</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/MevarchimChodeshEvent.ts#L41">src/MevarchimChodeshEvent.ts:41</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/MevarchimChodeshEvent.ts#L42">src/MevarchimChodeshEvent.ts:42</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="renderbrief"><span>render<wbr/>Brief</span><a href="#renderbrief" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -348,7 +351,7 @@ Subclasses override this to provide holiday-specific emoji.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <p>Overrides <a href="Event.html">Event</a>.<a href="Event.html#renderbrief">renderBrief</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/MevarchimChodeshEvent.ts#L50">src/MevarchimChodeshEvent.ts:50</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/MevarchimChodeshEvent.ts#L51">src/MevarchimChodeshEvent.ts:51</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="url"><span>url</span><a href="#url" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -364,7 +367,7 @@ override this with their own URL patterns.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="Event.html">Event</a>.<a href="Event.html#url">url</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/event.ts#L234">src/event.ts:234</a></li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/event.ts#L233">src/event.ts:233</a></li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

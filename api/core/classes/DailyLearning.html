@@ -16,17 +16,17 @@ Yerushalmi Yomi, Mishna Yomi, Nach Yomi, etc.</p>
 <p><code>@hebcal/core</code> itself contains no learning schedules — they are provided
 by the <a href="https://github.com/hebcal/hebcal-learning">@hebcal/learning</a>
 package, which calls <a href="#addcalendar" class="tsd-kind-method">DailyLearning.addCalendar</a> on import. After
-<code>@hebcal/learning</code> is loaded, <code>HebrewCalendar.calendar()</code> will emit
+<code>@hebcal/learning</code> is loaded, <code>calendar()</code> will emit
 learning events when the corresponding <code>options.dailyLearning</code> flag is set.</p>
 </div>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/learning&#39;</span><span class="hl-1">;</span><br/><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">DailyLearning</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ev</span><span class="hl-1"> = </span><span class="hl-4">DailyLearning</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;dafYomi&#39;</span><span class="hl-1">, </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(), </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">ev</span><span class="hl-1">?.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">)); </span><span class="hl-8">// e.g. &#39;Berakhot 2&#39;</span>
+<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/learning&#39;</span><span class="hl-1">;</span><br/><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">DailyLearning</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ev</span><span class="hl-1"> = </span><span class="hl-4">DailyLearning</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;dafYomi&#39;</span><span class="hl-1">, </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(), </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">ev</span><span class="hl-1">?.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">)); </span><span class="hl-8">// e.g. &#39;Daf Yomi: Berakhot 2&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/DailyLearning.ts#L27">src/DailyLearning.ts:27</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/DailyLearning.ts#L27">src/DailyLearning.ts:27</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -83,12 +83,12 @@ before the cycle's start) it should return <code>null</code>.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">DailyLearning</span><span class="hl-1">.</span><span class="hl-0">addCalendar</span><span class="hl-1">(</span><br/><span class="hl-1">  </span><span class="hl-2">&#39;myCalendar&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">  (</span><span class="hl-4">hd</span><span class="hl-1">, </span><span class="hl-4">il</span><span class="hl-1">) </span><span class="hl-5">=&gt;</span><span class="hl-1"> </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Event</span><span class="hl-1">(</span><span class="hl-4">hd</span><span class="hl-1">, </span><span class="hl-2">&#39;Today</span><span class="hl-9">\&#39;</span><span class="hl-2">s learning&#39;</span><span class="hl-1">, </span><span class="hl-7">0</span><span class="hl-1">),</span><br/><span class="hl-1">  </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-2">&#39;Tishrei&#39;</span><span class="hl-1">, </span><span class="hl-7">5780</span><span class="hl-1">),</span><br/><span class="hl-1">);</span>
+<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">DailyLearning</span><span class="hl-1">.</span><span class="hl-0">addCalendar</span><span class="hl-1">(</span><br/><span class="hl-1">  </span><span class="hl-2">&#39;myCalendar&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">  (</span><span class="hl-4">hd</span><span class="hl-1">, </span><span class="hl-4">il</span><span class="hl-1">) </span><span class="hl-5">=&gt;</span><span class="hl-1"> </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Event</span><span class="hl-1">(</span><span class="hl-4">hd</span><span class="hl-1">, </span><span class="hl-2">&#39;Today</span><span class="hl-10">\&#39;</span><span class="hl-2">s learning&#39;</span><span class="hl-1">, </span><span class="hl-7">0</span><span class="hl-1">),</span><br/><span class="hl-1">  </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-2">&#39;Tishrei&#39;</span><span class="hl-1">, </span><span class="hl-7">5780</span><span class="hl-1">),</span><br/><span class="hl-1">);</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/DailyLearning.ts#L44">src/DailyLearning.ts:44</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/DailyLearning.ts#L44">src/DailyLearning.ts:44</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getcalendars"><code class="tsd-tag">Static</code><span>get<wbr/>Calendars</span><a href="#getcalendars" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -100,7 +100,7 @@ calendars.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/DailyLearning.ts#L105">src/DailyLearning.ts:105</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/DailyLearning.ts#L105">src/DailyLearning.ts:105</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getstartdate"><code class="tsd-tag">Static</code><span>get<wbr/>Start<wbr/>Date</span><a href="#getstartdate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -119,7 +119,7 @@ calendar was not registered with a start date or is not registered at all.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/DailyLearning.ts#L84">src/DailyLearning.ts:84</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/DailyLearning.ts#L84">src/DailyLearning.ts:84</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="has"><code class="tsd-tag">Static</code><span>has</span><a href="#has" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -137,7 +137,7 @@ registered via <a href="#addcalendar" class="tsd-kind-method">addCalendar</a>.</
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/DailyLearning.ts#L97">src/DailyLearning.ts:97</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/DailyLearning.ts#L97">src/DailyLearning.ts:97</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="lookup"><code class="tsd-tag">Static</code><span>lookup</span><a href="#lookup" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -163,12 +163,12 @@ not registered).</p>
 <h4 class="tsd-returns-title">Returns <a href="Event.html" class="tsd-signature-type tsd-kind-class">Event</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-2">Example<a href="#example-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/learning&#39;</span><span class="hl-1">;</span><br/><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">DailyLearning</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-4">DailyLearning</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;dafYomi&#39;</span><span class="hl-1">, </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">2024</span><span class="hl-1">, </span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-7">15</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">);</span>
+<h4 class="tsd-anchor-link" id="example-2">Example<a href="#example-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/learning&#39;</span><span class="hl-1">;</span><br/><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">DailyLearning</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-4">DailyLearning</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;dafYomi&#39;</span><span class="hl-1">, </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">15</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">CHESHVAN</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">);</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/DailyLearning.ts#L70">src/DailyLearning.ts:70</a></li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/DailyLearning.ts#L70">src/DailyLearning.ts:70</a></li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

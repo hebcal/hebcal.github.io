@@ -25,12 +25,12 @@ conditions, observed values may vary from calculations.
 </div>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-5">const</span><span class="hl-1"> {</span><span class="hl-6">GeoLocation</span><span class="hl-1">, </span><span class="hl-6">Zmanim</span><span class="hl-1">} = </span><span class="hl-0">require</span><span class="hl-1">(</span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">latitude</span><span class="hl-1"> = </span><span class="hl-7">41.822232</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">longitude</span><span class="hl-1"> = -</span><span class="hl-7">71.448292</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">tzid</span><span class="hl-1"> = </span><span class="hl-2">&#39;America/New_York&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">friday</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">(</span><span class="hl-7">2023</span><span class="hl-1">, </span><span class="hl-7">8</span><span class="hl-1">, </span><span class="hl-7">8</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">gloc</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">GeoLocation</span><span class="hl-1">(</span><span class="hl-5">null</span><span class="hl-1">, </span><span class="hl-4">latitude</span><span class="hl-1">, </span><span class="hl-4">longitude</span><span class="hl-1">, </span><span class="hl-7">0</span><span class="hl-1">, </span><span class="hl-4">tzid</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">zmanim</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Zmanim</span><span class="hl-1">(</span><span class="hl-4">gloc</span><span class="hl-1">, </span><span class="hl-4">friday</span><span class="hl-1">, </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">candleLighting</span><span class="hl-1"> = </span><span class="hl-4">zmanim</span><span class="hl-1">.</span><span class="hl-0">sunsetOffset</span><span class="hl-1">(-</span><span class="hl-7">18</span><span class="hl-1">, </span><span class="hl-5">true</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">timeStr</span><span class="hl-1"> = </span><span class="hl-4">Zmanim</span><span class="hl-1">.</span><span class="hl-0">formatISOWithTimeZone</span><span class="hl-1">(</span><span class="hl-4">tzid</span><span class="hl-1">, </span><span class="hl-4">candleLighting</span><span class="hl-1">);</span>
+<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">GeoLocation</span><span class="hl-1">, </span><span class="hl-4">Zmanim</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">latitude</span><span class="hl-1"> = </span><span class="hl-7">41.822232</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">longitude</span><span class="hl-1"> = -</span><span class="hl-7">71.448292</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">tzid</span><span class="hl-1"> = </span><span class="hl-2">&#39;America/New_York&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">friday</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">(</span><span class="hl-7">2023</span><span class="hl-1">, </span><span class="hl-7">8</span><span class="hl-1">, </span><span class="hl-7">8</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">gloc</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">GeoLocation</span><span class="hl-1">(</span><span class="hl-5">null</span><span class="hl-1">, </span><span class="hl-4">latitude</span><span class="hl-1">, </span><span class="hl-4">longitude</span><span class="hl-1">, </span><span class="hl-7">0</span><span class="hl-1">, </span><span class="hl-4">tzid</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">zmanim</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Zmanim</span><span class="hl-1">(</span><span class="hl-4">gloc</span><span class="hl-1">, </span><span class="hl-4">friday</span><span class="hl-1">, </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">candleLighting</span><span class="hl-1"> = </span><span class="hl-4">zmanim</span><span class="hl-1">.</span><span class="hl-0">sunsetOffset</span><span class="hl-1">(-</span><span class="hl-7">18</span><span class="hl-1">, </span><span class="hl-5">true</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">timeStr</span><span class="hl-1"> = </span><span class="hl-4">Zmanim</span><span class="hl-1">.</span><span class="hl-0">formatISOWithTimeZone</span><span class="hl-1">(</span><span class="hl-4">tzid</span><span class="hl-1">, </span><span class="hl-4">candleLighting</span><span class="hl-1">);</span><br/><span class="hl-8">// &#39;2023-09-08T18:49:00-04:00&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L59">src/zmanim.ts:59</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L60">src/zmanim.ts:60</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -55,6 +55,8 @@ conditions, observed values may vary from calculations.
 <a href="#getsofzmankidushlevanabetweenmoldos" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Sof<wbr/>Zman<wbr/>Kidush<wbr/>Levana<wbr/>Between<wbr/>Moldos</span></a>
 <a href="#gettchilaszmankidushlevana3days" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Tchilas<wbr/>Zman<wbr/>Kidush<wbr/>Levana3<wbr/>Days</span></a>
 <a href="#gettchilaszmankidushlevana7days" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Tchilas<wbr/>Zman<wbr/>Kidush<wbr/>Levana7<wbr/>Days</span></a>
+<a href="#gettemporalhour72" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Temporal<wbr/>Hour72</span></a>
+<a href="#gettemporalhourbydeg" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Temporal<wbr/>Hour<wbr/>By<wbr/>Deg</span></a>
 <a href="#getuseelevation" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Use<wbr/>Elevation</span></a>
 <a href="#getzmanmolad" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Zman<wbr/>Molad</span></a>
 <a href="#gregeve" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>greg<wbr/>Eve</span></a>
@@ -67,6 +69,7 @@ conditions, observed values may vary from calculations.
 <a href="#misheyakir" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>misheyakir</span></a>
 <a href="#misheyakirmachmir" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>misheyakir<wbr/>Machmir</span></a>
 <a href="#neitzhachama" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>neitz<wbr/>Ha<wbr/>Chama</span></a>
+<a href="#nighthour" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>night<wbr/>Hour</span></a>
 <a href="#plaghamincha" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>plag<wbr/>Ha<wbr/>Mincha</span></a>
 <a href="#plaghaminchabaalhatanya" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>plag<wbr/>Hamincha<wbr/>Baal<wbr/>Hatanya</span></a>
 <a href="#sealevelsunrise" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sea<wbr/>Level<wbr/>Sunrise</span></a>
@@ -128,7 +131,7 @@ These zmanim intentionally do not support elevation adjustment.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">Zmanim</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L76">src/zmanim.ts:76</a></li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L77">src/zmanim.ts:77</a></li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -139,21 +142,21 @@ These zmanim intentionally do not support elevation adjustment.</p>
 <div class="tsd-signature tsd-anchor-link" id="alosbaalhatanya-1"><span class="tsd-kind-call-signature">alosBaalHatanya</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><a href="#alosbaalhatanya-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Returns the <a href="https://en.wikipedia.org/wiki/Shneur_Zalman_of_Liadi">Baal Hatanya</a>'s <em>alos</em>
-(dawn) calculated as the time when the sun is 16.9° below the eastern GEOMETRIC_ZENITH geometric horizon
-before getSunrise() sunrise.</p>
+(dawn) calculated as the time when the sun is 16.9° below the eastern geometric horizon
+before <a href="#sunrise" class="tsd-kind-method">sunrise</a>.</p>
 <p>The zenith of 16.9° below is based on the calculation that the time between dawn
-and <em>netz amiti</em> (sunrise) is 72 minutes, the time that is takes to walk 4 mil at 18 minutes
+and <em>netz amiti</em> (sunrise) is 72 minutes, the time that it takes to walk 4 mil at 18 minutes
 a mil (<a href="https://en.wikipedia.org/wiki/Maimonides">Rambam</a> and others). The sun's position at 72
-minutes before getSunriseBaalHatanya <em>netz amiti</em> (sunrise) in Jerusalem &lt;a href=../media/src
-&quot;<a href="https://kosherjava.com/2022/01/12/equinox-vs-equilux-zmanim-calculations/">https://kosherjava.com/2022/01/12/equinox-vs-equilux-zmanim-calculations/</a>&quot;&gt;around the equinox / equilux</a> is
-16.9° below GEOMETRIC_ZENITH geometric zenith.</p>
+minutes before <em>netz amiti</em> (sunrise) in Jerusalem
+<a href="https://kosherjava.com/2022/01/12/equinox-vs-equilux-zmanim-calculations/">around the equinox / equilux</a>
+is 16.9° below geometric zenith.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>The <code>Date</code> of dawn. If the calculation can't be computed such as northern and southern
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>the <code>Date</code> of dawn. If the calculation can't be computed, such as in northern and southern
 locations even south of the Arctic Circle and north of the Antarctic Circle where the sun may not reach
-low enough below the horizon for this calculation, a <code>null</code> will be returned.</p>
+low enough below the horizon for this calculation, an <code>Invalid Date</code> will be returned.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L856">src/zmanim.ts:856</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L895">src/zmanim.ts:895</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="alothashachar"><span>alot<wbr/>Ha<wbr/>Shachar</span><a href="#alothashachar" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -166,7 +169,7 @@ the result is not impacted by elevation.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L207">src/zmanim.ts:207</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L220">src/zmanim.ts:220</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="alothashachar72"><span>alot<wbr/>Ha<wbr/>Shachar72</span><a href="#alothashachar72" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -178,16 +181,20 @@ sea level sunrise.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L214">src/zmanim.ts:214</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L227">src/zmanim.ts:227</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="alothashachar72zdt"><span>alot<wbr/>Ha<wbr/>Shachar72zdt</span><a href="#alothashachar72zdt" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="alothashachar72zdt-1"><span class="tsd-kind-call-signature">alotHaShachar72zdt</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><a href="#alothashachar72zdt-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Same as <a href="#alothashachar72" class="tsd-kind-method">alotHaShachar72</a>, but returns a <code>Temporal.ZonedDateTime</code>
+with seconds precision (instead of a <code>Date</code> rounded to the minute), or
+<code>null</code> if sunrise cannot be calculated for this date and location.</p>
+</div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L217">src/zmanim.ts:217</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L235">src/zmanim.ts:235</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="beinhashmashos"><span>bein<wbr/>Ha<wbr/>Shmashos</span><a href="#beinhashmashos" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -203,18 +210,21 @@ the result is not impacted by elevation.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L492">src/zmanim.ts:492</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L524">src/zmanim.ts:524</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="chatzot"><span>chatzot</span><a href="#chatzot" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="chatzot-1"><span class="tsd-kind-call-signature">chatzot</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><a href="#chatzot-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Midday – Chatzot; Sunrise plus 6 halachic hours</p>
+<div class="tsd-comment tsd-typography"><p>Midday – Chatzot; Sunrise plus 6 halachic hours.</p>
+<p>Unlike most sunrise/sunset-based zmanim, this is always computed from
+sea-level sunrise and sunset, so it is not affected by the
+<code>useElevation</code> setting.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L189">src/zmanim.ts:189</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L202">src/zmanim.ts:202</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="chatzotnight"><span>chatzot<wbr/>Night</span><a href="#chatzotnight" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -226,7 +236,7 @@ If elevation is enabled, this function will include elevation in the calculation
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L199">src/zmanim.ts:199</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L212">src/zmanim.ts:212</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="dawn"><span>dawn</span><a href="#dawn" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -239,7 +249,7 @@ the result is not impacted by elevation.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L157">src/zmanim.ts:157</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L164">src/zmanim.ts:164</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="dusk"><span>dusk</span><a href="#dusk" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -252,7 +262,7 @@ the result is not impacted by elevation.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L166">src/zmanim.ts:166</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L173">src/zmanim.ts:173</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getsofzmankidushlevana15days"><span>get<wbr/>Sof<wbr/>Zman<wbr/>Kidush<wbr/>Levana15<wbr/>Days</span><a href="#getsofzmankidushlevana15days" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -261,37 +271,44 @@ the result is not impacted by elevation.</p>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Returns the latest time of <em>Kiddush Levana</em> calculated as 15 days after the molad. This is the opinion of
 the Shulchan Aruch (Orach Chaim 426). It should be noted that some opinions hold that the
-<a href="https://en.wikipedia.org/wiki/Moses_Isserles">Rema</a> who brings down the opinion of the <a
-href="https://en.wikipedia.org/wiki/Yaakov_ben_Moshe_Levi_Moelin">Maharil's</a> of calculating
-<a href="#getsofzmankidushlevanabetweenmoldos" class="tsd-kind-method">half way between <em>molad</em> and <em>molad</em></a> is of
-the opinion that the Mechaber agrees to his opinion. Also see the Aruch Hashulchan. For additional details on the subject,
-See Rabbi Dovid Heber's very detailed write-up in Siman Daled (chapter 4) of <a href="https://hebrewbooks.org/53000">Shaarei
-Zmanim</a>. The <em>sof zman Kiddush Levana</em> will be returned even if it occurs during the day. To limit the time to
-between <em>tzais</em> and <em>alos</em>, see <a href="#getsofzmankidushlevana15days" class="tsd-kind-method">getSofZmanKidushLevana15Days</a>.</p>
+<a href="https://en.wikipedia.org/wiki/Moses_Isserles">Rema</a>, who brings down the opinion of the
+<a href="https://en.wikipedia.org/wiki/Yaakov_ben_Moshe_Levi_Moelin">Maharil</a> of calculating
+<a href="#getsofzmankidushlevanabetweenmoldos" class="tsd-kind-method">half way between <em>molad</em> and <em>molad</em></a>, is of
+the opinion that the Mechaber agrees to his opinion. Also see the Aruch Hashulchan. For additional details on
+the subject, see Rabbi Dovid Heber's very detailed write-up in Siman Daled (chapter 4) of
+<a href="https://hebrewbooks.org/53000">Shaarei Zmanim</a>.</p>
+<p>The <em>sof zman Kiddush Levana</em> will be returned even if it occurs during the day, unless both <code>alos</code> and
+<code>tzais</code> are supplied.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">alos</span>: <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></span></li>
-<li><span><span class="tsd-kind-parameter">tzais</span>: <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></span></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><p>the Date representing the moment 15 days after the <em>molad</em>. If the time occurs between
-<em>alos</em> and <em>tzais</em>, <em>alos</em> will be returned. If the <em>zman</em> will not occur on this day, a
+<li><span><span class="tsd-kind-parameter">alos</span>: <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></span>
+<div class="tsd-comment tsd-typography"><p>the beginning of the Jewish day. If either the <em>alos</em> or <em>tzais</em> parameters are null, no daytime
+adjustment will be made.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">tzais</span>: <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></span>
+<div class="tsd-comment tsd-typography"><p>the end of the Jewish day. If either the <em>alos</em> or <em>tzais</em> parameters are null, no daytime
+adjustment will be made.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><p>the <code>Temporal.ZonedDateTime</code> representing the moment 15 days after the <em>molad</em>. If the time occurs
+between <em>alos</em> and <em>tzais</em>, <em>alos</em> will be returned. If the <em>zman</em> will not occur on this day,
 <code>null</code> will be returned.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L631">src/zmanim.ts:631</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L670">src/zmanim.ts:670</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getsofzmankidushlevanabetweenmoldos"><span>get<wbr/>Sof<wbr/>Zman<wbr/>Kidush<wbr/>Levana<wbr/>Between<wbr/>Moldos</span><a href="#getsofzmankidushlevanabetweenmoldos" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="getsofzmankidushlevanabetweenmoldos-1"><span class="tsd-kind-call-signature">getSofZmanKidushLevanaBetweenMoldos</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">alos</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">tzais</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><a href="#getsofzmankidushlevanabetweenmoldos-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns the latest time of Kiddush Levana according to the <a
-href="https://en.wikipedia.org/wiki/Yaakov_ben_Moshe_Levi_Moelin">Maharil's</a> opinion that it is calculated as
+<div class="tsd-comment tsd-typography"><p>Returns the latest time of Kiddush Levana according to the
+<a href="https://en.wikipedia.org/wiki/Yaakov_ben_Moshe_Levi_Moelin">Maharil's</a> opinion that it is calculated as
 halfway between <em>molad</em> and <em>molad</em>. This adds half the 29 days, 12 hours and 793 chalakim time between
-<em>molad</em> and <em>molad</em> (14 days, 18 hours, 22 minutes and 666 milliseconds) to the month's <em>molad</em>.
-The <em>sof zman Kiddush Levana</em> will be returned even if it occurs during the day. To limit the time to between
-<em>tzais</em> and <em>alos</em>, see <a href="#getsofzmankidushlevanabetweenmoldos" class="tsd-kind-method">getSofZmanKidushLevanaBetweenMoldos</a>.</p>
+<em>molad</em> and <em>molad</em> (14 days, 18 hours, 22 minutes and 666 milliseconds) to the month's <em>molad</em>.</p>
+<p>The <em>sof zman Kiddush Levana</em> will be returned even if it occurs during the day, unless both <code>alos</code> and
+<code>tzais</code> are supplied.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -306,20 +323,20 @@ are null, no daytime adjustment will be made.</p>
 tzais), the time returned will be alos. If either the alos or tzais parameters are null, no daytime
 adjustment will be made.</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><p>the Date representing the moment halfway between molad and molad. If the time occurs between
-<em>alos</em> and <em>tzais</em>, <em>alos</em> will be returned. If the <em>zman</em> will not occur on this
-day, a <code>null</code> will be returned.</p>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><p>the <code>Temporal.ZonedDateTime</code> representing the moment halfway between molad and molad. If the time
+occurs between <em>alos</em> and <em>tzais</em>, <em>alos</em> will be returned. If the <em>zman</em> will not occur on this
+day, <code>null</code> will be returned.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L592">src/zmanim.ts:592</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L625">src/zmanim.ts:625</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="gettchilaszmankidushlevana3days"><span>get<wbr/>Tchilas<wbr/>Zman<wbr/>Kidush<wbr/>Levana3<wbr/>Days</span><a href="#gettchilaszmankidushlevana3days" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="gettchilaszmankidushlevana3days-1"><span class="tsd-kind-call-signature">getTchilasZmanKidushLevana3Days</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">alos</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">tzais</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><a href="#gettchilaszmankidushlevana3days-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns the earliest time of <em>Kiddush Levana</em> according to &lt;a href=../media/src
-&quot;<a href="https://en.wikipedia.org/wiki/Yonah_Gerondi">https://en.wikipedia.org/wiki/Yonah_Gerondi</a>&quot;&gt;Rabbeinu Yonah</a>'s opinion that it can be said 3 days after the <em>molad</em>.
+<div class="tsd-comment tsd-typography"><p>Returns the earliest time of <em>Kiddush Levana</em> according to
+<a href="https://en.wikipedia.org/wiki/Yonah_Gerondi">Rabbeinu Yonah</a>'s opinion that it can be said 3 days after the <em>molad</em>.
 If the time of <em>tchilas zman Kiddush Levana</em> occurs during the day (between <em>alos</em> and <em>tzais</em> passed to
 this method) it will return the following <em>tzais</em>. If null is passed for either <em>alos</em> or <em>tzais</em>, the actual
 <em>tchilas zman Kiddush Levana</em> will be returned, regardless of if it is during the day or not.</p>
@@ -337,12 +354,12 @@ are null, no daytime adjustment will be made.</p>
 <em>tzais</em>), the time returned will be <em>tzais</em>. If either the <em>alos</em> or <em>tzais</em> parameters
 are null, no daytime adjustment will be made.</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><p>the Date representing the moment 3 days after the molad. If the time occurs between <em>alos</em> and
-<em>tzais</em>, <em>tzais</em> will be returned. If the <em>zman</em> will not occur on this day, a
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><p>the <code>Temporal.ZonedDateTime</code> representing the moment 3 days after the molad. If the time occurs
+between <em>alos</em> and <em>tzais</em>, <em>tzais</em> will be returned. If the <em>zman</em> will not occur on this day,
 <code>null</code> will be returned.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L673">src/zmanim.ts:673</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L712">src/zmanim.ts:712</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="gettchilaszmankidushlevana7days"><span>get<wbr/>Tchilas<wbr/>Zman<wbr/>Kidush<wbr/>Levana7<wbr/>Days</span><a href="#gettchilaszmankidushlevana7days" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -351,45 +368,91 @@ are null, no daytime adjustment will be made.</p>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Returns the earliest time of <em>Kiddush Levana</em> according to the opinions that it should not be said until 7
 days after the <em>molad</em>. The time will be returned even if it occurs during the day when <em>Kiddush Levana</em>
-can't be recited. Use <a href="#gettchilaszmankidushlevana7days" class="tsd-kind-method">getTchilasZmanKidushLevana7Days</a> if you want to limit the time to night hours.</p>
+can't be recited, unless both <code>alos</code> and <code>tzais</code> are supplied.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">alos</span>: <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></span></li>
-<li><span><span class="tsd-kind-parameter">tzais</span>: <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></span></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><p>the Date representing the moment 7 days after the molad regardless of it is day or night. If the <em>zman</em>
-will not occur on this day, a <code>null</code> will be returned.</p>
+<li><span><span class="tsd-kind-parameter">alos</span>: <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></span>
+<div class="tsd-comment tsd-typography"><p>the beginning of the Jewish day. If <em>Kidush Levana</em> occurs during the day (starting at <em>alos</em> and
+ending at <em>tzais</em>), the time returned will be <em>tzais</em>. If either the <em>alos</em> or <em>tzais</em> parameters
+are null, no daytime adjustment will be made.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">tzais</span>: <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></span>
+<div class="tsd-comment tsd-typography"><p>the end of the Jewish day. If either the <em>alos</em> or <em>tzais</em> parameters are null, no daytime
+adjustment will be made.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><p>the <code>Temporal.ZonedDateTime</code> representing the moment 7 days after the molad. If the <em>zman</em>
+will not occur on this day, <code>null</code> will be returned.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L756">src/zmanim.ts:756</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L800">src/zmanim.ts:800</a></li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="gettemporalhour72"><span>get<wbr/>Temporal<wbr/>Hour72</span><a href="#gettemporalhour72" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="gettemporalhour72-1"><span class="tsd-kind-call-signature">getTemporalHour72</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">forceSeaLevel</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">,</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><a href="#gettemporalhour72-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns a 2-element array with alot (a <code>Date</code>, 72 minutes before sunrise)
+and the length in milliseconds of one halachic hour of the resulting day.
+Used internally by the Magen Avraham zmanim.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">forceSeaLevel</span>: <span class="tsd-signature-type">boolean</span></span>
+<div class="tsd-comment tsd-typography"><p>ignore the <code>useElevation</code> setting and use sea-level
+sunrise and sunset</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">,</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L327">src/zmanim.ts:327</a></li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="gettemporalhourbydeg"><span>get<wbr/>Temporal<wbr/>Hour<wbr/>By<wbr/>Deg</span><a href="#gettemporalhourbydeg" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="gettemporalhourbydeg-1"><span class="tsd-kind-call-signature">getTemporalHourByDeg</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">angle</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">,</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><a href="#gettemporalhourbydeg-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns a 2-element array with alot (a <code>Date</code>, when the sun is <code>angle</code>
+degrees below the horizon in the morning) and the length in milliseconds
+of one halachic hour of the resulting day. Used internally by the
+degree-based Magen Avraham zmanim.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">angle</span>: <span class="tsd-signature-type">number</span></span>
+<div class="tsd-comment tsd-typography"><p>degrees of solar depression below the horizon</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">,</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L340">src/zmanim.ts:340</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getuseelevation"><span>get<wbr/>Use<wbr/>Elevation</span><a href="#getuseelevation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="getuseelevation-1"><span class="tsd-kind-call-signature">getUseElevation</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><a href="#getuseelevation-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns <code>true</code> if elevation adjustment is enabled
-for zmanim support elevation adjustment</p>
+<div class="tsd-comment tsd-typography"><p>Returns <code>true</code> if this instance uses the location's elevation when
+calculating sunrise/sunset-based zmanim.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L92">src/zmanim.ts:92</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L93">src/zmanim.ts:93</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getzmanmolad"><span>get<wbr/>Zman<wbr/>Molad</span><a href="#getzmanmolad" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="getzmanmolad-1"><span class="tsd-kind-call-signature">getZmanMolad</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><a href="#getzmanmolad-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns the point in time of <em>Molad</em> as a <code>Date</code> Object. For the traditional day of week, hour,
-minute and chalakim, <a href="Molad.html#getinstant" class="tsd-kind-method">()</a> and the not yet completed
-HebrewDateFormatter that will have formatting for this.</p>
+<div class="tsd-comment tsd-typography"><p>Returns the point in time of the <em>Molad</em>, if it occurs on this date. For the traditional day of week, hour,
+minute and chalakim, see <a href="Molad.html" class="tsd-kind-class">Molad</a> and its <a href="Molad.html#render" class="tsd-kind-method">Molad.render</a> method.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><p>the Date representing the moment of the molad. If the <em>molad</em> does not occur on this day, a
-<code>null</code> will be returned.</p>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><p>the <code>Temporal.ZonedDateTime</code> representing the moment of the molad. If the <em>molad</em> does not occur on
+this day, <code>null</code> will be returned.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L721">src/zmanim.ts:721</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L758">src/zmanim.ts:758</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="gregeve"><span>greg<wbr/>Eve</span><a href="#gregeve" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -401,7 +464,7 @@ If elevation is enabled, this function will include elevation in the calculation
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L174">src/zmanim.ts:174</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L181">src/zmanim.ts:181</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="minchagedola"><span>mincha<wbr/>Gedola</span><a href="#minchagedola" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -410,7 +473,7 @@ If elevation is enabled, this function will include elevation in the calculation
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Earliest Mincha – Mincha Gedola (GRA); Sunrise plus 6.5 halachic hours.
 If elevation is enabled, this function will include elevation in the calculation.</p>
-<p>This method returns the latest mincha gedola, the earliest time one can pray mincha
+<p>This method returns <em>mincha gedola</em>, the earliest time one can pray mincha,
 that is 6.5 shaos zmaniyos (solar hours) after sunrise or sea level sunrise
 (depending on the <code>useElevation</code> setting), according
 to the <a href="https://en.wikipedia.org/wiki/Vilna_Gaon">GRA</a>.</p>
@@ -420,7 +483,7 @@ opinion that <em>mincha</em> can be prayed <em>lechatchila</em> starting at <em>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L406">src/zmanim.ts:406</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L428">src/zmanim.ts:428</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="minchagedolabaalhatanya"><span>mincha<wbr/>Gedola<wbr/>Baal<wbr/>Hatanya</span><a href="#minchagedolabaalhatanya" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -429,22 +492,20 @@ opinion that <em>mincha</em> can be prayed <em>lechatchila</em> starting at <em>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>This method returns the time of <em>mincha gedola</em>. <em>Mincha gedola</em> is the earliest time one can pray
 <em>mincha</em>. The <a href="https://en.wikipedia.org/wiki/Maimonides">Rambam</a> is of the opinion that it is
-better to delay <em>mincha</em> until <a href="#minchaketanabaalhatanya" class="tsd-kind-method">() <em>mincha ketana</em></a> while the
+better to delay <em>mincha</em> until <a href="#minchaketanabaalhatanya" class="tsd-kind-method"><em>mincha ketana</em></a> while the
 <a href="https://en.wikipedia.org/wiki/Asher_ben_Jehiel">Ra&quot;sh</a>,
-<a href="https://en.wikipedia.org/wiki/Jacob_ben_Asher">Tur</a>, &lt;a href=../media/src
-&quot;<a href="https://en.wikipedia.org/wiki/Vilna_Gaon">https://en.wikipedia.org/wiki/Vilna_Gaon</a>&quot;&gt;GRA</a> and others are of the opinion that <em>mincha</em> can be prayed
-<em>lechatchila</em> starting at <em>mincha gedola</em>. This is calculated as 6.5 getShaahZmanisBaalHatanya() sea level solar hours after getSunriseBaalHatanya() <em>netz amiti</em> (sunrise). This calculation is based
-on the opinion of the Baal Hatanya that the day is calculated from sunrise to sunset. This returns the time 6.5</p>
-<ul>
-<li>getShaahZmanisBaalHatanya() after getSunriseBaalHatanya() <em>netz amiti</em> (&quot;real&quot; sunrise).</li>
-</ul>
+<a href="https://en.wikipedia.org/wiki/Jacob_ben_Asher">Tur</a>,
+<a href="https://en.wikipedia.org/wiki/Vilna_Gaon">GRA</a> and others are of the opinion that <em>mincha</em> can be prayed
+<em>lechatchila</em> starting at <em>mincha gedola</em>. This is calculated as 6.5 sea level solar hours after
+<em>netz amiti</em> (sunrise), based on the opinion of the Baal Hatanya that the day is calculated from
+<em>netz amiti</em> (sunrise) to <em>shkiah amiti</em> (sunset).</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>the <code>Date</code> of the time of <em>mincha gedola</em> according to the Baal Hatanya. If the calculation
-can't be computed such as in the Arctic Circle where there is at least one day a year where the sun does not rise,
-and one where it does not set, a <code>null</code> will be returned.</p>
+can't be computed, such as in the Arctic Circle where there is at least one day a year where the sun does not rise
+and one where it does not set, an <code>Invalid Date</code> will be returned.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L913">src/zmanim.ts:913</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L948">src/zmanim.ts:948</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="minchagedolamga"><span>mincha<wbr/>Gedola<wbr/>MGA</span><a href="#minchagedolamga" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -459,7 +520,7 @@ This is the earliest time to pray <em>mincha</em>.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L417">src/zmanim.ts:417</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L439">src/zmanim.ts:439</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="minchaketana"><span>mincha<wbr/>Ketana</span><a href="#minchaketana" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -476,7 +537,7 @@ to the <a href="https://en.wikipedia.org/wiki/Vilna_Gaon">GRA</a>.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L432">src/zmanim.ts:432</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L454">src/zmanim.ts:454</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="minchaketanabaalhatanya"><span>mincha<wbr/>Ketana<wbr/>Baal<wbr/>Hatanya</span><a href="#minchaketanabaalhatanya" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -485,17 +546,16 @@ to the <a href="https://en.wikipedia.org/wiki/Vilna_Gaon">GRA</a>.</p>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>This method returns the time of <em>mincha ketana</em>. This is the preferred earliest time to pray
 <em>mincha</em> in the opinion of the <a href="https://en.wikipedia.org/wiki/Maimonides">Rambam</a> and others.
-For more information on this see the documentation on <a href="#minchagedolabaalhatanya" class="tsd-kind-method">() <em>mincha gedola</em></a>.
-This is calculated as 9.5 sea level solar hours after getSunriseBaalHatanya <em>netz amiti</em> (sunrise). This calculation is calculated based on the opinion of the Baal Hatanya that the
-day is calculated from sunrise to sunset. This returns the time 9.5 * after
-<em>netz amiti</em> (sunrise).</p>
+For more information on this see the documentation on <a href="#minchagedolabaalhatanya" class="tsd-kind-method"><em>mincha gedola</em></a>.
+This is calculated as 9.5 sea level solar hours after <em>netz amiti</em> (sunrise), based on the opinion of
+the Baal Hatanya that the day is calculated from <em>netz amiti</em> (sunrise) to <em>shkiah amiti</em> (sunset).</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>the <code>Date</code> of the time of <em>mincha ketana</em>. If the calculation can't be computed such as
-in the Arctic Circle where there is at least one day a year where the sun does not rise, and one where it
-does not set, a <code>null</code> will be returned.</p>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>the <code>Date</code> of the time of <em>mincha ketana</em>. If the calculation can't be computed, such as
+in the Arctic Circle where there is at least one day a year where the sun does not rise and one where it
+does not set, an <code>Invalid Date</code> will be returned.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L930">src/zmanim.ts:930</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L963">src/zmanim.ts:963</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="minchaketanamga"><span>mincha<wbr/>Ketana<wbr/>MGA</span><a href="#minchaketanamga" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -510,7 +570,7 @@ the <a href="https://en.wikipedia.org/wiki/Maimonides">Rambam</a> and others.</p
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L443">src/zmanim.ts:443</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L465">src/zmanim.ts:465</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="misheyakir"><span>misheyakir</span><a href="#misheyakir" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -523,7 +583,7 @@ the result is not impacted by elevation.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L232">src/zmanim.ts:232</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L250">src/zmanim.ts:250</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="misheyakirmachmir"><span>misheyakir<wbr/>Machmir</span><a href="#misheyakirmachmir" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -536,7 +596,7 @@ the result is not impacted by elevation.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L240">src/zmanim.ts:240</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L258">src/zmanim.ts:258</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="neitzhachama"><span>neitz<wbr/>Ha<wbr/>Chama</span><a href="#neitzhachama" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -547,7 +607,20 @@ the result is not impacted by elevation.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L475">src/zmanim.ts:475</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L507">src/zmanim.ts:507</a></li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="nighthour"><span>night<wbr/>Hour</span><a href="#nighthour" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="nighthour-1"><span class="tsd-kind-call-signature">nightHour</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><a href="#nighthour-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Length in milliseconds of one halachic hour of the night, calculated as
+one twelfth of the time between the previous day's sunset and this
+day's sunrise. Used internally by <a href="#chatzotnight" class="tsd-kind-method">chatzotNight</a>.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L192">src/zmanim.ts:192</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="plaghamincha"><span>plag<wbr/>Ha<wbr/>Mincha</span><a href="#plaghamincha" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -559,24 +632,23 @@ If elevation is enabled, this function will include elevation in the calculation
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L451">src/zmanim.ts:451</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L473">src/zmanim.ts:473</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="plaghaminchabaalhatanya"><span>plag<wbr/>Hamincha<wbr/>Baal<wbr/>Hatanya</span><a href="#plaghaminchabaalhatanya" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="plaghaminchabaalhatanya-1"><span class="tsd-kind-call-signature">plagHaminchaBaalHatanya</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><a href="#plaghaminchabaalhatanya-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>This method returns the time of <em>plag hamincha</em>. This is calculated as 10.75 hours after sunrise. This
-calculation is based on the opinion of the Baal Hatanya that the day is calculated
-from sunrise to sunset. This returns the time 10.75 * getShaahZmanisBaalHatanya() after
-getSunriseBaalHatanya() <em>netz amiti</em> (sunrise).</p>
+<div class="tsd-comment tsd-typography"><p>This method returns the time of <em>plag hamincha</em>. This is calculated as 10.75 sea level solar hours
+after <em>netz amiti</em> (sunrise), based on the opinion of the Baal Hatanya that the day is calculated
+from <em>netz amiti</em> (sunrise) to <em>shkiah amiti</em> (sunset).</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>the <code>Date</code> of the time of <em>plag hamincha</em>. If the calculation can't be computed such as
-in the Arctic Circle where there is at least one day a year where the sun does not rise, and one where it
-does not set, a <code>null</code> will be returned.</p>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>the <code>Date</code> of the time of <em>plag hamincha</em> according to the Baal Hatanya. If the calculation
+can't be computed, such as in the Arctic Circle where there is at least one day a year where the sun does
+not rise and one where it does not set, an <code>Invalid Date</code> will be returned.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L944">src/zmanim.ts:944</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L976">src/zmanim.ts:976</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sealevelsunrise"><span>sea<wbr/>Level<wbr/>Sunrise</span><a href="#sealevelsunrise" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -588,7 +660,7 @@ This function does not support elevation adjustment.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L130">src/zmanim.ts:130</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L137">src/zmanim.ts:137</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sealevelsunset"><span>sea<wbr/>Level<wbr/>Sunset</span><a href="#sealevelsunset" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -600,22 +672,27 @@ This function does not support elevation adjustment.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L148">src/zmanim.ts:148</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L155">src/zmanim.ts:155</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="setuseelevation"><span>set<wbr/>Use<wbr/>Elevation</span><a href="#setuseelevation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="setuseelevation-1"><span class="tsd-kind-call-signature">setUseElevation</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">useElevation</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#setuseelevation-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Enables or disables elevation adjustment for zmanim support elevation adjustment</p>
+<div class="tsd-comment tsd-typography"><p>Enables or disables elevation adjustment for sunrise/sunset-based zmanim.</p>
+<p>Degree-based zmanim (such as <a href="#alothashachar" class="tsd-kind-method">alotHaShachar</a> or <a href="#tzeit" class="tsd-kind-method">tzeit</a>)
+estimate the amount of light in the sky and are never affected by this
+setting.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">useElevation</span>: <span class="tsd-signature-type">boolean</span></span></li></ul></div>
+<li><span><span class="tsd-kind-parameter">useElevation</span>: <span class="tsd-signature-type">boolean</span></span>
+<div class="tsd-comment tsd-typography"><p><code>true</code> to include the location's elevation</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L99">src/zmanim.ts:99</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L104">src/zmanim.ts:104</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="shkiah"><span>shkiah</span><a href="#shkiah" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -626,7 +703,7 @@ This function does not support elevation adjustment.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L481">src/zmanim.ts:481</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L513">src/zmanim.ts:513</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sofzmanbiurchametzgra"><span>sof<wbr/>Zman<wbr/>Biur<wbr/>Chametz<wbr/>GRA</span><a href="#sofzmanbiurchametzgra" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -634,17 +711,16 @@ This function does not support elevation adjustment.</p>
 <div class="tsd-signature tsd-anchor-link" id="sofzmanbiurchametzgra-1"><span class="tsd-kind-call-signature">sofZmanBiurChametzGRA</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><a href="#sofzmanbiurchametzgra-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>This method returns the latest time for burning <em>chametz</em> on <em>Erev Pesach</em> according to the opinion
-of the <a href="https://en.wikipedia.org/wiki/Vilna_Gaon">GRA</a>. This time is 5 hours into the day based on the
-opinion of the <a href="https://en.wikipedia.org/wiki/Vilna_Gaon">GRA</a> that the day is calculated from
-sunrise to sunset. This returns the time 5 * #getShaahZmanisGra() after #getSeaLevelSunrise() sea level sunrise.</p>
+of the <a href="https://en.wikipedia.org/wiki/Vilna_Gaon">GRA</a>. This time is 5 halachic hours into the day, based on
+the opinion of the GRA that the day is calculated from sunrise to sunset.</p>
+<p>If elevation is enabled, this function will include elevation in the calculation.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>the <code>Date</code> of the latest time for burning <em>chametz</em> on <em>Erev Pesach</em>. If it is not
-<em>erev Pesach</em> or the calculation can't be computed such as in the Arctic Circle where there is at least
-one day a year where the sun does not rise, and one where it does not set, a <code>null</code> will be
-returned.</p>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>the <code>Date</code> of the latest time for burning <em>chametz</em> on <em>Erev Pesach</em>. If the calculation can't be
+computed, such as in the Arctic Circle where there is at least one day a year where the sun does not
+rise and one where it does not set, an <code>Invalid Date</code> will be returned.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L301">src/zmanim.ts:301</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L317">src/zmanim.ts:317</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sofzmanshma"><span>sof<wbr/>Zman<wbr/>Shma</span><a href="#sofzmanshma" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -656,7 +732,7 @@ If elevation is enabled, this function will include elevation in the calculation
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L272">src/zmanim.ts:272</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L289">src/zmanim.ts:289</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sofzmanshmabaalhatanya"><span>sof<wbr/>Zman<wbr/>Shma<wbr/>Baal<wbr/>Hatanya</span><a href="#sofzmanshmabaalhatanya" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -664,15 +740,15 @@ If elevation is enabled, this function will include elevation in the calculation
 <div class="tsd-signature tsd-anchor-link" id="sofzmanshmabaalhatanya-1"><span class="tsd-kind-call-signature">sofZmanShmaBaalHatanya</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><a href="#sofzmanshmabaalhatanya-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>This method returns the latest <em>zman krias shema</em> (time to recite Shema in the morning). This time is 3
-shaahZmanisBaalHatanya() <em>shaos zmaniyos</em> (solar hours) after getSunriseBaalHatanya() <em>netz amiti</em> (sunrise) based on the opinion of the Baal Hatanya that the day is calculated from
-sunrise to sunset. This returns the time 3 * getShaahZmanisBaalHatanya() after getSunriseBaalHatanya() <em>netz amiti</em> (sunrise).</p>
+<em>shaos zmaniyos</em> (solar hours) after <em>netz amiti</em> (sunrise), based on the opinion of the Baal Hatanya
+that the day is calculated from <em>netz amiti</em> (sunrise) to <em>shkiah amiti</em> (sunset).</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>the <code>Date</code> of the latest <em>zman shema</em> according to the Baal Hatanya. If the calculation
-can't be computed such as in the Arctic Circle where there is at least one day a year where the sun does
-not rise, and one where it does not set, a <code>null</code> will be returned.</p>
+can't be computed, such as in the Arctic Circle where there is at least one day a year where the sun does
+not rise and one where it does not set, an <code>Invalid Date</code> will be returned.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L880">src/zmanim.ts:880</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L917">src/zmanim.ts:917</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sofzmanshmamga"><span>sof<wbr/>Zman<wbr/>Shma<wbr/>MGA</span><a href="#sofzmanshmamga" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -686,7 +762,7 @@ dawn being fixed 72 minutes before sea-level sunrise, and nightfall is fixed
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L330">src/zmanim.ts:330</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L352">src/zmanim.ts:352</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sofzmanshmamga16point1"><span>sof<wbr/>Zman<wbr/>Shma<wbr/>MGA16<wbr/>Point1</span><a href="#sofzmanshmamga16point1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -699,7 +775,7 @@ dawn to nightfall with both being 16.1° below the horizon.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L341">src/zmanim.ts:341</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L363">src/zmanim.ts:363</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sofzmanshmamga19point8"><span>sof<wbr/>Zman<wbr/>Shma<wbr/>MGA19<wbr/>Point8</span><a href="#sofzmanshmamga19point8" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -715,7 +791,7 @@ around the equinox / equilux which calculates to 19.8° below geometric zenith.
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L355">src/zmanim.ts:355</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L377">src/zmanim.ts:377</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sofzmantfilabaalhatanya"><span>sof<wbr/>Zman<wbr/>Tfila<wbr/>Baal<wbr/>Hatanya</span><a href="#sofzmantfilabaalhatanya" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -723,16 +799,15 @@ around the equinox / equilux which calculates to 19.8° below geometric zenith.
 <div class="tsd-signature tsd-anchor-link" id="sofzmantfilabaalhatanya-1"><span class="tsd-kind-call-signature">sofZmanTfilaBaalHatanya</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><a href="#sofzmantfilabaalhatanya-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>This method returns the latest <em>zman tfilah</em> (time to recite the morning prayers). This time is 4
-hours into the day based on the opinion of the Baal Hatanya that the day is
-calculated from sunrise to sunset. This returns the time 4 * getShaahZmanisBaalHatanya() after
-getSunriseBaalHatanya() <em>netz amiti</em> (sunrise).</p>
+halachic hours into the day, based on the opinion of the Baal Hatanya that the day is
+calculated from <em>netz amiti</em> (sunrise) to <em>shkiah amiti</em> (sunset).</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>the <code>Date</code> of the latest <em>zman tfilah</em>. If the calculation can't be computed such as in
-the Arctic Circle where there is at least one day a year where the sun does not rise, and one where it does
-not set, a <code>null</code> will be returned.</p>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>the <code>Date</code> of the latest <em>zman tfilah</em>. If the calculation can't be computed, such as in
+the Arctic Circle where there is at least one day a year where the sun does not rise and one where it does
+not set, an <code>Invalid Date</code> will be returned.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L894">src/zmanim.ts:894</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L930">src/zmanim.ts:930</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sofzmantfilla"><span>sof<wbr/>Zman<wbr/>Tfilla</span><a href="#sofzmantfilla" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -740,7 +815,7 @@ not set, a <code>null</code> will be returned.</p>
 <div class="tsd-signature tsd-anchor-link" id="sofzmantfilla-1"><span class="tsd-kind-call-signature">sofZmanTfilla</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><a href="#sofzmantfilla-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Latest Shacharit (Gra); Sunrise plus 4 halachic hours, according to the Gra.</p>
-<p>This method returns the latest <em>zman tfila</em> (time to recite shema in the morning)
+<p>This method returns the latest <em>zman tfila</em> (time to recite the morning prayers)
 that is 4 <em>shaos zmaniyos</em> (solar hours) after sunrise or sea level sunrise
 (depending on the <code>useElevation</code> setting), according
 to the <a href="https://en.wikipedia.org/wiki/Vilna_Gaon">GRA</a>.</p>
@@ -748,7 +823,7 @@ to the <a href="https://en.wikipedia.org/wiki/Vilna_Gaon">GRA</a>.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L286">src/zmanim.ts:286</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L303">src/zmanim.ts:303</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sofzmantfillamga"><span>sof<wbr/>Zman<wbr/>Tfilla<wbr/>MGA</span><a href="#sofzmantfillamga" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -759,7 +834,7 @@ to the <a href="https://en.wikipedia.org/wiki/Vilna_Gaon">GRA</a>.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L363">src/zmanim.ts:363</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L385">src/zmanim.ts:385</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sofzmantfillamga16point1"><span>sof<wbr/>Zman<wbr/>Tfilla<wbr/>MGA16<wbr/>Point1</span><a href="#sofzmantfillamga16point1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -772,7 +847,7 @@ dawn to nightfall with both being 16.1° below the horizon.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L374">src/zmanim.ts:374</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L396">src/zmanim.ts:396</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sofzmantfillamga19point8"><span>sof<wbr/>Zman<wbr/>Tfilla<wbr/>MGA19<wbr/>Point8</span><a href="#sofzmantfillamga19point8" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -788,7 +863,7 @@ around the equinox / equilux which calculates to 19.8° below geometric zenith.
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L388">src/zmanim.ts:388</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L410">src/zmanim.ts:410</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sunrise"><span>sunrise</span><a href="#sunrise" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -800,7 +875,7 @@ If elevation is enabled, this function will include elevation in the calculation
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L120">src/zmanim.ts:120</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L127">src/zmanim.ts:127</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sunriseoffset"><span>sunrise<wbr/>Offset</span><a href="#sunriseoffset" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -825,7 +900,7 @@ unless <code>forceSeaLevel</code> is <code>true</code>.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L1032">src/zmanim.ts:1032</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L1067">src/zmanim.ts:1067</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sunset"><span>sunset</span><a href="#sunset" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -837,7 +912,7 @@ If elevation is enabled, this function will include elevation in the calculation
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L138">src/zmanim.ts:138</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L145">src/zmanim.ts:145</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sunsetoffset"><span>sunset<wbr/>Offset</span><a href="#sunsetoffset" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -862,7 +937,7 @@ unless <code>forceSeaLevel</code> is <code>true</code>.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L1055">src/zmanim.ts:1055</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L1090">src/zmanim.ts:1090</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="timeatangle"><span>time<wbr/>At<wbr/>Angle</span><a href="#timeatangle" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -876,11 +951,17 @@ This function does not support elevation adjustment.</p>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">angle</span>: <span class="tsd-signature-type">number</span></span></li>
-<li><span><span class="tsd-kind-parameter">rising</span>: <span class="tsd-signature-type">boolean</span></span></li></ul></div>
+<li><span><span class="tsd-kind-parameter">angle</span>: <span class="tsd-signature-type">number</span></span>
+<div class="tsd-comment tsd-typography"><p>degrees of solar depression below the horizon; for example
+<code>8.5</code> means the center of the sun is 8.5° below the horizon</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">rising</span>: <span class="tsd-signature-type">boolean</span></span>
+<div class="tsd-comment tsd-typography"><p><code>true</code> for the morning (before sunrise), <code>false</code> for the
+evening (after sunset)</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L109">src/zmanim.ts:109</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L116">src/zmanim.ts:116</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="tzaisbaalhatanya"><span>tzais<wbr/>Baal<wbr/>Hatanya</span><a href="#tzaisbaalhatanya" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -888,46 +969,50 @@ This function does not support elevation adjustment.</p>
 <div class="tsd-signature tsd-anchor-link" id="tzaisbaalhatanya-1"><span class="tsd-kind-call-signature">tzaisBaalHatanya</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><a href="#tzaisbaalhatanya-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>A method that returns <em>tzais</em> (nightfall) when the sun is 6° below the western geometric horizon
-(90°) after getSunset() sunset. For information on the source of this calculation see
-ZENITH_6_DEGREES.</p>
+(90°) after <a href="#sunset" class="tsd-kind-method">sunset</a>. This is the time the Baal Hatanya calls <em>shkiah amiti</em> plus the
+interval it takes the sun to descend a further 6°.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>The <code>Date</code> of nightfall. If the calculation can't be computed such as northern and southern
-locations even south of the Arctic Circle and north of the Antarctic Circle where the sun may not reach
-low enough below the horizon for this calculation, a <code>null</code> will be returned.   *</p>
-
-<div class="tsd-comment tsd-typography">
-<div class="tsd-tag-see">
-<h4 class="tsd-anchor-link" id="see">See<a href="#see" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>ZENITH_6_DEGREES</p>
-</div></div><aside class="tsd-sources">
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><p>the <code>Date</code> of nightfall. If the calculation can't be computed, such as in northern and southern
+locations — even south of the Arctic Circle and north of the Antarctic Circle — where the sun may not
+reach low enough below the horizon for this calculation, an <code>Invalid Date</code> will be returned.</p>
+<aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L957">src/zmanim.ts:957</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L989">src/zmanim.ts:989</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="tzeit"><span>tzeit</span><a href="#tzeit" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="tzeit-1"><span class="tsd-kind-call-signature">tzeit</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">angle</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><a href="#tzeit-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Nightfall – Tzeit HaKochavim; the sun is <code>angle</code> degrees below the
+horizon in the evening.</p>
+<p>Because degree-based functions estimate the amount of light in the sky,
+the result is not impacted by elevation.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">angle</span>: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 8.5</span></span>
 <div class="tsd-comment tsd-typography"><p>optional time for solar depression.
-Default is 8.5 degrees for 3 small stars, use 7.083 degrees for 3 medium-sized stars.
-Because degree-based functions estimate the amount of light in the sky,
-the result is not impacted by elevation.</p>
+Default is 8.5 degrees for 3 small stars, use 7.083 degrees for 3 medium-sized stars.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L460">src/zmanim.ts:460</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L485">src/zmanim.ts:485</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="tzeit72"><span>tzeit72</span><a href="#tzeit72" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="tzeit72-1"><span class="tsd-kind-call-signature">tzeit72</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><a href="#tzeit72-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Nightfall – Tzeit HaKochavim; calculated as 72 minutes after sunset
+(or sea-level sunset, depending on the <code>useElevation</code> setting).</p>
+<p>Returns a <code>Temporal.ZonedDateTime</code> with seconds precision, or <code>null</code> if
+sunset cannot be calculated for this date and location.</p>
+</div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L463">src/zmanim.ts:463</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L495">src/zmanim.ts:495</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="formatisowithtimezone"><code class="tsd-tag">Static</code><span>format<wbr/>ISO<wbr/>With<wbr/>Time<wbr/>Zone</span><a href="#formatisowithtimezone" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -943,7 +1028,7 @@ the result is not impacted by elevation.</p>
 <li><span><span class="tsd-kind-parameter">date</span>: <span class="tsd-signature-type">Date</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L1015">src/zmanim.ts:1015</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L1050">src/zmanim.ts:1050</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="formattime"><code class="tsd-tag">Static</code><span>format<wbr/>Time</span><a href="#formattime" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -956,11 +1041,16 @@ Returns <code>XX:XX</code> if the date is invalid.</p>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">dt</span>: <span class="tsd-signature-type">Date</span></span></li>
-<li><span><span class="tsd-kind-parameter">timeFormat</span>: <span class="tsd-signature-type">DateTimeFormat</span></span></li></ul></div>
+<li><span><span class="tsd-kind-parameter">dt</span>: <span class="tsd-signature-type">Date</span></span>
+<div class="tsd-comment tsd-typography"><p>the time to format</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">timeFormat</span>: <span class="tsd-signature-type">DateTimeFormat</span></span>
+<div class="tsd-comment tsd-typography"><p>formatter to use, e.g. from
+<a href="Location.html#gettimeformatter" class="tsd-kind-method">Location.getTimeFormatter</a></p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L965">src/zmanim.ts:965</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L1000">src/zmanim.ts:1000</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="makesunsetawarehdate"><code class="tsd-tag">Static</code><span>make<wbr/>Sunset<wbr/>Aware<wbr/>H<wbr/>Date</span><a href="#makesunsetawarehdate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -985,12 +1075,12 @@ Hebrew date of <code>20th of Elul, 5784</code>.</p>
 <h4 class="tsd-returns-title">Returns <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-5">const</span><span class="hl-1"> {</span><span class="hl-6">GeoLocation</span><span class="hl-1">, </span><span class="hl-6">Zmanim</span><span class="hl-1">, </span><span class="hl-6">HDate</span><span class="hl-1">} = </span><span class="hl-0">require</span><span class="hl-1">(</span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">latitude</span><span class="hl-1"> = </span><span class="hl-7">48.85341</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">longitude</span><span class="hl-1"> = </span><span class="hl-7">2.3488</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">timezone</span><span class="hl-1"> = </span><span class="hl-2">&#39;Europe/Paris&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">gloc</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">GeoLocation</span><span class="hl-1">(</span><span class="hl-5">null</span><span class="hl-1">, </span><span class="hl-4">latitude</span><span class="hl-1">, </span><span class="hl-4">longitude</span><span class="hl-1">, </span><span class="hl-7">0</span><span class="hl-1">, </span><span class="hl-4">timezone</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">before</span><span class="hl-1"> = </span><span class="hl-4">Zmanim</span><span class="hl-1">.</span><span class="hl-0">makeSunsetAwareHDate</span><span class="hl-1">(</span><span class="hl-4">gloc</span><span class="hl-1">, </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">(</span><span class="hl-2">&#39;2024-09-22T17:38:46.123Z&#39;</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">before</span><span class="hl-1">.</span><span class="hl-0">toString</span><span class="hl-1">()); </span><span class="hl-8">// &#39;19 Elul 5784&#39;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">after</span><span class="hl-1"> = </span><span class="hl-4">Zmanim</span><span class="hl-1">.</span><span class="hl-0">makeSunsetAwareHDate</span><span class="hl-1">(</span><span class="hl-4">gloc</span><span class="hl-1">, </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">(</span><span class="hl-2">&#39;2024-09-22T23:45:18.345Z&#39;</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">after</span><span class="hl-1">.</span><span class="hl-0">toString</span><span class="hl-1">()); </span><span class="hl-8">// &#39;20 Elul 5784&#39;</span>
+<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">GeoLocation</span><span class="hl-1">, </span><span class="hl-4">Zmanim</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">latitude</span><span class="hl-1"> = </span><span class="hl-7">48.85341</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">longitude</span><span class="hl-1"> = </span><span class="hl-7">2.3488</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">timezone</span><span class="hl-1"> = </span><span class="hl-2">&#39;Europe/Paris&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">gloc</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">GeoLocation</span><span class="hl-1">(</span><span class="hl-5">null</span><span class="hl-1">, </span><span class="hl-4">latitude</span><span class="hl-1">, </span><span class="hl-4">longitude</span><span class="hl-1">, </span><span class="hl-7">0</span><span class="hl-1">, </span><span class="hl-4">timezone</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">before</span><span class="hl-1"> = </span><span class="hl-4">Zmanim</span><span class="hl-1">.</span><span class="hl-0">makeSunsetAwareHDate</span><span class="hl-1">(</span><span class="hl-4">gloc</span><span class="hl-1">, </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">(</span><span class="hl-2">&#39;2024-09-22T17:38:46.123Z&#39;</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">before</span><span class="hl-1">.</span><span class="hl-0">toString</span><span class="hl-1">()); </span><span class="hl-8">// &#39;19 Elul 5784&#39;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">after</span><span class="hl-1"> = </span><span class="hl-4">Zmanim</span><span class="hl-1">.</span><span class="hl-0">makeSunsetAwareHDate</span><span class="hl-1">(</span><span class="hl-4">gloc</span><span class="hl-1">, </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">(</span><span class="hl-2">&#39;2024-09-22T23:45:18.345Z&#39;</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">after</span><span class="hl-1">.</span><span class="hl-0">toString</span><span class="hl-1">()); </span><span class="hl-8">// &#39;20 Elul 5784&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L1090">src/zmanim.ts:1090</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L1125">src/zmanim.ts:1125</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="roundtime"><code class="tsd-tag">Static</code><span>round<wbr/>Time</span><a href="#roundtime" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -1005,7 +1095,7 @@ Hebrew date of <code>20th of Elul, 5784</code>.</p>
 <li><span><span class="tsd-kind-parameter">dt</span>: <span class="tsd-signature-type">Date</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L981">src/zmanim.ts:981</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L1016">src/zmanim.ts:1016</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="timezoneoffset"><code class="tsd-tag">Static</code><span>time<wbr/>Zone<wbr/>Offset</span><a href="#timezoneoffset" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -1021,7 +1111,7 @@ Hebrew date of <code>20th of Elul, 5784</code>.</p>
 <li><span><span class="tsd-kind-parameter">date</span>: <span class="tsd-signature-type">Date</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/zmanim.ts#L1002">src/zmanim.ts:1002</a></li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/zmanim.ts#L1037">src/zmanim.ts:1037</a></li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -1040,7 +1130,7 @@ Hebrew date of <code>20th of Elul, 5784</code>.</p>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Constructors</summary>
 <div><a href="#constructor"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#alosbaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>alos<wbr/>Baal<wbr/>Hatanya</span></a><a href="#alothashachar"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>alot<wbr/>Ha<wbr/>Shachar</span></a><a href="#alothashachar72"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>alot<wbr/>Ha<wbr/>Shachar72</span></a><a href="#alothashachar72zdt"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>alot<wbr/>Ha<wbr/>Shachar72zdt</span></a><a href="#beinhashmashos"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>bein<wbr/>Ha<wbr/>Shmashos</span></a><a href="#chatzot"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>chatzot</span></a><a href="#chatzotnight"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>chatzot<wbr/>Night</span></a><a href="#dawn"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dawn</span></a><a href="#dusk"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dusk</span></a><a href="#getsofzmankidushlevana15days"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Sof<wbr/>Zman<wbr/>Kidush<wbr/>Levana15<wbr/>Days</span></a><a href="#getsofzmankidushlevanabetweenmoldos"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Sof<wbr/>Zman<wbr/>Kidush<wbr/>Levana<wbr/>Between<wbr/>Moldos</span></a><a href="#gettchilaszmankidushlevana3days"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Tchilas<wbr/>Zman<wbr/>Kidush<wbr/>Levana3<wbr/>Days</span></a><a href="#gettchilaszmankidushlevana7days"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Tchilas<wbr/>Zman<wbr/>Kidush<wbr/>Levana7<wbr/>Days</span></a><a href="#getuseelevation"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Use<wbr/>Elevation</span></a><a href="#getzmanmolad"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Zman<wbr/>Molad</span></a><a href="#gregeve"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>greg<wbr/>Eve</span></a><a href="#minchagedola"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mincha<wbr/>Gedola</span></a><a href="#minchagedolabaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mincha<wbr/>Gedola<wbr/>Baal<wbr/>Hatanya</span></a><a href="#minchagedolamga"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mincha<wbr/>Gedola<wbr/>MGA</span></a><a href="#minchaketana"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mincha<wbr/>Ketana</span></a><a href="#minchaketanabaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mincha<wbr/>Ketana<wbr/>Baal<wbr/>Hatanya</span></a><a href="#minchaketanamga"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mincha<wbr/>Ketana<wbr/>MGA</span></a><a href="#misheyakir"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>misheyakir</span></a><a href="#misheyakirmachmir"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>misheyakir<wbr/>Machmir</span></a><a href="#neitzhachama"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>neitz<wbr/>Ha<wbr/>Chama</span></a><a href="#plaghamincha"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>plag<wbr/>Ha<wbr/>Mincha</span></a><a href="#plaghaminchabaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>plag<wbr/>Hamincha<wbr/>Baal<wbr/>Hatanya</span></a><a href="#sealevelsunrise"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sea<wbr/>Level<wbr/>Sunrise</span></a><a href="#sealevelsunset"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sea<wbr/>Level<wbr/>Sunset</span></a><a href="#setuseelevation"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Use<wbr/>Elevation</span></a><a href="#shkiah"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>shkiah</span></a><a href="#sofzmanbiurchametzgra"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Biur<wbr/>Chametz<wbr/>GRA</span></a><a href="#sofzmanshma"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Shma</span></a><a href="#sofzmanshmabaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Shma<wbr/>Baal<wbr/>Hatanya</span></a><a href="#sofzmanshmamga"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Shma<wbr/>MGA</span></a><a href="#sofzmanshmamga16point1"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Shma<wbr/>MGA16<wbr/>Point1</span></a><a href="#sofzmanshmamga19point8"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Shma<wbr/>MGA19<wbr/>Point8</span></a><a href="#sofzmantfilabaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Tfila<wbr/>Baal<wbr/>Hatanya</span></a><a href="#sofzmantfilla"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Tfilla</span></a><a href="#sofzmantfillamga"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Tfilla<wbr/>MGA</span></a><a href="#sofzmantfillamga16point1"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Tfilla<wbr/>MGA16<wbr/>Point1</span></a><a href="#sofzmantfillamga19point8"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Tfilla<wbr/>MGA19<wbr/>Point8</span></a><a href="#sunrise"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sunrise</span></a><a href="#sunriseoffset"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sunrise<wbr/>Offset</span></a><a href="#sunset"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sunset</span></a><a href="#sunsetoffset"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sunset<wbr/>Offset</span></a><a href="#timeatangle"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>time<wbr/>At<wbr/>Angle</span></a><a href="#tzaisbaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>tzais<wbr/>Baal<wbr/>Hatanya</span></a><a href="#tzeit"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>tzeit</span></a><a href="#tzeit72"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>tzeit72</span></a><a href="#formatisowithtimezone"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>format<wbr/>ISO<wbr/>With<wbr/>Time<wbr/>Zone</span></a><a href="#formattime"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>format<wbr/>Time</span></a><a href="#makesunsetawarehdate"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>make<wbr/>Sunset<wbr/>Aware<wbr/>H<wbr/>Date</span></a><a href="#roundtime"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>round<wbr/>Time</span></a><a href="#timezoneoffset"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>time<wbr/>Zone<wbr/>Offset</span></a></div></details></div></details></div>
+<div><a href="#alosbaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>alos<wbr/>Baal<wbr/>Hatanya</span></a><a href="#alothashachar"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>alot<wbr/>Ha<wbr/>Shachar</span></a><a href="#alothashachar72"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>alot<wbr/>Ha<wbr/>Shachar72</span></a><a href="#alothashachar72zdt"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>alot<wbr/>Ha<wbr/>Shachar72zdt</span></a><a href="#beinhashmashos"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>bein<wbr/>Ha<wbr/>Shmashos</span></a><a href="#chatzot"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>chatzot</span></a><a href="#chatzotnight"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>chatzot<wbr/>Night</span></a><a href="#dawn"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dawn</span></a><a href="#dusk"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>dusk</span></a><a href="#getsofzmankidushlevana15days"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Sof<wbr/>Zman<wbr/>Kidush<wbr/>Levana15<wbr/>Days</span></a><a href="#getsofzmankidushlevanabetweenmoldos"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Sof<wbr/>Zman<wbr/>Kidush<wbr/>Levana<wbr/>Between<wbr/>Moldos</span></a><a href="#gettchilaszmankidushlevana3days"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Tchilas<wbr/>Zman<wbr/>Kidush<wbr/>Levana3<wbr/>Days</span></a><a href="#gettchilaszmankidushlevana7days"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Tchilas<wbr/>Zman<wbr/>Kidush<wbr/>Levana7<wbr/>Days</span></a><a href="#gettemporalhour72"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Temporal<wbr/>Hour72</span></a><a href="#gettemporalhourbydeg"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Temporal<wbr/>Hour<wbr/>By<wbr/>Deg</span></a><a href="#getuseelevation"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Use<wbr/>Elevation</span></a><a href="#getzmanmolad"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Zman<wbr/>Molad</span></a><a href="#gregeve"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>greg<wbr/>Eve</span></a><a href="#minchagedola"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mincha<wbr/>Gedola</span></a><a href="#minchagedolabaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mincha<wbr/>Gedola<wbr/>Baal<wbr/>Hatanya</span></a><a href="#minchagedolamga"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mincha<wbr/>Gedola<wbr/>MGA</span></a><a href="#minchaketana"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mincha<wbr/>Ketana</span></a><a href="#minchaketanabaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mincha<wbr/>Ketana<wbr/>Baal<wbr/>Hatanya</span></a><a href="#minchaketanamga"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mincha<wbr/>Ketana<wbr/>MGA</span></a><a href="#misheyakir"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>misheyakir</span></a><a href="#misheyakirmachmir"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>misheyakir<wbr/>Machmir</span></a><a href="#neitzhachama"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>neitz<wbr/>Ha<wbr/>Chama</span></a><a href="#nighthour"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>night<wbr/>Hour</span></a><a href="#plaghamincha"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>plag<wbr/>Ha<wbr/>Mincha</span></a><a href="#plaghaminchabaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>plag<wbr/>Hamincha<wbr/>Baal<wbr/>Hatanya</span></a><a href="#sealevelsunrise"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sea<wbr/>Level<wbr/>Sunrise</span></a><a href="#sealevelsunset"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sea<wbr/>Level<wbr/>Sunset</span></a><a href="#setuseelevation"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Use<wbr/>Elevation</span></a><a href="#shkiah"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>shkiah</span></a><a href="#sofzmanbiurchametzgra"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Biur<wbr/>Chametz<wbr/>GRA</span></a><a href="#sofzmanshma"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Shma</span></a><a href="#sofzmanshmabaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Shma<wbr/>Baal<wbr/>Hatanya</span></a><a href="#sofzmanshmamga"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Shma<wbr/>MGA</span></a><a href="#sofzmanshmamga16point1"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Shma<wbr/>MGA16<wbr/>Point1</span></a><a href="#sofzmanshmamga19point8"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Shma<wbr/>MGA19<wbr/>Point8</span></a><a href="#sofzmantfilabaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Tfila<wbr/>Baal<wbr/>Hatanya</span></a><a href="#sofzmantfilla"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Tfilla</span></a><a href="#sofzmantfillamga"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Tfilla<wbr/>MGA</span></a><a href="#sofzmantfillamga16point1"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Tfilla<wbr/>MGA16<wbr/>Point1</span></a><a href="#sofzmantfillamga19point8"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sof<wbr/>Zman<wbr/>Tfilla<wbr/>MGA19<wbr/>Point8</span></a><a href="#sunrise"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sunrise</span></a><a href="#sunriseoffset"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sunrise<wbr/>Offset</span></a><a href="#sunset"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sunset</span></a><a href="#sunsetoffset"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>sunset<wbr/>Offset</span></a><a href="#timeatangle"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>time<wbr/>At<wbr/>Angle</span></a><a href="#tzaisbaalhatanya"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>tzais<wbr/>Baal<wbr/>Hatanya</span></a><a href="#tzeit"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>tzeit</span></a><a href="#tzeit72"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>tzeit72</span></a><a href="#formatisowithtimezone"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>format<wbr/>ISO<wbr/>With<wbr/>Time<wbr/>Zone</span></a><a href="#formattime"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>format<wbr/>Time</span></a><a href="#makesunsetawarehdate"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>make<wbr/>Sunset<wbr/>Aware<wbr/>H<wbr/>Date</span></a><a href="#roundtime"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>round<wbr/>Time</span></a><a href="#timezoneoffset"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>time<wbr/>Zone<wbr/>Offset</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../modules.html">@hebcal/core</a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container">

@@ -17,7 +17,7 @@ Parashat HaShavua, Daf Yomi, days of the omer, and the molad.
 Event names can be rendered in several languges using the <code>locale</code> option.</p>
 </div></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/hebcal.ts#L46">src/hebcal.ts:46</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/hebcal.ts#L46">src/hebcal.ts:46</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -51,93 +51,9 @@ Event names can be rendered in several languges using the <code>locale</code> op
 <p>Each holiday is represented by an <a href="Event.html" class="tsd-kind-class">Event</a> object which includes a date,
 a description, flags and optional attributes.
 If given no options, returns holidays for the Diaspora for the current Gregorian year.</p>
-<p>The date range returned by this function can be controlled by:</p>
-<ul>
-<li><code>options.year</code> - Gregorian (e.g. 1993) or Hebrew year (e.g. 5749)</li>
-<li><code>options.isHebrewYear</code> - to interpret <code>year</code> as Hebrew year</li>
-<li><code>options.numYears</code> - generate calendar for multiple years (default 1, maximum 2000)</li>
-<li><code>options.month</code> - Gregorian or Hebrew month (to filter results to a single month)</li>
-</ul>
-<p>Alternatively, specify start and end days with <code>Date</code> or <a href="HDate.html" class="tsd-kind-class">HDate</a> instances:</p>
-<ul>
-<li><code>options.start</code> - use specific start date (requires <code>end</code> date)</li>
-<li><code>options.end</code> - use specific end date (requires <code>start</code> date)</li>
-</ul>
-<p>Unless <code>options.noHolidays == true</code>, default holidays include:</p>
-<ul>
-<li>Major holidays - Rosh Hashana, Yom Kippur, Pesach, Sukkot, etc.</li>
-<li>Minor holidays - Purim, Chanukah, Tu BiShvat, Lag BaOmer, etc.</li>
-<li>Minor fasts - Ta'anit Esther, Tzom Gedaliah, etc. (unless <code>options.noMinorFast</code>)</li>
-<li>Special Shabbatot - Shabbat Shekalim, Zachor, etc. (unless <code>options.noSpecialShabbat</code>)</li>
-<li>Modern Holidays - Yom HaShoah, Yom HaAtzma'ut, etc. (unless <code>options.noModern</code>)</li>
-<li>Rosh Chodesh (unless <code>options.noRoshChodesh</code>)</li>
-</ul>
-<p>Holiday and Torah reading schedules differ between Israel and the Disapora.
-Set <code>options.il=true</code> to use the Israeli schedule.</p>
-<p>Additional non-default event types can be specified:</p>
-<ul>
-<li>Parashat HaShavua - weekly Torah Reading on Saturdays (<code>options.sedrot</code>)</li>
-<li>Counting of the Omer (<code>options.omer</code>)</li>
-<li>Shabbat Mevarchim HaChodesh on Saturday before Rosh Chodesh (<code>options.shabbatMevarchim</code>)</li>
-<li>Molad announcement on Saturday before Rosh Chodesh (<code>options.molad</code>)</li>
-<li>Yom Kippur Katan (<code>options.yomKippurKatan</code>)</li>
-<li>Yizkor (<code>options.yizkor</code>)</li>
-</ul>
-<p>Daily Study of texts are supported by the
-<a href="https://github.com/hebcal/hebcal-learning">@hebcal/learning</a> package,
-for example:</p>
-<ul>
-<li>Babylonian Talmud Daf Yomi (<code>options.dailyLearning.dafYomi</code>)</li>
-<li>Jerusalem Talmud (Yerushalmi) Yomi (<code>options.dailyLearning.yerushalmi</code>)</li>
-<li>Mishna Yomi (<code>options.dailyLearning.mishnaYomi</code>)</li>
-<li>Nach Yomi (<code>options.dailyLearning.nachYomi</code>)</li>
-</ul>
-<p>Candle-lighting and Havdalah times are approximated using latitude and longitude
-specified by the <a href="Location.html" class="tsd-kind-class">Location</a> class. The <code>Location</code> class contains a small
-database of cities with their associated geographic information and time-zone information.
-If you ever have any doubts about Hebcal's times, consult your local halachic authority.
-If you enter geographic coordinates above the arctic circle or antarctic circle,
-the times are guaranteed to be wrong.</p>
-<p>To add candle-lighting options, set <code>options.candlelighting=true</code> and set
-<code>options.location</code> to an instance of <code>Location</code>. By default, candle lighting
-time is 18 minutes before sundown (40 minutes for Jerusalem,
-30 minutes for Haifa and Zikhron Ya'akov) and Havdalah is
-calculated according to Tzeit Hakochavim - Nightfall (the point when 3 small stars
-are observable in the night time sky with the naked eye). The default Havdalah
-option (Tzeit Hakochavim) is calculated when the sun is 8.5° below the horizon.
-These defaults can be changed using these options:</p>
-<ul>
-<li><code>options.candleLightingMins</code> - minutes before sundown to light candles</li>
-<li><code>options.havdalahMins</code> - minutes after sundown for Havdalah (typical values are 42, 50, or 72).
-Havdalah times are suppressed when <code>options.havdalahMins=0</code>.</li>
-<li><code>options.havdalahDeg</code> - degrees for solar depression for Havdalah.
-Default is 8.5 degrees for 3 small stars. Use 7.083 degrees for 3 medium-sized stars.
-Havdalah times are suppressed when <code>options.havdalahDeg=0</code>.</li>
-</ul>
-<p>If both <code>options.candlelighting=true</code> and <code>options.location</code> is specified,
-Chanukah candle-lighting times and minor fast start/end times will also be generated.
-Chanukah candle-lighting is at Bein HaShmashos (13.5 minutes before
-the sun is 7.083° below the horizon in the evening)
-on weekdays, at regular candle-lighting time on Fridays, and at regular Havdalah time on
-Saturday night (see above).</p>
-<p>Minor fasts begin at Alot HaShachar (sun is 16.1° below the horizon in the morning) and
-end when 3 medium-sized stars are observable in the night sky (sun is 7.083° below the horizon
-in the evening).</p>
-<p>Two options also exist for generating an Event with the Hebrew date:</p>
-<ul>
-<li><code>options.addHebrewDates</code> - print the Hebrew date for the entire date range</li>
-<li><code>options.addHebrewDatesForEvents</code> - print the Hebrew date for dates with some events</li>
-</ul>
-<p>Lastly, translation and transliteration of event titles is controlled by
-<code>options.locale</code> and the <a href="Locale.html" class="tsd-kind-class">Locale</a> API.
-<code>@hebcal/core</code> supports three locales by default:</p>
-<ul>
-<li><code>en</code> - default, Sephardic transliterations (e.g. &quot;Shabbat&quot;)</li>
-<li><code>ashkenazi</code> - Ashkenazi transliterations (e.g. &quot;Shabbos&quot;)</li>
-<li><code>he</code> - Hebrew (e.g. &quot;שַׁבָּת&quot;)</li>
-</ul>
-<p>Additional locales (such as <code>ru</code> or <code>fr</code>) are supported by the
-<a href="https://github.com/hebcal/hebcal-locales">@hebcal/locales</a> package</p>
+<p>This is a convenience wrapper around the standalone <a href="../functions/calendar.html" class="tsd-kind-function">calendar</a> function.
+See <a href="../functions/calendar.html" class="tsd-kind-function">calendar</a> for the complete list of supported options, the
+candle-lighting and Havdalah defaults, and notes on locales.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -146,12 +62,12 @@ in the evening).</p>
 <h4 class="tsd-returns-title">Returns <a href="Event.html" class="tsd-signature-type tsd-kind-class">Event</a><span class="tsd-signature-symbol">[]</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">HebrewCalendar</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">, </span><span class="hl-4">Location</span><span class="hl-1">, </span><span class="hl-4">Event</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">options</span><span class="hl-1">: </span><span class="hl-10">CalOptions</span><span class="hl-1"> = {</span><br/><span class="hl-1">  </span><span class="hl-4">year:</span><span class="hl-1"> </span><span class="hl-7">1981</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">isHebrewYear:</span><span class="hl-1"> </span><span class="hl-5">false</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">candlelighting:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">location:</span><span class="hl-1"> </span><span class="hl-4">Location</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;San Francisco&#39;</span><span class="hl-1">),</span><br/><span class="hl-1">  </span><span class="hl-4">sedrot:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">omer:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">};</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">events</span><span class="hl-1"> = </span><span class="hl-4">HebrewCalendar</span><span class="hl-1">.</span><span class="hl-0">calendar</span><span class="hl-1">(</span><span class="hl-4">options</span><span class="hl-1">);</span><br/><span class="hl-3">for</span><span class="hl-1"> (</span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ev</span><span class="hl-1"> </span><span class="hl-5">of</span><span class="hl-1"> </span><span class="hl-4">events</span><span class="hl-1">) {</span><br/><span class="hl-1">  </span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">hd</span><span class="hl-1"> = </span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">getDate</span><span class="hl-1">();</span><br/><span class="hl-1">  </span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">date</span><span class="hl-1"> = </span><span class="hl-4">hd</span><span class="hl-1">.</span><span class="hl-0">greg</span><span class="hl-1">();</span><br/><span class="hl-1">  </span><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">date</span><span class="hl-1">.</span><span class="hl-0">toLocaleDateString</span><span class="hl-1">(), </span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">), </span><span class="hl-4">hd</span><span class="hl-1">.</span><span class="hl-0">toString</span><span class="hl-1">());</span><br/><span class="hl-1">}</span>
+<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">HebrewCalendar</span><span class="hl-1">, </span><span class="hl-4">Location</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">options</span><span class="hl-1">: </span><span class="hl-11">CalOptions</span><span class="hl-1"> = {</span><br/><span class="hl-1">  </span><span class="hl-4">year:</span><span class="hl-1"> </span><span class="hl-7">1981</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">isHebrewYear:</span><span class="hl-1"> </span><span class="hl-5">false</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">candlelighting:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">location:</span><span class="hl-1"> </span><span class="hl-4">Location</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;San Francisco&#39;</span><span class="hl-1">),</span><br/><span class="hl-1">  </span><span class="hl-4">sedrot:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">omer:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">};</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">events</span><span class="hl-1"> = </span><span class="hl-4">HebrewCalendar</span><span class="hl-1">.</span><span class="hl-0">calendar</span><span class="hl-1">(</span><span class="hl-4">options</span><span class="hl-1">);</span><br/><span class="hl-3">for</span><span class="hl-1"> (</span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ev</span><span class="hl-1"> </span><span class="hl-5">of</span><span class="hl-1"> </span><span class="hl-4">events</span><span class="hl-1">) {</span><br/><span class="hl-1">  </span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">hd</span><span class="hl-1"> = </span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">getDate</span><span class="hl-1">();</span><br/><span class="hl-1">  </span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">date</span><span class="hl-1"> = </span><span class="hl-4">hd</span><span class="hl-1">.</span><span class="hl-0">greg</span><span class="hl-1">();</span><br/><span class="hl-1">  </span><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">date</span><span class="hl-1">.</span><span class="hl-0">toLocaleDateString</span><span class="hl-1">(), </span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">), </span><span class="hl-4">hd</span><span class="hl-1">.</span><span class="hl-0">toString</span><span class="hl-1">());</span><br/><span class="hl-1">}</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/hebcal.ts#L156">src/hebcal.ts:156</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/hebcal.ts#L76">src/hebcal.ts:76</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="eruvtavshilin"><code class="tsd-tag">Static</code><span>eruv<wbr/>Tavshilin</span><a href="#eruvtavshilin" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -177,12 +93,12 @@ Thursday), the following Friday to be Yom Tov, and the day after Friday
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">HebrewCalendar</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-8">// Thursday April 25, 2024 — first day of Pesach 5784, with Shabbat</span><br/><span class="hl-8">// chol ha-moed the next day, so Eruv Tavshilin is required:</span><br/><span class="hl-4">HebrewCalendar</span><span class="hl-1">.</span><span class="hl-0">eruvTavshilin</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">(</span><span class="hl-7">2024</span><span class="hl-1">, </span><span class="hl-7">3</span><span class="hl-1">, </span><span class="hl-7">25</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">); </span><span class="hl-8">// true</span>
+<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">HebrewCalendar</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-8">// Wednesday October 16, 2024 is Erev Sukkot 5785. In the Diaspora,</span><br/><span class="hl-8">// Sukkot I falls on Thursday and Sukkot II on Friday, so Eruv</span><br/><span class="hl-8">// Tavshilin is prepared on Wednesday:</span><br/><span class="hl-4">HebrewCalendar</span><span class="hl-1">.</span><span class="hl-0">eruvTavshilin</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">(</span><span class="hl-7">2024</span><span class="hl-1">, </span><span class="hl-7">9</span><span class="hl-1">, </span><span class="hl-7">16</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">); </span><span class="hl-8">// true</span><br/><span class="hl-8">// In Israel there is only one day of Yom Tov, so Friday is a weekday:</span><br/><span class="hl-4">HebrewCalendar</span><span class="hl-1">.</span><span class="hl-0">eruvTavshilin</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">(</span><span class="hl-7">2024</span><span class="hl-1">, </span><span class="hl-7">9</span><span class="hl-1">, </span><span class="hl-7">16</span><span class="hl-1">), </span><span class="hl-5">true</span><span class="hl-1">); </span><span class="hl-8">// false</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/hebcal.ts#L316">src/hebcal.ts:316</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/hebcal.ts#L235">src/hebcal.ts:235</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getbirthdayoranniversary"><code class="tsd-tag">Static</code><span>get<wbr/>Birthday<wbr/>Or<wbr/>Anniversary</span><a href="#getbirthdayoranniversary" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -190,8 +106,11 @@ Thursday), the following Friday to be Yom Tov, and the day after Friday
 <div class="tsd-signature tsd-anchor-link" id="getbirthdayoranniversary-1"><span class="tsd-kind-call-signature">getBirthdayOrAnniversary</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">hyear</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">gdate</span><span class="tsd-signature-symbol">:</span> <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span><a href="#getbirthdayoranniversary-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Calculates a birthday or anniversary (non-yahrzeit).
-<code>hyear</code> must be after original <code>gdate</code> of anniversary.
-Returns <code>undefined</code> when requested year preceeds or is same as original year.</p>
+Returns <code>undefined</code> when <code>hyear</code> precedes the original year of <code>gdate</code>.</p>
+<p>When <code>hyear</code> is the original year, the original date is returned unchanged —
+a &quot;0th birthday&quot; is a meaningful thing to ask for. This differs from
+<a href="#getyahrzeit" class="tsd-kind-method">getYahrzeit</a>, which returns <code>undefined</code> for the original year,
+because a yahrzeit only has meaning from the first anniversary onward.</p>
 <p>Hebcal uses the algorithm defined in &quot;Calendrical Calculations&quot;
 by Edward M. Reingold and Nachum Dershowitz.</p>
 <p>The birthday of someone born in Adar of an ordinary year or Adar II of
@@ -221,7 +140,7 @@ years where that day does not occur. [Calendrical Calculations p. 111]</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/hebcal.ts#L186">src/hebcal.ts:186</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/hebcal.ts#L110">src/hebcal.ts:110</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getholidaysforyear"><code class="tsd-tag">Static</code><span>get<wbr/>Holidays<wbr/>For<wbr/>Year</span><a href="#getholidaysforyear" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -249,7 +168,7 @@ The result is cached in an internal LRU.</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/hebcal.ts#L257">src/hebcal.ts:257</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/hebcal.ts#L173">src/hebcal.ts:173</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getholidaysforyeararray"><code class="tsd-tag">Static</code><span>get<wbr/>Holidays<wbr/>For<wbr/>Year<wbr/>Array</span><a href="#getholidaysforyeararray" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -279,7 +198,7 @@ but does not generate candle-lighting times, Torah readings, or Omer days.</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/hebcal.ts#L275">src/hebcal.ts:275</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/hebcal.ts#L191">src/hebcal.ts:191</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getholidaysondate"><code class="tsd-tag">Static</code><span>get<wbr/>Holidays<wbr/>On<wbr/>Date</span><a href="#getholidaysondate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -308,7 +227,7 @@ returned; pass <code>true</code> or <code>false</code> to filter to a single sch
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/hebcal.ts#L293">src/hebcal.ts:293</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/hebcal.ts#L209">src/hebcal.ts:209</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getsedra"><code class="tsd-tag">Static</code><span>get<wbr/>Sedra</span><a href="#getsedra" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -333,12 +252,12 @@ keviyah-specific reading pattern.</p>
 <h4 class="tsd-returns-title">Returns <a href="Sedra.html" class="tsd-signature-type tsd-kind-class">Sedra</a></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-6">Example<a href="#example-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">HebrewCalendar</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">sedra</span><span class="hl-1"> = </span><span class="hl-4">HebrewCalendar</span><span class="hl-1">.</span><span class="hl-0">getSedra</span><span class="hl-1">(</span><span class="hl-7">5784</span><span class="hl-1">, </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">result</span><span class="hl-1"> = </span><span class="hl-4">sedra</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">15</span><span class="hl-1">, </span><span class="hl-2">&#39;Cheshvan&#39;</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">));</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">result</span><span class="hl-1">.</span><span class="hl-4">parsha</span><span class="hl-1">); </span><span class="hl-8">// [&#39;Lech-Lecha&#39;]</span>
+<h4 class="tsd-anchor-link" id="example-6">Example<a href="#example-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">HebrewCalendar</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">sedra</span><span class="hl-1"> = </span><span class="hl-4">HebrewCalendar</span><span class="hl-1">.</span><span class="hl-0">getSedra</span><span class="hl-1">(</span><span class="hl-7">5784</span><span class="hl-1">, </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">result</span><span class="hl-1"> = </span><span class="hl-4">sedra</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">15</span><span class="hl-1">, </span><span class="hl-2">&#39;Cheshvan&#39;</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">));</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">result</span><span class="hl-1">.</span><span class="hl-4">parsha</span><span class="hl-1">); </span><span class="hl-8">// [&#39;Vayera&#39;]</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/hebcal.ts#L378">src/hebcal.ts:378</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/hebcal.ts#L297">src/hebcal.ts:297</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getyahrzeit"><code class="tsd-tag">Static</code><span>get<wbr/>Yahrzeit</span><a href="#getyahrzeit" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -387,7 +306,7 @@ of the date of death. [Calendrical Calculations p. 113]</li>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/hebcal.ts#L231">src/hebcal.ts:231</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/hebcal.ts#L151">src/hebcal.ts:151</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="hallel"><code class="tsd-tag">Static</code><span>hallel</span><a href="#hallel" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -404,8 +323,12 @@ Yom Ha'atzmaut, and Yom Yerushalayim.</p>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">hdate</span>: <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a></span></li>
-<li><span><span class="tsd-kind-parameter">il</span>: <span class="tsd-signature-type">boolean</span></span></li></ul></div>
+<li><span><span class="tsd-kind-parameter">hdate</span>: <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a></span>
+<div class="tsd-comment tsd-typography"><p>Hebrew date to test</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">il</span>: <span class="tsd-signature-type">boolean</span></span>
+<div class="tsd-comment tsd-typography"><p>use the Israeli holiday schedule</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>0 for no Hallel, 1 for half Hallel, 2 for whole Hallel</p>
 
 <div class="tsd-comment tsd-typography">
@@ -415,12 +338,12 @@ Yom Ha'atzmaut, and Yom Yerushalayim.</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/hebcal.ts#L399">src/hebcal.ts:399</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/hebcal.ts#L320">src/hebcal.ts:320</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="reformattimestr"><code class="tsd-tag">Static</code><span>reformat<wbr/>Time<wbr/>Str</span><a href="#reformattimestr" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
-<div class="tsd-signature tsd-anchor-link" id="reformattimestr-1"><span class="tsd-kind-call-signature">reformatTimeStr</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">timeStr</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">suffix</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">:</span> <a href="../types/CalOptions.html" class="tsd-signature-type tsd-kind-type-alias">CalOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><a href="#reformattimestr-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-signature tsd-anchor-link" id="reformattimestr-1"><span class="tsd-kind-call-signature">reformatTimeStr</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">timeStr</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">suffix</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">?:</span> <a href="../types/CalOptions.html" class="tsd-signature-type tsd-kind-type-alias">CalOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><a href="#reformattimestr-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Helper function to format a 24-hour (00:00-23:59) time string in either
 12-hour US format (e.g. <code>&quot;8:13pm&quot;</code>) or keep it in 24-hour format (e.g.
@@ -439,7 +362,9 @@ takes precedence: if <code>false</code>, locale is ignored and the result is alw
 <li><span><span class="tsd-kind-parameter">suffix</span>: <span class="tsd-signature-type">string</span></span>
 <div class="tsd-comment tsd-typography"><p>&quot;p&quot; or &quot;pm&quot; or &quot; P.M.&quot;. Add leading space if you want it</p>
 </div></li>
-<li><span><span class="tsd-kind-parameter">options</span>: <a href="../types/CalOptions.html" class="tsd-signature-type tsd-kind-type-alias">CalOptions</a></span></li></ul></div>
+<li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">options</span>: <a href="../types/CalOptions.html" class="tsd-signature-type tsd-kind-type-alias">CalOptions</a></span>
+<div class="tsd-comment tsd-typography"><p>optional; <code>location</code>, <code>locale</code> and <code>hour12</code> are consulted</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
@@ -448,7 +373,7 @@ takes precedence: if <code>false</code>, locale is ignored and the result is alw
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/hebcal.ts#L347">src/hebcal.ts:347</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/hebcal.ts#L266">src/hebcal.ts:266</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="tachanun"><code class="tsd-tag">Static</code><span>tachanun</span><a href="#tachanun" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -469,17 +394,21 @@ Yom Ha'atzmaut, and Yom Yerushalayim.</p>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">hdate</span>: <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a></span></li>
-<li><span><span class="tsd-kind-parameter">il</span>: <span class="tsd-signature-type">boolean</span></span></li></ul></div>
+<li><span><span class="tsd-kind-parameter">hdate</span>: <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a></span>
+<div class="tsd-comment tsd-typography"><p>Hebrew date to test</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">il</span>: <span class="tsd-signature-type">boolean</span></span>
+<div class="tsd-comment tsd-typography"><p>use the Israeli holiday schedule</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="../types/TachanunResult.html" class="tsd-signature-type tsd-kind-type-alias">TachanunResult</a></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-10">Example<a href="#example-10" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">HebrewCalendar</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-8">// Regular weekday — Tachanun is said at both services</span><br/><span class="hl-4">HebrewCalendar</span><span class="hl-1">.</span><span class="hl-0">tachanun</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">2</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">SHVAT</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-8">// =&gt; { shacharit: true, mincha: true, allCongs: true }</span><br/><br/><span class="hl-8">// Rosh Chodesh — no Tachanun</span><br/><span class="hl-4">HebrewCalendar</span><span class="hl-1">.</span><span class="hl-0">tachanun</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">SHVAT</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-8">// =&gt; { shacharit: false, mincha: false, allCongs: false }</span>
+<h4 class="tsd-anchor-link" id="example-10">Example<a href="#example-10" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">HebrewCalendar</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-8">// Regular weekday — Tachanun is said at both services</span><br/><span class="hl-4">HebrewCalendar</span><span class="hl-1">.</span><span class="hl-0">tachanun</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">4</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">SHVAT</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-8">// =&gt; { shacharit: true, mincha: true, allCongs: true }</span><br/><br/><span class="hl-8">// Friday 2 Sh&#39;vat — said at Shacharit, but not at Mincha (erev Shabbat)</span><br/><span class="hl-4">HebrewCalendar</span><span class="hl-1">.</span><span class="hl-0">tachanun</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">2</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">SHVAT</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-8">// =&gt; { shacharit: true, mincha: false, allCongs: true }</span><br/><br/><span class="hl-8">// Rosh Chodesh — no Tachanun</span><br/><span class="hl-4">HebrewCalendar</span><span class="hl-1">.</span><span class="hl-0">tachanun</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">SHVAT</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-8">// =&gt; { shacharit: false, mincha: false, allCongs: false }</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/hebcal.ts#L432">src/hebcal.ts:432</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/hebcal.ts#L359">src/hebcal.ts:359</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="version"><code class="tsd-tag">Static</code><span>version</span><a href="#version" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -487,11 +416,11 @@ Yom Ha'atzmaut, and Yom Yerushalayim.</p>
 <div class="tsd-signature tsd-anchor-link" id="version-1"><span class="tsd-kind-call-signature">version</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><a href="#version-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Returns the semantic version string of the <code>@hebcal/core</code> package
-(e.g. <code>&quot;5.10.0&quot;</code>). Useful for logging or feature detection.</p>
+(e.g. <code>&quot;6.8.2&quot;</code>). Useful for logging or feature detection.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/hebcal.ts#L359">src/hebcal.ts:359</a></li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/hebcal.ts#L278">src/hebcal.ts:278</a></li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

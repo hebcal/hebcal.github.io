@@ -18,16 +18,152 @@ also be specified. Hebcal also includes algorithms to calculate
 yahrzeits, birthdays and anniversaries.</p>
 <p><a href="https://github.com/hebcal/hebcal-es6/actions/workflows/node.js.yml"><img src="https://github.com/hebcal/hebcal-es6/actions/workflows/node.js.yml/badge.svg" alt="Build Status"></a></p>
 <p><code>@hebcal/core</code> targets both browser-based JavaScript and server-side Node.js.</p>
-<p>Many users of this library will utilize the <a href="https://hebcal.github.io/api/core/classes/HebrewCalendar.html">HebrewCalendar</a>
-and <a href="https://hebcal.github.io/api/hdate/classes/HDate.html">HDate</a> interfaces.</p>
+<p>Most work starts with the <a href="https://hebcal.github.io/api/core/functions/calendar.html"><code>calendar()</code></a>
+function and the <a href="https://hebcal.github.io/api/hdate/classes/HDate.html"><code>HDate</code></a> class.</p>
+<p>Nearly everything is available as a standalone function — <code>calendar()</code>,
+<code>getHolidaysOnDate()</code>, <code>getSedra()</code>, <code>tachanun()</code>, <code>reformatTimeStr()</code> — and the
+examples here use that form, since importing only what you need is what lets a
+bundler drop the rest. The same functions are also reachable as static methods on
+<a href="https://hebcal.github.io/api/core/classes/HebrewCalendar.html"><code>HebrewCalendar</code></a>.</p>
+<p>Yahrzeits and birthdays are standalone functions too, but they live in
+<code>@hebcal/hdate</code> rather than here — import <code>yahrzeit()</code> and
+<code>birthdayOrAnniversary()</code> from there directly.
+<code>HebrewCalendar.getYahrzeit()</code> and <code>.getBirthdayOrAnniversary()</code> are thin
+wrappers over them. A few odds and ends remain class-only:
+<code>eruvTavshilin()</code>, <code>hallel()</code> and <code>getHolidaysForYear()</code>.</p>
 <h2 id="installation" class="tsd-anchor-link">Installation<a href="#installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
 <pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">@hebcal/core</span>
 </code><button type="button">Copy</button></pre>
 
 <h2 id="synopsis" class="tsd-anchor-link">Synopsis<a href="#synopsis" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
-<pre><code class="javascript"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">HebrewCalendar</span><span class="hl-1">, </span><span class="hl-4">Location</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">events</span><span class="hl-1"> = </span><span class="hl-4">HebrewCalendar</span><span class="hl-1">.</span><span class="hl-0">calendar</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-4">year:</span><span class="hl-1"> </span><span class="hl-7">1981</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">isHebrewYear:</span><span class="hl-1"> </span><span class="hl-5">false</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">candlelighting:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">location:</span><span class="hl-1"> </span><span class="hl-4">Location</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;San Francisco&#39;</span><span class="hl-1">),</span><br/><span class="hl-1">  </span><span class="hl-4">sedrot:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">omer:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-3">for</span><span class="hl-1"> (</span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ev</span><span class="hl-1"> </span><span class="hl-5">of</span><span class="hl-1"> </span><span class="hl-4">events</span><span class="hl-1">) {</span><br/><span class="hl-1">  </span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">hd</span><span class="hl-1"> = </span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">getDate</span><span class="hl-1">();</span><br/><span class="hl-1">  </span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">date</span><span class="hl-1"> = </span><span class="hl-4">hd</span><span class="hl-1">.</span><span class="hl-0">greg</span><span class="hl-1">();</span><br/><span class="hl-1">  </span><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">date</span><span class="hl-1">.</span><span class="hl-0">toLocaleDateString</span><span class="hl-1">(), </span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">), </span><span class="hl-4">hd</span><span class="hl-1">.</span><span class="hl-0">toString</span><span class="hl-1">());</span><br/><span class="hl-1">}</span>
+<pre><code class="javascript"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">calendar</span><span class="hl-1">, </span><span class="hl-4">Location</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">events</span><span class="hl-1"> = </span><span class="hl-0">calendar</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-4">year:</span><span class="hl-1"> </span><span class="hl-7">1981</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">isHebrewYear:</span><span class="hl-1"> </span><span class="hl-5">false</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">candlelighting:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">location:</span><span class="hl-1"> </span><span class="hl-4">Location</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;San Francisco&#39;</span><span class="hl-1">),</span><br/><span class="hl-1">  </span><span class="hl-4">sedrot:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">omer:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-3">for</span><span class="hl-1"> (</span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ev</span><span class="hl-1"> </span><span class="hl-5">of</span><span class="hl-1"> </span><span class="hl-4">events</span><span class="hl-1">) {</span><br/><span class="hl-1">  </span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">hd</span><span class="hl-1"> = </span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">getDate</span><span class="hl-1">();</span><br/><span class="hl-1">  </span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">date</span><span class="hl-1"> = </span><span class="hl-4">hd</span><span class="hl-1">.</span><span class="hl-0">greg</span><span class="hl-1">();</span><br/><span class="hl-1">  </span><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">date</span><span class="hl-1">.</span><span class="hl-0">toLocaleDateString</span><span class="hl-1">(), </span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">), </span><span class="hl-4">hd</span><span class="hl-1">.</span><span class="hl-0">toString</span><span class="hl-1">());</span><br/><span class="hl-1">}</span>
 </code><button type="button">Copy</button></pre>
 
+<h2 id="events-and-flags" class="tsd-anchor-link">Events and flags<a href="#events-and-flags" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Everything <code>calendar()</code> returns is an <a href="https://hebcal.github.io/api/core/classes/Event.html"><code>Event</code></a>:
+a Hebrew date, a description, a <code>flags</code> bitmask, and optional extras. Subclasses add
+detail — <code>HolidayEvent</code>, <code>ParshaEvent</code>, <code>OmerEvent</code>, <code>CandleLightingEvent</code> and
+<code>HavdalahEvent</code> (both <code>TimedEvent</code>s, carrying an <code>eventTime</code>), <code>MoladEvent</code>,
+<code>HebrewDateEvent</code>, and others.</p>
+<p>Rather than testing <code>instanceof</code>, classify events with <code>flags</code>:</p>
+<pre><code class="javascript"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">calendar</span><span class="hl-1">, </span><span class="hl-4">flags</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">events</span><span class="hl-1"> = </span><span class="hl-0">calendar</span><span class="hl-1">({</span><span class="hl-4">year:</span><span class="hl-1"> </span><span class="hl-7">5784</span><span class="hl-1">, </span><span class="hl-4">isHebrewYear:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">});</span><br/><br/><span class="hl-3">for</span><span class="hl-1"> (</span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ev</span><span class="hl-1"> </span><span class="hl-5">of</span><span class="hl-1"> </span><span class="hl-4">events</span><span class="hl-1">) {</span><br/><span class="hl-1">  </span><span class="hl-3">if</span><span class="hl-1"> (</span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">getFlags</span><span class="hl-1">() &amp; </span><span class="hl-4">flags</span><span class="hl-1">.</span><span class="hl-6">MAJOR_FAST</span><span class="hl-1">) {</span><br/><span class="hl-1">    </span><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-2">&#39;fast day:&#39;</span><span class="hl-1">, </span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">));</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<p>You can also push the filter down into generation, which is cheaper than filtering
+afterwards, via <code>options.mask</code>:</p>
+<pre><code class="javascript"><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">roshChodesh</span><span class="hl-1"> = </span><span class="hl-0">calendar</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-4">year:</span><span class="hl-1"> </span><span class="hl-7">5784</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">isHebrewYear:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">mask:</span><span class="hl-1"> </span><span class="hl-4">flags</span><span class="hl-1">.</span><span class="hl-6">ROSH_CHODESH</span><span class="hl-1">,</span><br/><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<p><code>Event.getCategories()</code> gives a coarser, string-based classification
+(<code>['holiday', 'major', 'fast']</code>) that is handy for CSS classes or grouping.
+See the <a href="https://hebcal.github.io/api/core/variables/flags.html">flags API docs</a>
+for the full list.</p>
+<h2 id="looking-up-a-single-date" class="tsd-anchor-link">Looking up a single date<a href="#looking-up-a-single-date" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><code>calendar()</code> is built for generating a <em>range</em>. When you only need to know what
+falls on one day, <code>getHolidaysOnDate()</code> is much more direct — it reads from an
+internally cached per-year map instead of running the full generator:</p>
+<pre><code class="javascript"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">getHolidaysOnDate</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">events</span><span class="hl-1"> = </span><span class="hl-0">getHolidaysOnDate</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">15</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">NISAN</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">events</span><span class="hl-1">?.</span><span class="hl-0">map</span><span class="hl-1">(</span><span class="hl-4">ev</span><span class="hl-1"> </span><span class="hl-5">=&gt;</span><span class="hl-1"> </span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">getDesc</span><span class="hl-1">())); </span><span class="hl-8">// [&#39;Pesach I&#39;]</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Three things to know:</p>
+<ul>
+<li>It returns <code>undefined</code> — not an empty array — when nothing falls on that date, so
+use <code>events?.map(...)</code> or check before indexing.</li>
+<li>The <code>il</code> argument is optional, and <strong>omitting it is not the same as passing
+<code>false</code></strong>. With <code>il</code> omitted you get both the Israel and Diaspora events for that
+date, unfiltered; pass <code>true</code> or <code>false</code> to get one schedule.</li>
+<li>It accepts an <code>HDate</code>, a <code>Date</code>, or an absolute R.D. day number.</li>
+</ul>
+<p>It returns only holidays. Candle-lighting times, Torah readings and Omer days come
+from <code>calendar()</code>, which is what <code>options.candlelighting</code>, <code>options.sedrot</code> and
+<code>options.omer</code> drive.</p>
+<h2 id="daily-learning-daf-yomi-and-friends" class="tsd-anchor-link">Daily learning (Daf Yomi and friends)<a href="#daily-learning-daf-yomi-and-friends" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><code>@hebcal/core</code> ships <strong>no</strong> learning schedules itself. <code>DailyLearning</code> is a plug-in
+registry; the schedules live in the separate
+<a href="https://github.com/hebcal/hebcal-learning"><code>@hebcal/learning</code></a> package, which
+registers them by calling <code>DailyLearning.addCalendar()</code> when you import it. This
+keeps the daily-study tables — which are large and grow as new cycles are added —
+out of the core bundle for the many users who don't need them.</p>
+<p>Import <code>@hebcal/learning</code> once for its side effects, then request calendars through
+<code>options.dailyLearning</code>:</p>
+<pre><code class="javascript"><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/learning&#39;</span><span class="hl-1">;</span><br/><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">calendar</span><span class="hl-1">, </span><span class="hl-4">flags</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">events</span><span class="hl-1"> = </span><span class="hl-0">calendar</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-4">year:</span><span class="hl-1"> </span><span class="hl-7">5784</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">isHebrewYear:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">noHolidays:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">dailyLearning:</span><span class="hl-1"> {</span><span class="hl-4">dafYomi:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">},</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-3">for</span><span class="hl-1"> (</span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ev</span><span class="hl-1"> </span><span class="hl-5">of</span><span class="hl-1"> </span><span class="hl-4">events</span><span class="hl-1">) {</span><br/><span class="hl-1">  </span><span class="hl-3">if</span><span class="hl-1"> (</span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">getFlags</span><span class="hl-1">() &amp; </span><span class="hl-4">flags</span><span class="hl-1">.</span><span class="hl-6">DAF_YOMI</span><span class="hl-1">) {</span><br/><span class="hl-1">    </span><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">getDate</span><span class="hl-1">().</span><span class="hl-0">toString</span><span class="hl-1">(), </span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">));</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Daf Yomi (Babylonian Talmud) is by far the most widely used. <code>@hebcal/learning</code> also
+provides Yerushalmi Yomi, Mishna Yomi, Nach Yomi, Daf Weekly, Chofetz Chaim, Rambam,
+929 and more. Most take <code>true</code>; <code>yerushalmi</code> takes a number selecting the edition
+(<code>1</code> for Vilna, <code>2</code> for Schottenstein):</p>
+<pre><code class="javascript"><span class="hl-9">dailyLearning</span><span class="hl-1">: {</span><span class="hl-9">dafYomi</span><span class="hl-1">: </span><span class="hl-5">true</span><span class="hl-1">, </span><span class="hl-9">mishnaYomi</span><span class="hl-1">: </span><span class="hl-5">true</span><span class="hl-1">, </span><span class="hl-9">yerushalmi</span><span class="hl-1">: </span><span class="hl-7">1</span><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<p>To query a single day without generating a calendar, use <code>DailyLearning.lookup()</code>:</p>
+<pre><code class="javascript"><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/learning&#39;</span><span class="hl-1">;</span><br/><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">DailyLearning</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ev</span><span class="hl-1"> = </span><span class="hl-4">DailyLearning</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><br/><span class="hl-1">  </span><span class="hl-2">&#39;dafYomi&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">15</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">CHESHVAN</span><span class="hl-1">, </span><span class="hl-7">5784</span><span class="hl-1">),</span><br/><span class="hl-1">  </span><span class="hl-5">false</span><br/><span class="hl-1">);</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">ev</span><span class="hl-1">?.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">)); </span><span class="hl-8">// &#39;Daf Yomi: Kiddushin 78&#39;</span>
+</code><button type="button">Copy</button></pre>
+
+<p><code>DailyLearning.getCalendars()</code> returns the authoritative list of what the installed
+version of <code>@hebcal/learning</code> actually registered; <code>has()</code> and <code>getStartDate()</code> report
+whether a given calendar is available and from what date. You can register your own
+schedule with <code>addCalendar()</code> — the same entry point <code>@hebcal/learning</code> uses.</p>
+<h2 id="candle-lighting-havdalah-and-fast-times" class="tsd-anchor-link">Candle lighting, Havdalah, and fast times<a href="#candle-lighting-havdalah-and-fast-times" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Set <code>options.candlelighting = true</code> and supply an <code>options.location</code> to get timed
+events. Times are computed from latitude and longitude via NOAA solar equations. If
+you ever have any doubts about Hebcal's times, consult your local halachic authority —
+and note that coordinates above the Arctic or below the Antarctic circle are
+guaranteed to be wrong.</p>
+<pre><code class="javascript"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">calendar</span><span class="hl-1">, </span><span class="hl-4">Location</span><span class="hl-1">, </span><span class="hl-4">flags</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">events</span><span class="hl-1"> = </span><span class="hl-0">calendar</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-4">year:</span><span class="hl-1"> </span><span class="hl-7">2024</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">candlelighting:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-4">location:</span><span class="hl-1"> </span><span class="hl-4">Location</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;Jerusalem&#39;</span><span class="hl-1">),</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-3">for</span><span class="hl-1"> (</span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ev</span><span class="hl-1"> </span><span class="hl-5">of</span><span class="hl-1"> </span><span class="hl-4">events</span><span class="hl-1">) {</span><br/><span class="hl-1">  </span><span class="hl-3">if</span><span class="hl-1"> (</span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">getFlags</span><span class="hl-1">() &amp; </span><span class="hl-4">flags</span><span class="hl-1">.</span><span class="hl-6">LIGHT_CANDLES</span><span class="hl-1">) {</span><br/><span class="hl-1">    </span><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-0">getDate</span><span class="hl-1">().</span><span class="hl-0">toString</span><span class="hl-1">(), </span><span class="hl-4">ev</span><span class="hl-1">.</span><span class="hl-4">eventTimeStr</span><span class="hl-1">); </span><span class="hl-8">// &#39;24 Tevet 5784&#39; &#39;16:08&#39;</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>Candle lighting</strong> defaults to 18 minutes before sunset in the Diaspora and 20
+minutes in Israel, with 40 minutes for Jerusalem and 30 for Haifa and Zikhron
+Ya'akov. Override with <code>options.candleLightingMins</code>.</p>
+<p><strong>Havdalah</strong> defaults to Tzeit Hakochavim — nightfall, when 3 small stars are
+visible — calculated at 8.5° of solar depression. Two mutually exclusive overrides:</p>
+<ul>
+<li><code>options.havdalahDeg</code> — a different solar depression angle (7.083° is the common
+alternative, for 3 medium-sized stars). Set to <code>0</code> to suppress Havdalah times.</li>
+<li><code>options.havdalahMins</code> — a fixed number of minutes after sunset instead (42, 50
+and 72 are typical). Set to <code>0</code> to suppress Havdalah times.</li>
+</ul>
+<p><strong>Minor fasts</strong> begin at Alot HaShachar (16.1° in the morning). They end at 7.083°
+in the Diaspora, or 15 minutes after sunset in Israel (Rabbi Deblitzky's practice).
+Override with <code>options.fastEndDeg</code> or <code>options.fastEndMins</code> — again mutually
+exclusive. When a minor fast falls on a Friday, the end time is suppressed, because
+Shabbat begins before nightfall.</p>
+<p><strong>Tish'a B'Av</strong> does not follow those rules: it begins at sunset the previous day and
+always ends at 6.45° (Rabbi Yechiel Michel Tucazinsky), ignoring <code>fastEndDeg</code> and
+<code>fastEndMins</code>.</p>
+<p><strong>Chanukah</strong> candle-lighting, also generated when <code>candlelighting</code> and <code>location</code>
+are set, is at Bein HaShmashos (13.5 minutes before 7.083°) on weekdays, regular
+candle-lighting time on Friday, and regular Havdalah time on Saturday night.</p>
+<p>Set <code>options.useElevation = true</code> to factor a location's elevation into sunrise and
+sunset. Note that degree-based zmanim estimate the amount of light in the sky and
+so are unaffected by elevation by design; <code>chatzot</code> is also always computed at sea
+level.</p>
+<p>For zmanim outside the calendar-generation flow, use the
+<a href="https://hebcal.github.io/api/core/classes/Zmanim.html"><code>Zmanim</code></a> class directly.</p>
+<h2 id="yahrzeits-birthdays-and-anniversaries" class="tsd-anchor-link">Yahrzeits, birthdays, and anniversaries<a href="#yahrzeits-birthdays-and-anniversaries" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>These are two different calculations, not one function with a flag, because the
+customs genuinely differ. Both follow &quot;Calendrical Calculations&quot; by Reingold and
+Dershowitz.</p>
+<p>Both live in <code>@hebcal/hdate</code>; <code>HebrewCalendar</code> exposes them as wrappers for
+convenience.</p>
+<pre><code class="javascript"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">birthdayOrAnniversary</span><span class="hl-1">, </span><span class="hl-4">yahrzeit</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/hdate&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">dt</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">(</span><span class="hl-7">2014</span><span class="hl-1">, </span><span class="hl-7">2</span><span class="hl-1">, </span><span class="hl-7">2</span><span class="hl-1">); </span><span class="hl-8">// 30 Adar I 5774</span><br/><br/><span class="hl-0">birthdayOrAnniversary</span><span class="hl-1">(</span><span class="hl-7">5785</span><span class="hl-1">, </span><span class="hl-4">dt</span><span class="hl-1">)?.</span><span class="hl-0">toString</span><span class="hl-1">(); </span><span class="hl-8">// &#39;1 Nisan 5785&#39;</span><br/><span class="hl-0">yahrzeit</span><span class="hl-1">(</span><span class="hl-7">5785</span><span class="hl-1">, </span><span class="hl-4">dt</span><span class="hl-1">)?.</span><span class="hl-0">toString</span><span class="hl-1">(); </span><span class="hl-8">// &#39;30 Sh&#39;vat 5785&#39;</span>
+</code><button type="button">Copy</button></pre>
+
+<p>The short version: <strong>a birthday moves forward, a yahrzeit moves back.</strong> When the
+original day doesn't exist in the target year, a birthday is postponed to the first
+of the following month, whereas a yahrzeit is observed on the day <em>before</em> that — so
+in the example above the two land a month apart.</p>
+<p>A yahrzeit has one more wrinkle: for a death on 30 Marcheshvan or 30 Kislev, the
+date in later years depends on what happened at the <strong>first</strong> anniversary, so the
+observance is fixed by precedent rather than recomputed independently each year.</p>
+<p>They also differ at the boundary, and for a reason: asking for the original year
+gives you the original date back from <code>birthdayOrAnniversary()</code>, because a &quot;0th
+birthday&quot; is a meaningful thing to ask for. <code>yahrzeit()</code> returns <code>undefined</code> there,
+because a yahrzeit only has meaning from the first anniversary onward. Both return
+<code>undefined</code> for years before the original.</p>
+<p>Neither function modifies the date you pass in, so a single original date can be
+reused to generate a run of years.</p>
 <h2 id="displaying-the-current-shabbat" class="tsd-anchor-link">Displaying the current Shabbat<a href="#displaying-the-current-shabbat" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
 <p><code>ParshaEvent</code> is designed for regular weekly parsha readings. On Shabbatot
 with holiday readings, such as Shabbat Chol HaMoed, use holiday events or the
@@ -40,6 +176,30 @@ with holiday readings, such as Shabbat Chol HaMoed, use holiday events or the
 <pre><code class="javascript"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">HDate</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/hdate&#39;</span><span class="hl-1">;</span><br/><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">getLeyningOnDate</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/leyning&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">hdate</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">(</span><span class="hl-7">2025</span><span class="hl-1">, </span><span class="hl-7">9</span><span class="hl-1">, </span><span class="hl-7">11</span><span class="hl-1">));</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">reading</span><span class="hl-1"> = </span><span class="hl-0">getLeyningOnDate</span><span class="hl-1">(</span><span class="hl-4">hdate</span><span class="hl-1">, </span><span class="hl-5">true</span><span class="hl-1">, </span><span class="hl-5">false</span><span class="hl-1">, </span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">reading</span><span class="hl-1">.</span><span class="hl-4">name</span><span class="hl-1">.</span><span class="hl-4">he</span><span class="hl-1">);</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">reading</span><span class="hl-1">.</span><span class="hl-4">summary</span><span class="hl-1">);</span>
 </code><button type="button">Copy</button></pre>
 
+<h2 id="-and-whats-coming-in-v7" class="tsd-anchor-link"><code>Date</code>, <code>Temporal</code>, and what's coming in v7<a href="#-and-whats-coming-in-v7" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Solar calculations in this library run on
+<a href="https://tc39.es/proposal-temporal/docs/">Temporal</a>, which arrives via the
+<code>@hebcal/noaa</code> dependency. It is supplied by <code>temporal-polyfill</code>, imported through
+its <code>/global</code> entry point — that installs <code>Temporal</code> onto <code>globalThis</code> only when
+<code>globalThis.Temporal</code> is absent, so on an engine that ships Temporal natively you
+transparently get the native implementation instead.</p>
+<p>Temporal is newer than most of the JavaScript standard library, but it has been
+running in production here for over two years. It is worth the dependency: unlike
+<code>Date</code>, it models instants, wall-clock times, and time zones as distinct things,
+which is exactly the distinction zmanim arithmetic depends on. Getting DST
+transitions and standard-time offsets right with <code>Date</code> alone means a lot of
+error-prone manual bookkeeping.</p>
+<p>The awkward part today is that the public API is still mostly <code>Date</code>-based, and
+<code>Zmanim</code> in particular mixes the two — most methods return a <code>Date</code> rounded to the
+minute, while a few (<code>tzeit72()</code>, <code>alotHaShachar72zdt()</code>, the Kiddush Levana methods
+on <code>Molad</code>) return a <code>Temporal.ZonedDateTime</code> with seconds precision. Where a
+<code>Date</code>-returning method can't compute a time — far enough north or south that the sun
+doesn't cross the relevant angle — it returns an <code>Invalid Date</code>; the
+<code>Temporal</code>-returning ones return <code>null</code> instead.</p>
+<p>That split is transitional. The intent is to move the library to <code>Temporal</code>
+throughout, which is a breaking change and so is planned for <code>@hebcal/core</code> version 7.
+Until then, checking <code>isNaN(dt.getTime())</code> on <code>Date</code> results and <code>=== null</code> on
+<code>Temporal</code> results is the portable approach.</p>
 <h2 id="usage" class="tsd-anchor-link">Usage<a href="#usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
 <p>This package exports two categories of output:</p>
 <ul>
@@ -99,7 +259,13 @@ and candle-lighting times, and improved ES module support.</p>
 <ul>
 <li><a href="#installation"><span>Installation</span></a></li>
 <li><a href="#synopsis"><span>Synopsis</span></a></li>
+<li><a href="#events-and-flags"><span>Events and flags</span></a></li>
+<li><a href="#looking-up-a-single-date"><span>Looking up a single date</span></a></li>
+<li><a href="#daily-learning-daf-yomi-and-friends"><span>Daily learning (<wbr/>Daf <wbr/>Yomi and friends)</span></a></li>
+<li><a href="#candle-lighting-havdalah-and-fast-times"><span>Candle lighting, <wbr/>Havdalah, and fast times</span></a></li>
+<li><a href="#yahrzeits-birthdays-and-anniversaries"><span>Yahrzeits, birthdays, and anniversaries</span></a></li>
 <li><a href="#displaying-the-current-shabbat"><span>Displaying the current <wbr/>Shabbat</span></a></li>
+<li><a href="#-and-whats-coming-in-v7"><span>, , and what&#39;s coming in v7</span></a></li>
 <li><a href="#usage"><span>Usage</span></a></li>
 <li><a href="#api-documentation"><span>API <wbr/>Documentation</span></a></li>
 <li><a href="#history"><span>History</span></a></li></ul></div></details></div>

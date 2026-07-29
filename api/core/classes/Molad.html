@@ -20,12 +20,12 @@ Calculations use the traditional chalakim arithmetic
 </div>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">Molad</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">m</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Molad</span><span class="hl-1">(</span><span class="hl-7">5784</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">NISAN</span><span class="hl-1">);</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">getMonthName</span><span class="hl-1">()); </span><span class="hl-8">// &#39;Nisan&#39;</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">getHour</span><span class="hl-1">(), </span><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">getMinutes</span><span class="hl-1">(), </span><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">getChalakim</span><span class="hl-1">()); </span><span class="hl-8">// e.g. 1 31 12</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">)); </span><span class="hl-8">// &#39;Molad Nisan: Mon, 1:31am and 12 chalakim&#39;</span>
+<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">Molad</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">m</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Molad</span><span class="hl-1">(</span><span class="hl-7">5784</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">NISAN</span><span class="hl-1">);</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">getMonthName</span><span class="hl-1">()); </span><span class="hl-8">// &#39;Nisan&#39;</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">getHour</span><span class="hl-1">(), </span><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">getMinutes</span><span class="hl-1">(), </span><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">getChalakim</span><span class="hl-1">()); </span><span class="hl-8">// 22 57 7</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">)); </span><span class="hl-8">// &#39;Molad Nisan: Monday, 10:57pm and 7 chalakim&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L75">src/molad.ts:75</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L76">src/molad.ts:76</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -74,7 +74,7 @@ Calculations use the traditional chalakim arithmetic
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">Molad</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L86">src/molad.ts:86</a></li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L87">src/molad.ts:87</a></li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -87,7 +87,7 @@ Calculations use the traditional chalakim arithmetic
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>parts of a minute (0-17)</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L142">src/molad.ts:142</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L143">src/molad.ts:143</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getdow"><span>get<wbr/>Dow</span><a href="#getdow" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -97,7 +97,7 @@ Calculations use the traditional chalakim arithmetic
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>Day of Week (0=Sunday, 6=Saturday)</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L124">src/molad.ts:124</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L125">src/molad.ts:125</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="gethour"><span>get<wbr/>Hour</span><a href="#gethour" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -107,29 +107,32 @@ Calculations use the traditional chalakim arithmetic
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>hour of day (0-23)</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L130">src/molad.ts:130</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L131">src/molad.ts:131</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getinstant"><span>get<wbr/>Instant</span><a href="#getinstant" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="getinstant-1"><span class="tsd-kind-call-signature">getInstant</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ZonedDateTime</span><a href="#getinstant-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns the molad in Standard Time in Yerushalayim as a <code>Temporal.ZonedDateTime</code>.
-This method subtracts 20.94 minutes (20 minutes and 56.496 seconds) from the computed time (Har Habayis with a longitude
-of 35.2354° is 5.2354° away from the %15 timezone longitude) to get to standard time. This method
-intentionally uses standard time and not daylight savings time.</p>
+<div class="tsd-comment tsd-typography"><p>Returns the moment of the molad as a <code>Temporal.ZonedDateTime</code> in the <code>UTC</code> zone.</p>
+<p>The molad is computed in Jerusalem <em>standard</em> time and then converted, so the
+returned instant is correct year-round; only the zone of the returned object
+is <code>UTC</code>. This method subtracts 20.94 minutes (20 minutes and 56.496 seconds)
+from the computed time — Har Habayis, at longitude 35.2354°, is 5.2354° away
+from the multiple-of-15 timezone longitude — to get to standard time. Daylight
+savings time is intentionally not applied; adjust when formatting for display.</p>
 <p>The returned value is cached after the first call.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span></h4><p>the <code>Temporal.ZonedDateTime</code> representing the moment of the molad</p>
 
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">Molad</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">m</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Molad</span><span class="hl-1">(</span><span class="hl-7">5784</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">NISAN</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">zdt</span><span class="hl-1"> = </span><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">getInstant</span><span class="hl-1">();</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">zdt</span><span class="hl-1">.</span><span class="hl-0">toString</span><span class="hl-1">()); </span><span class="hl-8">// e.g. &#39;2024-04-08T17:21:13.333+00:00[UTC]&#39;</span>
+<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">Molad</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">m</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Molad</span><span class="hl-1">(</span><span class="hl-7">5784</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">NISAN</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">zdt</span><span class="hl-1"> = </span><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">getInstant</span><span class="hl-1">();</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-4">zdt</span><span class="hl-1">.</span><span class="hl-0">toString</span><span class="hl-1">()); </span><span class="hl-8">// &#39;2024-04-08T20:36:26.837+00:00[UTC]&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L159">src/molad.ts:159</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L164">src/molad.ts:164</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getminutes"><span>get<wbr/>Minutes</span><a href="#getminutes" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -139,7 +142,7 @@ intentionally uses standard time and not daylight savings time.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>minutes past hour (0-59)</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L136">src/molad.ts:136</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L137">src/molad.ts:137</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getmoladdate"><span>get<wbr/>Molad<wbr/>Date</span><a href="#getmoladdate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -157,7 +160,7 @@ month, and in extremely rare circumstances the 27th of the month.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L99">src/molad.ts:99</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L100">src/molad.ts:100</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getmonth"><span>get<wbr/>Month</span><a href="#getmonth" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -168,7 +171,7 @@ month, and in extremely rare circumstances the 27th of the month.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L111">src/molad.ts:111</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L112">src/molad.ts:112</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getmonthname"><span>get<wbr/>Month<wbr/>Name</span><a href="#getmonthname" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -180,7 +183,7 @@ for example 'Elul' or 'Cheshvan'.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L118">src/molad.ts:118</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L119">src/molad.ts:119</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getsofzmankidushlevana15days"><span>get<wbr/>Sof<wbr/>Zman<wbr/>Kidush<wbr/>Levana15<wbr/>Days</span><a href="#getsofzmankidushlevana15days" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -189,27 +192,27 @@ for example 'Elul' or 'Cheshvan'.</p>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Returns the latest time of Kiddush Levana calculated as 15 days after the molad. This is the opinion brought down
 in the Shulchan Aruch (Orach Chaim 426). It should be noted that some opinions hold that the
-<a href="https://en.wikipedia.org/wiki/Moses_Isserles">Rema</a> who brings down the opinion of the <a
-href="https://en.wikipedia.org/wiki/Yaakov_ben_Moshe_Levi_Moelin">Maharil's</a> of calculating
-<a href="#getsofzmankidushlevanabetweenmoldos" class="tsd-kind-method">() half way between molad and mold</a> is of the opinion that Mechaber
+<a href="https://en.wikipedia.org/wiki/Moses_Isserles">Rema</a> who brings down the opinion of the
+<a href="https://en.wikipedia.org/wiki/Yaakov_ben_Moshe_Levi_Moelin">Maharil's</a> of calculating
+<a href="#getsofzmankidushlevanabetweenmoldos" class="tsd-kind-method">half way between molad and molad</a> is of the opinion that Mechaber
 agrees to his opinion. Also see the Aruch Hashulchan. For additional details on the subject, See Rabbi Dovid
-Heber's very detailed writeup in Siman Daled (chapter 4) of <a
-href="https://www.worldcat.org/oclc/461326125">Shaarei Zmanim</a>. This method returns the time even if it is during
+Heber's very detailed writeup in Siman Daled (chapter 4) of
+<a href="https://www.worldcat.org/oclc/461326125">Shaarei Zmanim</a>. This method returns the time even if it is during
 the day when <em>Kiddush Levana</em> can't be said. Callers of this method should consider displaying <em>alos</em>
 before this time if the zman is between <em>alos</em> and <em>tzais</em>.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span></h4><p>the Temporal.ZonedDateTime representing the moment 15 days after the molad.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L226">src/molad.ts:226</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L231">src/molad.ts:231</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getsofzmankidushlevanabetweenmoldos"><span>get<wbr/>Sof<wbr/>Zman<wbr/>Kidush<wbr/>Levana<wbr/>Between<wbr/>Moldos</span><a href="#getsofzmankidushlevanabetweenmoldos" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="getsofzmankidushlevanabetweenmoldos-1"><span class="tsd-kind-call-signature">getSofZmanKidushLevanaBetweenMoldos</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ZonedDateTime</span><a href="#getsofzmankidushlevanabetweenmoldos-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns the latest time of Kiddush Levana according to the <a
-href="https://en.wikipedia.org/wiki/Yaakov_ben_Moshe_Levi_Moelin">Maharil's</a> opinion that it is calculated as
+<div class="tsd-comment tsd-typography"><p>Returns the latest time of Kiddush Levana according to the
+<a href="https://en.wikipedia.org/wiki/Yaakov_ben_Moshe_Levi_Moelin">Maharil's</a> opinion that it is calculated as
 halfway between molad and molad. This adds half the 29 days, 12 hours and 793 chalakim time between molad and
 molad (14 days, 18 hours, 22 minutes and 666 milliseconds) to the month's molad. This method returns the time
 even if it is during the day when <em>Kiddush Levana</em> can't be said. Callers of this method should consider
@@ -218,7 +221,7 @@ displaying <em>alos</em> before this time if the zman is between <em>alos</em> a
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span></h4><p>the Temporal.ZonedDateTime representing the moment halfway between molad and molad.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L199">src/molad.ts:199</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L204">src/molad.ts:204</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="gettchilaszmankidushlevana3days"><span>get<wbr/>Tchilas<wbr/>Zman<wbr/>Kidush<wbr/>Levana3<wbr/>Days</span><a href="#gettchilaszmankidushlevana3days" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -232,23 +235,23 @@ displaying the next <em>tzais</em> if the zman is between <em>alos</em> and <em>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span></h4><p>the Temporal.ZonedDateTime representing the moment 3 days after the molad.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L170">src/molad.ts:170</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L175">src/molad.ts:175</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="gettchilaszmankidushlevana7days"><span>get<wbr/>Tchilas<wbr/>Zman<wbr/>Kidush<wbr/>Levana7<wbr/>Days</span><a href="#gettchilaszmankidushlevana7days" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="gettchilaszmankidushlevana7days-1"><span class="tsd-kind-call-signature">getTchilasZmanKidushLevana7Days</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ZonedDateTime</span><a href="#gettchilaszmankidushlevana7days-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns the earliest time of Kiddush Levana calculated as 7 days after the molad as mentioned by the <a
-href="https://en.wikipedia.org/wiki/Yosef_Karo">Mechaber</a>. See the <a
-href="https://en.wikipedia.org/wiki/Yoel_Sirkis">Bach's</a> opinion on this time. This method returns the time
+<div class="tsd-comment tsd-typography"><p>Returns the earliest time of Kiddush Levana calculated as 7 days after the molad as mentioned by the
+<a href="https://en.wikipedia.org/wiki/Yosef_Karo">Mechaber</a>. See the
+<a href="https://en.wikipedia.org/wiki/Yoel_Sirkis">Bach's</a> opinion on this time. This method returns the time
 even if it is during the day when <em>Kiddush Levana</em> can't be said. Callers of this method should consider
 displaying the next <em>tzais</em> if the zman is between <em>alos</em> and <em>tzais</em>.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span></h4><p>the Temporal.ZonedDateTime representing the moment 7 days after the molad.</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L184">src/molad.ts:184</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L189">src/molad.ts:189</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getyear"><span>get<wbr/>Year</span><a href="#getyear" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -259,7 +262,7 @@ displaying the next <em>tzais</em> if the zman is between <em>alos</em> and <em>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L105">src/molad.ts:105</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L106">src/molad.ts:106</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="render"><span>render</span><a href="#render" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -270,7 +273,7 @@ displaying the next <em>tzais</em> if the zman is between <em>alos</em> and <em>
 suitable for use on Shabbat Mevarchim. The format includes the Hebrew
 month name, day of week, hour : minute, and chalakim if non-zero.</p>
 <p>Time format honors <code>options.hour12</code> and <code>options.location</code> (12-hour vs.
-24-hour); see <a href="HebrewCalendar.html#reformattimestr" class="tsd-kind-method">HebrewCalendar.reformatTimeStr</a>.</p>
+24-hour); see <a href="../functions/reformatTimeStr.html" class="tsd-kind-function">reformatTimeStr</a>.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -284,12 +287,12 @@ month name, day of week, hour : minute, and chalakim if non-zero.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-2">Example<a href="#example-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">Molad</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">m</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Molad</span><span class="hl-1">(</span><span class="hl-7">5784</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">NISAN</span><span class="hl-1">);</span><br/><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">, {</span><span class="hl-4">hour12:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">});</span><br/><span class="hl-8">// =&gt; &#39;Molad Nisan: Mon, 7:21pm and 6 chalakim&#39;</span><br/><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">);</span><br/><span class="hl-8">// =&gt; &#39;מוֹלָד נִיסָן יִהְיֶה בַּיּוֹם שֵׁנִי בשָׁבוּעַ, …&#39;</span>
+<h4 class="tsd-anchor-link" id="example-2">Example<a href="#example-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">Molad</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">m</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Molad</span><span class="hl-1">(</span><span class="hl-7">5784</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">NISAN</span><span class="hl-1">);</span><br/><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">, {</span><span class="hl-4">hour12:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">});</span><br/><span class="hl-8">// =&gt; &#39;Molad Nisan: Monday, 10:57pm and 7 chalakim&#39;</span><br/><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">, {</span><span class="hl-4">hour12:</span><span class="hl-1"> </span><span class="hl-5">false</span><span class="hl-1">});</span><br/><span class="hl-8">// =&gt; &#39;Molad Nisan: Monday, 22:57 and 7 chalakim&#39;</span><br/><span class="hl-4">m</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">);</span><br/><span class="hl-8">// =&gt; &#39;מוֹלָד הָלְּבָנָה נִיסָן יִהְיֶה בַּיּוֹם שֵׁנִי בשָׁבוּעַ, …&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/molad.ts#L249">src/molad.ts:249</a></li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/molad.ts#L256">src/molad.ts:256</a></li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

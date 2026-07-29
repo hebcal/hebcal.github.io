@@ -19,9 +19,24 @@ holidays. <code>@hebcal/hdate</code> supports four locales by default</p>
 <li><code>he</code> - Hebrew (e.g. &quot;שַׁבָּת&quot;)</li>
 <li><code>he-x-NoNikud</code> - Hebrew without nikud (e.g. &quot;שבת&quot;)</li>
 </ul>
-</div></section><aside class="tsd-sources">
+<p>The locale set that ships here covers only what this package needs:
+month names, a handful of connective words, and the parts of speech
+used by <a href="HDate.html#render" class="tsd-kind-method">HDate.render</a>. Packages built on top of it (such as
+<code>@hebcal/core</code>) register their own holiday translations into the same
+locales with <a href="#addtranslations" class="tsd-kind-method">Locale.addTranslations</a>.</p>
+<p>Every method is static — <code>Locale</code> is a namespace, not something you
+instantiate. Locale names are matched case-insensitively, and the
+single letters <code>h</code>, <code>a</code> and <code>s</code> are accepted as aliases for <code>he</code>,
+<code>ashkenazi</code> and <code>en</code> respectively.</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-example">
+<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">Locale</span><span class="hl-1">, </span><span class="hl-4">HDate</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/hdate&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Cheshvan&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">);        </span><span class="hl-8">// &#39;חֶשְׁוָן&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Cheshvan&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;ashkenazi&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;Cheshvan&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">ordinal</span><span class="hl-1">(</span><span class="hl-7">15</span><span class="hl-1">, </span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">);                </span><span class="hl-8">// &#39;15th&#39;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">hd</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">HDate</span><span class="hl-1">(</span><span class="hl-7">15</span><span class="hl-1">, </span><span class="hl-4">months</span><span class="hl-1">.</span><span class="hl-6">CHESHVAN</span><span class="hl-1">, </span><span class="hl-7">5769</span><span class="hl-1">);</span><br/><span class="hl-4">hd</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;15th of Cheshvan, 5769&#39;</span><br/><span class="hl-4">hd</span><span class="hl-1">.</span><span class="hl-0">render</span><span class="hl-1">(</span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;15 חֶשְׁוָן, 5769&#39;</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div></section><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:18</li></ul></aside>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:68</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -64,7 +79,9 @@ holidays. <code>@hebcal/hdate</code> supports four locales by default</p>
 <li class="tsd-is-external">
 <div class="tsd-signature tsd-anchor-link" id="addlocale-1"><span class="tsd-kind-call-signature">addLocale</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">locale</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">data</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/LocaleData.html" class="tsd-signature-type tsd-kind-interface">LocaleData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#addlocale-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Register locale translations.</p>
+<div class="tsd-comment tsd-typography"><p>Register locale translations, replacing the locale entirely if it
+was already registered. Use <a href="#addtranslations" class="tsd-kind-method">Locale.addTranslations</a> to merge
+into an existing locale instead.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -77,13 +94,16 @@ holidays. <code>@hebcal/hdate</code> supports four locales by default</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 <div class="tsd-comment tsd-typography">
+<div class="tsd-tag-throws">
+<h4 class="tsd-anchor-link" id="throws">Throws<a href="#throws" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>if <code>data</code> is not in the compact <code>.po</code> format</p>
+</div>
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-4">poFr</span><span class="hl-1"> </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;./fr.po&#39;</span><span class="hl-1">;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">addLocale</span><span class="hl-1">(</span><span class="hl-2">&#39;fr&#39;</span><span class="hl-1">, </span><span class="hl-4">poFr</span><span class="hl-1">);</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Shabbat&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;fr&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;Chabbat&#39;</span>
+<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">Locale</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/hdate&#39;</span><span class="hl-1">;</span><br/><span class="hl-8">// typically `import poFr from &#39;./fr.po&#39;` — inlined here for clarity</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">poFr</span><span class="hl-1"> = {</span><span class="hl-4">headers:</span><span class="hl-1"> {}, </span><span class="hl-4">contexts:</span><span class="hl-1"> {</span><span class="hl-2">&#39;&#39;</span><span class="hl-4">:</span><span class="hl-1"> {</span><span class="hl-4">Shabbat:</span><span class="hl-1"> [</span><span class="hl-2">&#39;Chabbat&#39;</span><span class="hl-1">]}}};</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">addLocale</span><span class="hl-1">(</span><span class="hl-2">&#39;fr&#39;</span><span class="hl-1">, </span><span class="hl-4">poFr</span><span class="hl-1">);</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Shabbat&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;fr&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;Chabbat&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:48</li></ul></aside></div></li></ul></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:103</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="addtranslation"><code class="tsd-tag">Static</code><span>add<wbr/>Translation</span><a href="#addtranslation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -107,12 +127,12 @@ holidays. <code>@hebcal/hdate</code> supports four locales by default</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">addTranslation</span><span class="hl-1">(</span><span class="hl-2">&#39;ashkenazi&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;Foobar&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;Quux&#39;</span><span class="hl-1">);</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Foobar&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;ashkenazi&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;Quux&#39;</span>
+<h4 class="tsd-anchor-link" id="example-2">Example<a href="#example-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">addTranslation</span><span class="hl-1">(</span><span class="hl-2">&#39;ashkenazi&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;Foobar&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;Quux&#39;</span><span class="hl-1">);</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Foobar&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;ashkenazi&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;Quux&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:58</li></ul></aside></div></li></ul></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:113</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="addtranslations"><code class="tsd-tag">Static</code><span>add<wbr/>Translations</span><a href="#addtranslations" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -135,9 +155,21 @@ existing locale.</p>
 <li><span><span class="tsd-kind-parameter">data</span>: <a href="../interfaces/LocaleData.html" class="tsd-signature-type tsd-kind-interface">LocaleData</a></span>
 <div class="tsd-comment tsd-typography"><p>parsed data from a <code>.po</code> file.</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-throws">
+<h4 class="tsd-anchor-link" id="throws-1">Throws<a href="#throws-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>if <code>locale</code> has not been registered</p>
+</div>
+<div class="tsd-tag-throws">
+<h4 class="tsd-anchor-link" id="throws-2">Throws<a href="#throws-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>if <code>data</code> is not in the compact <code>.po</code> format</p>
+</div>
+<div class="tsd-tag-example">
+<h4 class="tsd-anchor-link" id="example-3">Example<a href="#example-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">Locale</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/hdate&#39;</span><span class="hl-1">;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">addTranslations</span><span class="hl-1">(</span><span class="hl-2">&#39;ashkenazi&#39;</span><span class="hl-1">, {</span><br/><span class="hl-1">  </span><span class="hl-4">headers:</span><span class="hl-1"> {},</span><br/><span class="hl-1">  </span><span class="hl-4">contexts:</span><span class="hl-1"> {</span><span class="hl-2">&#39;&#39;</span><span class="hl-4">:</span><span class="hl-1"> {</span><span class="hl-4">Sukkot:</span><span class="hl-1"> [</span><span class="hl-2">&#39;Sukkos&#39;</span><span class="hl-1">], </span><span class="hl-4">Shavuot:</span><span class="hl-1"> [</span><span class="hl-2">&#39;Shavuos&#39;</span><span class="hl-1">]}},</span><br/><span class="hl-1">});</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Sukkot&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;ashkenazi&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;Sukkos&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Tevet&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;ashkenazi&#39;</span><span class="hl-1">);  </span><span class="hl-8">// &#39;Teves&#39; (existing translations kept)</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:70</li></ul></aside></div></li></ul></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:135</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="copylocalenonikud"><code class="tsd-tag">Static</code><span>copy<wbr/>Locale<wbr/>No<wbr/>Nikud</span><a href="#copylocalenonikud" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -154,10 +186,22 @@ variant of a custom Hebrew-script locale.</p>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">data</span>: <a href="../interfaces/LocaleData.html" class="tsd-signature-type tsd-kind-interface">LocaleData</a></span></li></ul></div>
-<h4 class="tsd-returns-title">Returns <a href="../interfaces/LocaleData.html" class="tsd-signature-type tsd-kind-interface">LocaleData</a></h4><aside class="tsd-sources">
+<li><span><span class="tsd-kind-parameter">data</span>: <a href="../interfaces/LocaleData.html" class="tsd-signature-type tsd-kind-interface">LocaleData</a></span>
+<div class="tsd-comment tsd-typography"><p>locale data to copy</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/LocaleData.html" class="tsd-signature-type tsd-kind-interface">LocaleData</a></h4><p>a new <code>LocaleData</code> with niqqud removed</p>
+
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-see">
+<h4 class="tsd-anchor-link" id="see">See<a href="#see" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="#hebrewstripnikkud" class="tsd-kind-method">Locale.hebrewStripNikkud</a></p>
+</div>
+<div class="tsd-tag-example">
+<h4 class="tsd-anchor-link" id="example-4">Example<a href="#example-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">Locale</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/hdate&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">withNikud</span><span class="hl-1"> = {</span><br/><span class="hl-1">  </span><span class="hl-4">headers:</span><span class="hl-1"> {},</span><br/><span class="hl-1">  </span><span class="hl-4">contexts:</span><span class="hl-1"> {</span><span class="hl-2">&#39;&#39;</span><span class="hl-4">:</span><span class="hl-1"> {</span><span class="hl-4">Elul:</span><span class="hl-1"> [</span><span class="hl-2">&#39;אֱלוּל&#39;</span><span class="hl-1">]}},</span><br/><span class="hl-1">};</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">stripped</span><span class="hl-1"> = </span><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">copyLocaleNoNikud</span><span class="hl-1">(</span><span class="hl-4">withNikud</span><span class="hl-1">);</span><br/><span class="hl-4">stripped</span><span class="hl-1">.</span><span class="hl-4">contexts</span><span class="hl-1">[</span><span class="hl-2">&#39;&#39;</span><span class="hl-1">].</span><span class="hl-4">Elul</span><span class="hl-1">[</span><span class="hl-7">0</span><span class="hl-1">];   </span><span class="hl-8">// &#39;אלול&#39;</span><br/><span class="hl-4">withNikud</span><span class="hl-1">.</span><span class="hl-4">contexts</span><span class="hl-1">[</span><span class="hl-2">&#39;&#39;</span><span class="hl-1">].</span><span class="hl-4">Elul</span><span class="hl-1">[</span><span class="hl-7">0</span><span class="hl-1">];  </span><span class="hl-8">// &#39;אֱלוּל&#39; (input unchanged)</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:110</li></ul></aside></div></li></ul></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:187</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="getlocalenames"><code class="tsd-tag">Static</code><span>get<wbr/>Locale<wbr/>Names</span><a href="#getlocalenames" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -169,12 +213,12 @@ variant of a custom Hebrew-script locale.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-2">Example<a href="#example-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">getLocaleNames</span><span class="hl-1">(); </span><span class="hl-8">// [&#39;ashkenazi&#39;, &#39;en&#39;, &#39;he&#39;, &#39;he-x-nonikud&#39;]</span>
+<h4 class="tsd-anchor-link" id="example-5">Example<a href="#example-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">getLocaleNames</span><span class="hl-1">(); </span><span class="hl-8">// [&#39;ashkenazi&#39;, &#39;en&#39;, &#39;he&#39;, &#39;he-x-nonikud&#39;]</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:76</li></ul></aside></div></li></ul></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:141</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="gettext"><code class="tsd-tag">Static</code><span>gettext</span><a href="#gettext" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -195,12 +239,12 @@ variant of a custom Hebrew-script locale.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-3">Example<a href="#example-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Elul&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">);          </span><span class="hl-8">// &#39;אֱלוּל&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Tevet&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;ashkenazi&#39;</span><span class="hl-1">);  </span><span class="hl-8">// &#39;Teves&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Unknown&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">);       </span><span class="hl-8">// &#39;Unknown&#39; (falls back to id)</span>
+<h4 class="tsd-anchor-link" id="example-6">Example<a href="#example-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Elul&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">);          </span><span class="hl-8">// &#39;אֱלוּל&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Tevet&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;ashkenazi&#39;</span><span class="hl-1">);  </span><span class="hl-8">// &#39;Teves&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-2">&#39;Unknown&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">);       </span><span class="hl-8">// &#39;Unknown&#39; (falls back to id)</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:38</li></ul></aside></div></li></ul></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:88</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="haslocale"><code class="tsd-tag">Static</code><span>has<wbr/>Locale</span><a href="#haslocale" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -218,12 +262,12 @@ variant of a custom Hebrew-script locale.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-4">Example<a href="#example-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">hasLocale</span><span class="hl-1">(</span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">); </span><span class="hl-8">// true</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">hasLocale</span><span class="hl-1">(</span><span class="hl-2">&#39;fr&#39;</span><span class="hl-1">); </span><span class="hl-8">// false</span>
+<h4 class="tsd-anchor-link" id="example-7">Example<a href="#example-7" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">hasLocale</span><span class="hl-1">(</span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">); </span><span class="hl-8">// true</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">hasLocale</span><span class="hl-1">(</span><span class="hl-2">&#39;fr&#39;</span><span class="hl-1">); </span><span class="hl-8">// false</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:84</li></ul></aside></div></li></ul></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:149</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="hebrewstripnikkud"><code class="tsd-tag">Static</code><span>hebrew<wbr/>Strip<wbr/>Nikkud</span><a href="#hebrewstripnikkud" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -239,12 +283,12 @@ variant of a custom Hebrew-script locale.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-5">Example<a href="#example-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">hebrewStripNikkud</span><span class="hl-1">(</span><span class="hl-2">&#39;אֱלוּל&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;אלול&#39;</span>
+<h4 class="tsd-anchor-link" id="example-8">Example<a href="#example-8" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">hebrewStripNikkud</span><span class="hl-1">(</span><span class="hl-2">&#39;אֱלוּל&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;אלול&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:100</li></ul></aside></div></li></ul></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:165</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="ishebrewlocale"><code class="tsd-tag">Static</code><span>is<wbr/>Hebrew<wbr/>Locale</span><a href="#ishebrewlocale" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -260,12 +304,12 @@ variant of a custom Hebrew-script locale.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-6">Example<a href="#example-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">isHebrewLocale</span><span class="hl-1">(</span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">);           </span><span class="hl-8">// true</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">isHebrewLocale</span><span class="hl-1">(</span><span class="hl-2">&#39;he-x-NoNikud&#39;</span><span class="hl-1">); </span><span class="hl-8">// true</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">isHebrewLocale</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">);           </span><span class="hl-8">// false</span>
+<h4 class="tsd-anchor-link" id="example-9">Example<a href="#example-9" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">isHebrewLocale</span><span class="hl-1">(</span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">);           </span><span class="hl-8">// true</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">isHebrewLocale</span><span class="hl-1">(</span><span class="hl-2">&#39;he-x-NoNikud&#39;</span><span class="hl-1">); </span><span class="hl-8">// true</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">isHebrewLocale</span><span class="hl-1">(</span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">);           </span><span class="hl-8">// false</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:118</li></ul></aside></div></li></ul></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:195</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="lookuptranslation"><code class="tsd-tag">Static</code><span>lookup<wbr/>Translation</span><a href="#lookuptranslation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -287,12 +331,12 @@ Otherwise, returns <code>undefined</code>.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-7">Example<a href="#example-7" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">lookupTranslation</span><span class="hl-1">(</span><span class="hl-2">&#39;Adar II&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;he-x-NoNikud&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;אדר ב׳&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">lookupTranslation</span><span class="hl-1">(</span><span class="hl-2">&#39;Foobar&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;he-x-NoNikud&#39;</span><span class="hl-1">);  </span><span class="hl-8">// undefined</span>
+<h4 class="tsd-anchor-link" id="example-10">Example<a href="#example-10" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">lookupTranslation</span><span class="hl-1">(</span><span class="hl-2">&#39;Adar II&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;he-x-NoNikud&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;אדר ב׳&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">lookupTranslation</span><span class="hl-1">(</span><span class="hl-2">&#39;Foobar&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;he-x-NoNikud&#39;</span><span class="hl-1">);  </span><span class="hl-8">// undefined</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:28</li></ul></aside></div></li></ul></section>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:78</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="ordinal"><code class="tsd-tag">Static</code><span>ordinal</span><a href="#ordinal" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -311,12 +355,12 @@ Otherwise, returns <code>undefined</code>.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-8">Example<a href="#example-8" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">ordinal</span><span class="hl-1">(</span><span class="hl-7">3</span><span class="hl-1">, </span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;3rd&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">ordinal</span><span class="hl-1">(</span><span class="hl-7">3</span><span class="hl-1">, </span><span class="hl-2">&#39;es&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;3º&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">ordinal</span><span class="hl-1">(</span><span class="hl-7">3</span><span class="hl-1">, </span><span class="hl-2">&#39;fr&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;3.&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">ordinal</span><span class="hl-1">(</span><span class="hl-7">3</span><span class="hl-1">, </span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;3&#39;</span>
+<h4 class="tsd-anchor-link" id="example-11">Example<a href="#example-11" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">ordinal</span><span class="hl-1">(</span><span class="hl-7">3</span><span class="hl-1">, </span><span class="hl-2">&#39;en&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;3rd&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">ordinal</span><span class="hl-1">(</span><span class="hl-7">3</span><span class="hl-1">, </span><span class="hl-2">&#39;es&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;3º&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">ordinal</span><span class="hl-1">(</span><span class="hl-7">3</span><span class="hl-1">, </span><span class="hl-2">&#39;fr&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;3.&#39;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">ordinal</span><span class="hl-1">(</span><span class="hl-7">3</span><span class="hl-1">, </span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;3&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:94</li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/locale.d.ts:159</li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

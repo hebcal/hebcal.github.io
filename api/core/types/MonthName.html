@@ -11,10 +11,19 @@
 <li><a href="" aria-current="page">MonthName</a></li></ul>
 <h1>Type Alias MonthName</h1></div>
 <div class="tsd-signature"><span class="tsd-kind-type-alias">MonthName</span><span class="tsd-signature-symbol">:</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Nisan&quot;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Iyyar&quot;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Sivan&quot;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Tamuz&quot;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Av&quot;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Elul&quot;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Tishrei&quot;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Cheshvan&quot;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Kislev&quot;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Tevet&quot;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Sh&#39;vat&quot;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Adar&quot;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Adar I&quot;</span><br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;Adar II&quot;</span></div>
-<div class="tsd-comment tsd-typography"><p>Transliterated Hebrew month names.</p>
-</div><aside class="tsd-sources">
+<div class="tsd-comment tsd-typography"><p>Transliterated Hebrew month names, as returned by
+<a href="https://hebcal.github.io/api/hdate/functions/getMonthName.html">getMonthName</a> and <a href="../classes/HDate.html#getmonthname-2" class="tsd-kind-method">HDate.getMonthName</a>.</p>
+<p>These strings double as the message IDs used for translation, so they
+can be passed straight to <a href="../classes/Locale.html#gettext" class="tsd-kind-method">Locale.gettext</a>.</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-example">
+<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">Locale</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/hdate&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">name</span><span class="hl-1">: </span><span class="hl-11">MonthName</span><span class="hl-1"> = </span><span class="hl-2">&#39;Cheshvan&#39;</span><span class="hl-1">;</span><br/><span class="hl-4">Locale</span><span class="hl-1">.</span><span class="hl-0">gettext</span><span class="hl-1">(</span><span class="hl-4">name</span><span class="hl-1">, </span><span class="hl-2">&#39;he&#39;</span><span class="hl-1">); </span><span class="hl-8">// &#39;חֶשְׁוָן&#39;</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:35</li></ul></aside></div>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/hdateBase.d.ts:57</li></ul></aside></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

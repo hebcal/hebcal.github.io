@@ -378,7 +378,7 @@ where it does not set, a null will be returned. See detailed explanation on top 
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>The getSunrise method Returns a <code>Date</code> representing the
 <a href="#getelevationadjustment" class="tsd-kind-method">elevation adjusted</a> sunrise time. The zenith used
-for the calculation uses GEOMETRIC_ZENITH geometric zenith of 90° plus
+for the calculation uses <a href="https://hebcal.github.io/api/noaa/classes/NOAACalculator.html">geometric zenith</a> of 90° plus
 <a href="#getelevationadjustment" class="tsd-kind-method">getElevationAdjustment</a>. This is adjusted
 to add approximately 50/60 of a degree to account for 34 archminutes of refraction
 and 16 archminutes for the sun's radius for a total of <a href="#adjustzenith" class="tsd-kind-method">90.83333°</a>.</p>
@@ -405,7 +405,7 @@ does not set, a null will be returned. See detailed explanation on top of the pa
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>A utility method that returns the time of an offset by degrees below or above the horizon of
 <a href="#getsunrise" class="tsd-kind-method">() sunrise</a>. Note that the degree offset is from the vertical, so for a calculation of 14°
-before sunrise, an offset of 14 + GEOMETRIC_ZENITH = 104 would have to be passed as a parameter.</p>
+before sunrise, an offset of 14 + <a href="https://hebcal.github.io/api/noaa/classes/NOAACalculator.html">GEOMETRIC_ZENITH</a> = 104 would have to be passed as a parameter.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -413,7 +413,7 @@ before sunrise, an offset of 14 + GEOMETRIC_ZENITH = 104 would have to be passed
 <li><span><span class="tsd-kind-parameter">offsetZenith</span>: <span class="tsd-signature-type">number</span></span>
 <div class="tsd-comment tsd-typography"><p>the degrees before <a href="#getsunrise" class="tsd-kind-method">getSunrise</a> to use in the calculation. For time after sunrise use
 negative numbers. Note that the degree offset is from the vertical, so for a calculation of 14°
-before sunrise, an offset of 14 + GEOMETRIC_ZENITH = 104 would have to be passed as a
+before sunrise, an offset of 14 + <a href="https://hebcal.github.io/api/noaa/classes/NOAACalculator.html">GEOMETRIC_ZENITH</a> = 104 would have to be passed as a
 parameter.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><p>The <code>Date</code> of the offset after (or before) <a href="#getsunrise" class="tsd-kind-method">getSunrise</a>. If the calculation
@@ -431,7 +431,7 @@ page.</p>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>The getSunset method Returns a <code>Date</code> representing the
 <a href="#getelevationadjustment" class="tsd-kind-method">elevation adjusted</a> sunset time. The zenith used for
-the calculation uses GEOMETRIC_ZENITH geometric zenith of 90° plus
+the calculation uses <a href="https://hebcal.github.io/api/noaa/classes/NOAACalculator.html">geometric zenith</a> of 90° plus
 <a href="#getelevationadjustment" class="tsd-kind-method">getElevationAdjustment</a>. This is adjusted
 to add approximately 50/60 of a degree to account for 34 archminutes of refraction
 and 16 archminutes for the sun's radius for a total of <a href="#adjustzenith" class="tsd-kind-method">90.83333°</a>.
@@ -461,7 +461,7 @@ does not set, a null will be returned. See detailed explanation on top of the pa
 <div class="tsd-signature tsd-anchor-link" id="getsunsetoffsetbydegrees-1"><span class="tsd-kind-call-signature">getSunsetOffsetByDegrees</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">offsetZenith</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span><a href="#getsunsetoffsetbydegrees-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>A utility method that returns the time of an offset by degrees below or above the horizon of <a href="#getsunset" class="tsd-kind-method">()</a>. Note that the degree offset is from the vertical, so for a calculation of 14° after sunset, an
-offset of 14 + GEOMETRIC_ZENITH = 104 would have to be passed as a parameter.</p>
+offset of 14 + <a href="https://hebcal.github.io/api/noaa/classes/NOAACalculator.html">GEOMETRIC_ZENITH</a> = 104 would have to be passed as a parameter.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -469,7 +469,7 @@ offset of 14 + GEOMETRIC_ZENITH = 104 would have to be passed as a parameter.</p
 <li><span><span class="tsd-kind-parameter">offsetZenith</span>: <span class="tsd-signature-type">number</span></span>
 <div class="tsd-comment tsd-typography"><p>the degrees after <a href="#getsunset" class="tsd-kind-method">getSunset</a> to use in the calculation. For time before sunset use negative
 numbers. Note that the degree offset is from the vertical, so for a calculation of 14° after
-sunset, an offset of 14 + GEOMETRIC_ZENITH = 104 would have to be passed as a parameter.</p>
+sunset, an offset of 14 + <a href="https://hebcal.github.io/api/noaa/classes/NOAACalculator.html">GEOMETRIC_ZENITH</a> = 104 would have to be passed as a parameter.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4><p>The <code>Date</code>of the offset after (or before) <a href="#getsunset" class="tsd-kind-method">getSunset</a>. If the calculation can't
 be computed such as in the Arctic Circle where there is at least one day a year where the sun does not

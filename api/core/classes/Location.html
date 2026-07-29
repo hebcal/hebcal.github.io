@@ -15,7 +15,7 @@
 havdalah, and zmanim calculations.</p>
 <p>Extends <a href="GeoLocation.html" class="tsd-kind-class">GeoLocation</a> from <code>@hebcal/noaa</code> with Jewish-calendar
 specific data: an Israel/Diaspora flag, ISO country code, and an optional
-geographic identifier. Also provides <a href="#lookup" class="tsd-kind-method">Location.lookup</a> for ~60
+geographic identifier. Also provides <a href="#lookup" class="tsd-kind-method">Location.lookup</a> for the 65
 built-in &quot;classic&quot; Hebcal cities.</p>
 </div>
 <div class="tsd-comment tsd-typography">
@@ -24,14 +24,14 @@ built-in &quot;classic&quot; Hebcal cities.</p>
 </code><button type="button">Copy</button></pre>
 
 </div></div></section>
-<section class="tsd-panel tsd-hierarchy" data-refl="511">
+<section class="tsd-panel tsd-hierarchy" data-refl="512">
 <h4>Hierarchy (<a href="../hierarchy.html#Location">View Summary</a>)</h4>
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><a href="GeoLocation.html" class="tsd-signature-type tsd-kind-class">GeoLocation</a>
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><span class="tsd-hierarchy-target">Location</span></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L109">src/location.ts:109</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L109">src/location.ts:109</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -121,20 +121,26 @@ built-in &quot;classic&quot; Hebcal cities.</p>
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">Location</a></h4><aside class="tsd-sources">
 <p>Overrides <a href="GeoLocation.html">GeoLocation</a>.<a href="GeoLocation.html#constructor">constructor</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L131">src/location.ts:131</a></li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L147">src/location.ts:147</a></li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="properties-1">Properties<a href="#properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="admin1"><code class="tsd-tag">Optional</code><span>admin1</span><a href="#admin1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">admin1</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources">
+<div class="tsd-signature"><span class="tsd-kind-property">admin1</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>First-level administrative division (e.g. a US state or a French
+region) as an abbreviation, such as <code>&quot;CA&quot;</code>. Not set by this package;
+populated by callers that hydrate a <code>Location</code> from a geo database.</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L113">src/location.ts:113</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L118">src/location.ts:118</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="asciiname"><code class="tsd-tag">Optional</code><span>asciiname</span><a href="#asciiname" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">asciiname</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources">
+<div class="tsd-signature"><span class="tsd-kind-property">asciiname</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>City name in plain ASCII, for sorting or URL generation. Not set by this package.</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L118">src/location.ts:118</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L134">src/location.ts:134</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-protected tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="elevation"><code class="tsd-tag">Protected</code><span>elevation</span><a href="#elevation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">elevation</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
@@ -143,9 +149,12 @@ built-in &quot;classic&quot; Hebcal cities.</p>
 <li>Defined in node_modules/@hebcal/noaa/dist/index.d.ts:33</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="geo"><code class="tsd-tag">Optional</code><span>geo</span><a href="#geo" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">geo</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">&quot;zip&quot;</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;geoname&quot;</span></div><aside class="tsd-sources">
+<div class="tsd-signature"><span class="tsd-kind-property">geo</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">&quot;zip&quot;</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">&quot;geoname&quot;</span></div>
+<div class="tsd-comment tsd-typography"><p>Which kind of lookup produced this location: <code>'zip'</code> for a US Zip Code
+or <code>'geoname'</code> for a GeoNames city. Not set by this package.</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L115">src/location.ts:115</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L128">src/location.ts:128</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-protected tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="latitude"><code class="tsd-tag">Protected</code><span>latitude</span><a href="#latitude" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">latitude</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
@@ -166,14 +175,19 @@ built-in &quot;classic&quot; Hebcal cities.</p>
 <li>Defined in node_modules/@hebcal/noaa/dist/index.d.ts:30</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="population"><code class="tsd-tag">Optional</code><span>population</span><a href="#population" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">population</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
+<div class="tsd-signature"><span class="tsd-kind-property">population</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>Approximate population of the city. Not set by this package.</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L117">src/location.ts:117</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L132">src/location.ts:132</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="statename"><code class="tsd-tag">Optional</code><span>state<wbr/>Name</span><a href="#statename" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">stateName</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources">
+<div class="tsd-signature"><span class="tsd-kind-property">stateName</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>Full name of the first-level administrative division, such as
+<code>&quot;California&quot;</code>. Not set by this package.</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L114">src/location.ts:114</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L123">src/location.ts:123</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-protected tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="timezoneid"><code class="tsd-tag">Protected</code><span>time<wbr/>Zone<wbr/>Id</span><a href="#timezoneid" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">timeZoneId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources">
@@ -182,9 +196,11 @@ built-in &quot;classic&quot; Hebcal cities.</p>
 <li>Defined in node_modules/@hebcal/noaa/dist/index.d.ts:32</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="zip"><code class="tsd-tag">Optional</code><span>zip</span><a href="#zip" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">zip</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources">
+<div class="tsd-signature"><span class="tsd-kind-property">zip</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>US Zip Code, such as <code>&quot;02912&quot;</code>. Not set by this package.</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L116">src/location.ts:116</a></li></ul></aside></section></section></details>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L130">src/location.ts:130</a></li></ul></aside></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -199,7 +215,7 @@ passed to the constructor, or <code>undefined</code> if none was provided.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L209">src/location.ts:209</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L239">src/location.ts:239</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="getelevation"><span>get<wbr/>Elevation</span><a href="#getelevation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -225,7 +241,7 @@ passed to the constructor, or <code>undefined</code> if none was provided.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">number</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L239">src/location.ts:239</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L269">src/location.ts:269</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getisrael"><span>get<wbr/>Israel</span><a href="#getisrael" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -237,7 +253,7 @@ and Torah-reading schedule), <code>false</code> for the Diaspora.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L166">src/location.ts:166</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L185">src/location.ts:185</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="getlatitude"><span>get<wbr/>Latitude</span><a href="#getlatitude" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -279,16 +295,18 @@ and Torah-reading schedule), <code>false</code> for the Diaspora.</p>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Returns the full descriptive location name passed to the constructor,
 or <code>null</code> if no name was provided.</p>
+<p>Note that the built-in classic cities are named by city alone, so
+<code>getName()</code> and <a href="#getshortname" class="tsd-kind-method">getShortName</a> return the same string for them.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Location</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;San Francisco&#39;</span><span class="hl-1">)?.</span><span class="hl-0">getName</span><span class="hl-1">(); </span><span class="hl-8">// &#39;San Francisco, California, USA&#39;</span>
+<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">loc</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Location</span><span class="hl-1">(</span><span class="hl-7">41.85003</span><span class="hl-1">, -</span><span class="hl-7">87.65005</span><span class="hl-1">, </span><span class="hl-5">false</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&#39;America/Chicago&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;Chicago, Illinois, USA&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;US&#39;</span><span class="hl-1">);</span><br/><span class="hl-4">loc</span><span class="hl-1">.</span><span class="hl-0">getName</span><span class="hl-1">(); </span><span class="hl-8">// &#39;Chicago, Illinois, USA&#39;</span><br/><span class="hl-4">Location</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;San Francisco&#39;</span><span class="hl-1">)?.</span><span class="hl-0">getName</span><span class="hl-1">(); </span><span class="hl-8">// &#39;San Francisco&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L176">src/location.ts:176</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L201">src/location.ts:201</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getshortname"><span>get<wbr/>Short<wbr/>Name</span><a href="#getshortname" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -297,18 +315,18 @@ or <code>null</code> if no name was provided.</p>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Returns the location name truncated at the first comma. Useful for
 compact display where only the city name is desired.</p>
-<p>Special-cased so that US locations of the form <code>&quot;Washington, DC&quot;</code> or
+<p>Special-cased so that US locations of the form <code>&quot;Washington, DC ...&quot;</code> or
 <code>&quot;Washington, D.C., ...&quot;</code> keep the <code>DC</code> / <code>D.C.</code> suffix attached.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">null</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-2">Example<a href="#example-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-4">Location</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;San Francisco&#39;</span><span class="hl-1">)?.</span><span class="hl-0">getShortName</span><span class="hl-1">(); </span><span class="hl-8">// &#39;San Francisco&#39;</span><br/><span class="hl-4">Location</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;Washington DC&#39;</span><span class="hl-1">)?.</span><span class="hl-0">getShortName</span><span class="hl-1">(); </span><span class="hl-8">// &#39;Washington, DC&#39;</span>
+<h4 class="tsd-anchor-link" id="example-2">Example<a href="#example-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">chi</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Location</span><span class="hl-1">(</span><span class="hl-7">41.85003</span><span class="hl-1">, -</span><span class="hl-7">87.65005</span><span class="hl-1">, </span><span class="hl-5">false</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&#39;America/Chicago&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;Chicago, Illinois, USA&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;US&#39;</span><span class="hl-1">);</span><br/><span class="hl-4">chi</span><span class="hl-1">.</span><span class="hl-0">getShortName</span><span class="hl-1">(); </span><span class="hl-8">// &#39;Chicago&#39;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">dc</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Location</span><span class="hl-1">(</span><span class="hl-7">38.89511</span><span class="hl-1">, -</span><span class="hl-7">77.03637</span><span class="hl-1">, </span><span class="hl-5">false</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&#39;America/New_York&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;Washington, D.C., USA&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;US&#39;</span><span class="hl-1">);</span><br/><span class="hl-4">dc</span><span class="hl-1">.</span><span class="hl-0">getShortName</span><span class="hl-1">(); </span><span class="hl-8">// &#39;Washington, D.C.&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L190">src/location.ts:190</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L219">src/location.ts:219</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="gettimeformatter"><span>get<wbr/>Time<wbr/>Formatter</span><a href="#gettimeformatter" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -327,7 +345,7 @@ timezone so repeated calls do not allocate.</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L230">src/location.ts:230</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L260">src/location.ts:260</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="gettimezone"><span>get<wbr/>Time<wbr/>Zone</span><a href="#gettimezone" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -350,7 +368,7 @@ Alias for <code>getTimeZone()</code> from the parent <code>GeoLocation</code> cl
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L217">src/location.ts:217</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L247">src/location.ts:247</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external">
 <h3 class="tsd-anchor-link" id="setelevation"><span>set<wbr/>Elevation</span><a href="#setelevation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited tsd-is-external">
@@ -442,7 +460,7 @@ Useful for debugging and structured logging.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L278">src/location.ts:278</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L308">src/location.ts:308</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="addlocation"><code class="tsd-tag">Static</code><span>add<wbr/>Location</span><a href="#addlocation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -453,23 +471,27 @@ Useful for debugging and structured logging.</p>
 registry. Names are stored case-insensitively. Returns <code>false</code> if a
 location with the same (lower-cased) name is already registered, and
 <code>true</code> if successfully added.</p>
-<p>Use this to extend the built-in set of ~60 classic Hebcal cities with
+<p>Use this to extend the built-in set of 65 classic Hebcal cities with
 your own custom locations.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">cityName</span>: <span class="tsd-signature-type">string</span></span></li>
-<li><span><span class="tsd-kind-parameter">location</span>: <a href="" class="tsd-signature-type tsd-kind-class">Location</a></span></li></ul></div>
+<li><span><span class="tsd-kind-parameter">cityName</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>name to register the location under (case insensitive)</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">location</span>: <a href="" class="tsd-signature-type tsd-kind-class">Location</a></span>
+<div class="tsd-comment tsd-typography"><p>the <code>Location</code> instance to register</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example-4">Example<a href="#example-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">tlv</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Location</span><span class="hl-1">(</span><span class="hl-7">32.0853</span><span class="hl-1">, </span><span class="hl-7">34.7818</span><span class="hl-1">, </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&#39;Asia/Tel_Aviv&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;My Office, Tel Aviv&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;IL&#39;</span><span class="hl-1">);</span><br/><span class="hl-4">Location</span><span class="hl-1">.</span><span class="hl-0">addLocation</span><span class="hl-1">(</span><span class="hl-2">&#39;My Office&#39;</span><span class="hl-1">, </span><span class="hl-4">tlv</span><span class="hl-1">);   </span><span class="hl-8">// true</span><br/><span class="hl-4">Location</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;my office&#39;</span><span class="hl-1">)?.</span><span class="hl-0">getTzid</span><span class="hl-1">();  </span><span class="hl-8">// &#39;Asia/Tel_Aviv&#39;</span>
+<h4 class="tsd-anchor-link" id="example-4">Example<a href="#example-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">tlv</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Location</span><span class="hl-1">(</span><span class="hl-7">32.0853</span><span class="hl-1">, </span><span class="hl-7">34.7818</span><span class="hl-1">, </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&#39;Asia/Jerusalem&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;My Office, Tel Aviv&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;IL&#39;</span><span class="hl-1">);</span><br/><span class="hl-4">Location</span><span class="hl-1">.</span><span class="hl-0">addLocation</span><span class="hl-1">(</span><span class="hl-2">&#39;My Office&#39;</span><span class="hl-1">, </span><span class="hl-4">tlv</span><span class="hl-1">);   </span><span class="hl-8">// true</span><br/><span class="hl-4">Location</span><span class="hl-1">.</span><span class="hl-0">lookup</span><span class="hl-1">(</span><span class="hl-2">&#39;my office&#39;</span><span class="hl-1">)?.</span><span class="hl-0">getTzid</span><span class="hl-1">();  </span><span class="hl-8">// &#39;Asia/Jerusalem&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L361">src/location.ts:361</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L395">src/location.ts:395</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getusatzid"><code class="tsd-tag">Static</code><span>get<wbr/>Usa<wbr/>Tzid</span><a href="#getusatzid" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -498,7 +520,7 @@ your own custom locations.</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L336">src/location.ts:336</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L368">src/location.ts:368</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="legacytztotzid"><code class="tsd-tag">Static</code><span>legacy<wbr/>Tz<wbr/>To<wbr/>Tzid</span><a href="#legacytztotzid" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -527,14 +549,14 @@ timezones as GMT offset + DST scheme rather than as a full tzid.</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L296">src/location.ts:296</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L326">src/location.ts:326</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="lookup"><code class="tsd-tag">Static</code><span>lookup</span><a href="#lookup" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="lookup-1"><span class="tsd-kind-call-signature">lookup</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">name</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type tsd-kind-class">Location</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span><a href="#lookup-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Creates a location object from one of 60 &quot;classic&quot; Hebcal city names.
+<div class="tsd-comment tsd-typography"><p>Creates a location object from one of 65 &quot;classic&quot; Hebcal city names.
 The following city names are supported:
 'Ashdod', 'Atlanta', 'Austin', 'Baghdad', 'Beer Sheva',
 'Berlin', 'Baltimore', 'Bogota', 'Boston', 'Budapest',
@@ -566,7 +588,7 @@ recognized. The list can be extended with <a href="#addlocation" class="tsd-kind
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/076de1b9b55753ff2f51e067c88db87da452b0dd/src/location.ts#L267">src/location.ts:267</a></li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/e47aa8d6a3deed4ed603f699e01ad32a277cd5be/src/location.ts#L297">src/location.ts:297</a></li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
