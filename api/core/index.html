@@ -127,12 +127,20 @@ and 72 are typical). Set to <code>0</code> to suppress Havdalah times.</li>
 </ul>
 <p><strong>Minor fasts</strong> begin at Alot HaShachar (16.1° in the morning). They end at 7.083°
 in the Diaspora, or 15 minutes after sunset in Israel (Rabbi Deblitzky's practice).
-Override with <code>options.fastEndDeg</code> or <code>options.fastEndMins</code> — again mutually
-exclusive. When a minor fast falls on a Friday, the end time is suppressed, because
+Each end has a pair of mutually exclusive overrides:</p>
+<ul>
+<li><code>options.fastStartDeg</code> — a different solar depression angle for the start, or
+<code>options.fastStartMins</code> — a fixed number of minutes before sunrise (72 and 90
+are typical).</li>
+<li><code>options.fastEndDeg</code> — a different solar depression angle for the end, or
+<code>options.fastEndMins</code> — a fixed number of minutes after sunset.</li>
+</ul>
+<p>When a minor fast falls on a Friday, the end time is suppressed, because
 Shabbat begins before nightfall.</p>
-<p><strong>Tish'a B'Av</strong> does not follow those rules: it begins at sunset the previous day and
-always ends at 6.45° (Rabbi Yechiel Michel Tucazinsky), ignoring <code>fastEndDeg</code> and
-<code>fastEndMins</code>.</p>
+<p><strong>Tish'a B'Av</strong> does not follow those rules: it always begins at sunset the
+previous day, and by default ends at 6.45° (Rabbi Yechiel Michel Tucazinsky),
+ignoring the minor fast options. Override its end with <code>options.tishaBavEndDeg</code> or
+<code>options.tishaBavEndMins</code> (mutually exclusive).</p>
 <p><strong>Chanukah</strong> candle-lighting, also generated when <code>candlelighting</code> and <code>location</code>
 are set, is at Bein HaShmashos (13.5 minutes before 7.083°) on weekdays, regular
 candle-lighting time on Friday, and regular Havdalah time on Saturday night.</p>

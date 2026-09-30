@@ -95,13 +95,22 @@ They end when 3 medium-sized stars are observable in the night sky (sun is 7.083
 below the horizon in the evening) in the Diaspora, or 15 minutes after sunset in
 Israel (Rabbi Deblitzky's practice). Override with:</p>
 <ul>
+<li><code>options.fastStartDeg</code> - degrees of solar depression for the start of a minor fast</li>
+<li><code>options.fastStartMins</code> - minutes before sunrise for the start of a minor fast
+(mutually exclusive with <code>options.fastStartDeg</code>)</li>
 <li><code>options.fastEndDeg</code> - degrees of solar depression for the end of a minor fast</li>
 <li><code>options.fastEndMins</code> - minutes after sunset for the end of a minor fast
 (mutually exclusive with <code>options.fastEndDeg</code>)</li>
 </ul>
-<p>Tish'a B'Av is different: it begins at sunset on the previous day and always ends
-at tzeit 6.45° (Rabbi Yechiel Michel Tucazinsky), ignoring <code>options.fastEndDeg</code>
-and <code>options.fastEndMins</code>. When a minor fast falls on a Friday the end time is
+<p>Tish'a B'Av is different: it always begins at sunset on the previous day, and
+by default ends at tzeit 6.45° (Rabbi Yechiel Michel Tucazinsky), ignoring the
+minor fast options above. Override its end with:</p>
+<ul>
+<li><code>options.tishaBavEndDeg</code> - degrees of solar depression for the end of Tish'a B'Av</li>
+<li><code>options.tishaBavEndMins</code> - minutes after sunset for the end of Tish'a B'Av
+(mutually exclusive with <code>options.tishaBavEndDeg</code>)</li>
+</ul>
+<p>When a minor fast falls on a Friday the end time is
 suppressed, because Shabbat begins before nightfall.</p>
 <p>Two options also exist for generating an Event with the Hebrew date:</p>
 <ul>
@@ -131,7 +140,7 @@ suppressed, because Shabbat begins before nightfall.</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ab31798ae55e26784223e93c97e2d5879209bfa9/src/calendar.ts#L144">src/calendar.ts:144</a></li></ul></aside></div></li></ul></section></div>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/c50d69553ee7a0692f6957f6659fede716f4dc2b/src/calendar.ts#L152">src/calendar.ts:152</a></li></ul></aside></div></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
