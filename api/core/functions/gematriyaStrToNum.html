@@ -16,9 +16,11 @@
 <div class="tsd-signature tsd-anchor-link" id="gematriyastrtonum"><span class="tsd-kind-call-signature">gematriyaStrToNum</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">str</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><a href="#gematriyastrtonum" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Converts a string of Hebrew letters to a numerical value.</p>
-<p>Only considers the value of Hebrew letters <code>א</code> through <code>ת</code>.
-Ignores final Hebrew letters such as <code>ך</code> (kaf sofit) or <code>ם</code> (mem sofit)
-and vowels (nekudot).</p>
+<p>Considers the value of Hebrew letters <code>א</code> through <code>ת</code>, and the five final
+(sofit) forms <code>ך</code>, <code>ם</code>, <code>ן</code>, <code>ף</code>, <code>ץ</code>, which count as their base letters
+(20, 40, 50, 80, 90). This matches how Hebrew years are written — e.g.
+<code>תש״ף</code> is 780 — since the last letter of a year falls in final form.
+Vowels (nekudot) are ignored.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -27,12 +29,12 @@ and vowels (nekudot).</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-example">
-<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-0">gematriyaStrToNum</span><span class="hl-1">(</span><span class="hl-2">&#39;תשע״ד&#39;</span><span class="hl-1">);   </span><span class="hl-8">// 774</span><br/><span class="hl-0">gematriyaStrToNum</span><span class="hl-1">(</span><span class="hl-2">&#39;ט״ו&#39;</span><span class="hl-1">);     </span><span class="hl-8">// 15</span><br/><span class="hl-0">gematriyaStrToNum</span><span class="hl-1">(</span><span class="hl-2">&#39;ג׳תשס״א&#39;</span><span class="hl-1">); </span><span class="hl-8">// 3761 (thousands prefix)</span>
+<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-0">gematriyaStrToNum</span><span class="hl-1">(</span><span class="hl-2">&#39;תשע״ד&#39;</span><span class="hl-1">);   </span><span class="hl-8">// 774</span><br/><span class="hl-0">gematriyaStrToNum</span><span class="hl-1">(</span><span class="hl-2">&#39;תש״ף&#39;</span><span class="hl-1">);    </span><span class="hl-8">// 780 (final pe)</span><br/><span class="hl-0">gematriyaStrToNum</span><span class="hl-1">(</span><span class="hl-2">&#39;ט״ו&#39;</span><span class="hl-1">);     </span><span class="hl-8">// 15</span><br/><span class="hl-0">gematriyaStrToNum</span><span class="hl-1">(</span><span class="hl-2">&#39;ג׳תשס״א&#39;</span><span class="hl-1">); </span><span class="hl-8">// 3761 (thousands prefix)</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in node_modules/@hebcal/hdate/dist/esm/gematriya.d.ts:25</li></ul></aside></div></li></ul></section></div>
+<li>Defined in node_modules/@hebcal/hdate/dist/esm/gematriya.d.ts:28</li></ul></aside></div></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

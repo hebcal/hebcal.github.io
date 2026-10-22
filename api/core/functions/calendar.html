@@ -51,6 +51,9 @@ Set <code>options.il=true</code> to use the Israeli schedule.</p>
 <li>Yom Kippur Katan (<code>options.yomKippurKatan</code>)</li>
 <li>BeHaB fast days after Pesach and Sukkot (<code>options.behab</code>)</li>
 <li>Yizkor (<code>options.yizkor</code>)</li>
+<li>Latest time for Kiddush Levana, according to the Maharil
+(<code>options.kiddushLevanaMaharil</code>, requires <code>options.location</code>;
+see <a href="../classes/KiddushLevanaEvent.html" class="tsd-kind-class">KiddushLevanaEvent</a>)</li>
 </ul>
 <p>Daily Study of texts are supported by the
 <a href="https://github.com/hebcal/hebcal-learning">@hebcal/learning</a> package,
@@ -117,6 +120,15 @@ suppressed, because Shabbat begins before nightfall.</p>
 <li><code>options.addHebrewDates</code> - print the Hebrew date for the entire date range</li>
 <li><code>options.addHebrewDatesForEvents</code> - print the Hebrew date for dates with some events</li>
 </ul>
+<p>Events are returned in date order. Events on the same date are ordered by
+approximate time of day: timed events before dawn (Fast begins, an early
+Latest Kiddush Levana), then the parsha, special Shabbatot and minor fasts,
+then the Molad and Shabbat Mevarchim, then other holidays, Yizkor and the
+Omer, then the chametz deadlines on Erev Pesach, then daily learning, then
+evening holidays (Erev holidays, Chanukah), and finally the remaining timed
+events (candle-lighting, Havdalah, Fast ends) in order of time. When
+<code>options.addHebrewDates</code> or <code>options.addHebrewDatesForEvents</code> adds a Hebrew
+date event, it comes first.</p>
 <p>Lastly, translation and transliteration of event titles is controlled by
 <code>options.locale</code> and the <a href="../classes/Locale.html" class="tsd-kind-class">Locale</a> API.
 <code>@hebcal/core</code> supports three locales by default:</p>
@@ -140,7 +152,7 @@ suppressed, because Shabbat begins before nightfall.</p>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/c50d69553ee7a0692f6957f6659fede716f4dc2b/src/calendar.ts#L152">src/calendar.ts:152</a></li></ul></aside></div></li></ul></section></div>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/calendar.ts#L167">src/calendar.ts:167</a></li></ul></aside></div></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

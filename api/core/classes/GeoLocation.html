@@ -21,7 +21,7 @@ elevation field may not be used by some calculation engines and would be ignored
 <div class="tsd-tag-version">
 <h4 class="tsd-anchor-link" id="version">Version<a href="#version" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>1.1</p>
 </div></div></section>
-<section class="tsd-panel tsd-hierarchy" data-refl="380">
+<section class="tsd-panel tsd-hierarchy" data-refl="383">
 <h4>Hierarchy (<a href="../hierarchy.html#GeoLocation">View Summary</a>)</h4>
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><span class="tsd-hierarchy-target">GeoLocation</span>
@@ -48,8 +48,10 @@ elevation field may not be used by some calculation engines and would be ignored
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-index-list"><a href="#getelevation" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Elevation</span></a>
+<div class="tsd-index-list"><a href="#getantimeridianadjustment" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Antimeridian<wbr/>Adjustment</span></a>
+<a href="#getelevation" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Elevation</span></a>
 <a href="#getlatitude" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Latitude</span></a>
+<a href="#getlocalmeantimeoffset" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Local<wbr/>Mean<wbr/>Time<wbr/>Offset</span></a>
 <a href="#getlocationname" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Location<wbr/>Name</span></a>
 <a href="#getlongitude" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Longitude</span></a>
 <a href="#gettimezone" class="tsd-index-link tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Time<wbr/>Zone</span></a>
@@ -127,6 +129,34 @@ sunrise and set.</p>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
 <section class="tsd-panel tsd-member tsd-is-external">
+<h3 class="tsd-anchor-link" id="getantimeridianadjustment"><span>get<wbr/>Antimeridian<wbr/>Adjustment</span><a href="#getantimeridianadjustment" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-external">
+<li class="tsd-is-external">
+<div class="tsd-signature tsd-anchor-link" id="getantimeridianadjustment-1"><span class="tsd-kind-call-signature">getAntimeridianAdjustment</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">date</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PlainDate</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><a href="#getantimeridianadjustment-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Adjust the date for <a href="https://en.wikipedia.org/wiki/180th_meridian">antimeridian</a> crossover. This is
+needed to deal with edge cases such as Samoa that use a different calendar date than expected based on their
+geographic location.</p>
+<p>The actual Time Zone offset may deviate from the expected offset based on the longitude. Since the 'absolute time'
+calculations are always based on longitudinal offset from UTC for a given date, the date is presumed to only
+increase East of the Prime Meridian, and to only decrease West of it. For Time Zones that cross the antimeridian,
+the date will be artificially adjusted before calculation to conform with this presumption.</p>
+<p>For example, Apia, Samoa with a longitude of -171.75 uses a local offset of +14:00. When calculating sunrise for
+2018-02-03, the calculator should operate using 2018-02-02 since the expected zone is -11. After determining the
+UTC time, the local DST offset of <a href="https://en.wikipedia.org/wiki/UTC%2B14:00">UTC+14:00</a> should be applied
+to bring the date back to 2018-02-03.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">date</span>: <span class="tsd-signature-type">PlainDate</span></span>
+<div class="tsd-comment tsd-typography"><p>the date, at the start of which (in this location's time zone) the offset is read</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>the number of days to adjust the date This will typically be 0 unless the date crosses the antimeridian</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in node_modules/@hebcal/noaa/dist/index.d.ts:106</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="getelevation"><span>get<wbr/>Elevation</span><a href="#getelevation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
 <li class="tsd-is-external">
@@ -148,6 +178,31 @@ sunrise and set.</p>
 <aside class="tsd-sources">
 <ul>
 <li>Defined in node_modules/@hebcal/noaa/dist/index.d.ts:51</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member tsd-is-external">
+<h3 class="tsd-anchor-link" id="getlocalmeantimeoffset"><span>get<wbr/>Local<wbr/>Mean<wbr/>Time<wbr/>Offset</span><a href="#getlocalmeantimeoffset" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-external">
+<li class="tsd-is-external">
+<div class="tsd-signature tsd-anchor-link" id="getlocalmeantimeoffset-1"><span class="tsd-kind-call-signature">getLocalMeanTimeOffset</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">instant</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Instant</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><a href="#getlocalmeantimeoffset-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>A method that will return the location's local mean time offset in milliseconds from local
+<a href="https://en.wikipedia.org/wiki/Standard_time">standard time</a>. The globe is split into 360°, with
+15° per hour of the day. For a local that is at a longitude that is evenly divisible by 15
+(longitude % 15 == 0), at solar noon (with adjustment for the
+<a href="https://en.wikipedia.org/wiki/Equation_of_time">equation of time</a>) the sun should be directly overhead,
+so a user who is 1° west of this will have noon at 4 minutes after standard time noon, and conversely,
+a user who is 1° east of the 15° longitude will have noon at 11:56 AM.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">instant</span>: <span class="tsd-signature-type">Instant</span></span>
+<div class="tsd-comment tsd-typography"><p>the instant at which to read the time zone offset (DST is taken into account)</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>the offset in milliseconds not accounting for Daylight saving time. A positive value will be returned
+East of the 15° timezone line, and a negative value West of it.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in node_modules/@hebcal/noaa/dist/index.d.ts:88</li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-external">
 <h3 class="tsd-anchor-link" id="getlocationname"><span>get<wbr/>Location<wbr/>Name</span><a href="#getlocationname" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-external">
@@ -273,7 +328,7 @@ sunrise and set.</p>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
 <div><a href="#elevation" class="tsd-is-protected tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>elevation</span></a><a href="#latitude" class="tsd-is-protected tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>latitude</span></a><a href="#locationname" class="tsd-is-protected tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>location<wbr/>Name</span></a><a href="#longitude" class="tsd-is-protected tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>longitude</span></a><a href="#timezoneid" class="tsd-is-protected tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>time<wbr/>Zone<wbr/>Id</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#getelevation" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Elevation</span></a><a href="#getlatitude" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Latitude</span></a><a href="#getlocationname" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Location<wbr/>Name</span></a><a href="#getlongitude" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Longitude</span></a><a href="#gettimezone" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Time<wbr/>Zone</span></a><a href="#setelevation" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Elevation</span></a><a href="#setlatitude" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Latitude</span></a><a href="#setlocationname" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Location<wbr/>Name</span></a><a href="#setlongitude" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Longitude</span></a><a href="#settimezone" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Time<wbr/>Zone</span></a></div></details></div></details></div>
+<div><a href="#getantimeridianadjustment" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Antimeridian<wbr/>Adjustment</span></a><a href="#getelevation" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Elevation</span></a><a href="#getlatitude" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Latitude</span></a><a href="#getlocalmeantimeoffset" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Local<wbr/>Mean<wbr/>Time<wbr/>Offset</span></a><a href="#getlocationname" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Location<wbr/>Name</span></a><a href="#getlongitude" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Longitude</span></a><a href="#gettimezone" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Time<wbr/>Zone</span></a><a href="#setelevation" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Elevation</span></a><a href="#setlatitude" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Latitude</span></a><a href="#setlocationname" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Location<wbr/>Name</span></a><a href="#setlongitude" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Longitude</span></a><a href="#settimezone" class="tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Time<wbr/>Zone</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../modules.html">@hebcal/core</a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container">
