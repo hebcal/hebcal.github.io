@@ -25,8 +25,8 @@ end of the last night on which Kiddush Levana can be said.</li>
 regular candle-lighting time before that Shabbat or Yom Tov.</li>
 <li>The time is rounded down to the minute, never up.</li>
 </ul>
-<p>The <a href="Event.html#memo" class="tsd-kind-property">memo</a> lists the unadjusted earliest (3 and 7 days after the
-<em>molad</em>) and latest (Maharil and 15 days after the <em>molad</em>) times.</p>
+<p>The <a href="#molad" class="tsd-kind-property">molad</a> property gives access to the unadjusted earliest and
+latest times, e.g. <a href="Molad.html#gettchilaszmankidushlevana3days" class="tsd-kind-method">Molad.getTchilasZmanKidushLevana3Days</a>.</p>
 </div></section>
 <section class="tsd-panel tsd-hierarchy" data-refl="1231">
 <h4>Hierarchy (<a href="../hierarchy.html#KiddushLevanaEvent">View Summary</a>)</h4>
@@ -35,7 +35,7 @@ regular candle-lighting time before that Shabbat or Yom Tov.</li>
 <ul class="tsd-hierarchy">
 <li class="tsd-hierarchy-item"><span class="tsd-hierarchy-target">KiddushLevanaEvent</span></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/KiddushLevanaEvent.ts#L33">src/KiddushLevanaEvent.ts:33</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/KiddushLevanaEvent.ts#L40">src/KiddushLevanaEvent.ts:40</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -47,7 +47,8 @@ regular candle-lighting time before that Shabbat or Yom Tov.</li>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="properties">Properties<a href="#properties" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-index-list"><a href="#alarm" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>alarm?</span></a>
+<div class="tsd-index-list"><a href="#adjustedto" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>adjusted<wbr/>To?</span></a>
+<a href="#alarm" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>alarm?</span></a>
 <a href="#date" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>date</span></a>
 <a href="#desc" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>desc</span></a>
 <a href="#duration" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>duration?</span></a>
@@ -87,7 +88,7 @@ regular candle-lighting time before that Shabbat or Yom Tov.</li>
 <h3 class="tsd-anchor-link" id="constructor"><span>constructor</span><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
-<div class="tsd-signature tsd-anchor-link" id="constructorkiddushlevanaevent"><span class="tsd-signature-keyword">new</span> <span class="tsd-kind-constructor-signature">KiddushLevanaEvent</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">date</span><span class="tsd-signature-symbol">:</span> <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">eventTime</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">location</span><span class="tsd-signature-symbol">:</span> <a href="Location.html" class="tsd-signature-type tsd-kind-class">Location</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">molad</span><span class="tsd-signature-symbol">:</span> <a href="Molad.html" class="tsd-signature-type tsd-kind-class">Molad</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">?:</span> <a href="../types/CalOptions.html" class="tsd-signature-type tsd-kind-type-alias">CalOptions</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type tsd-kind-class">KiddushLevanaEvent</a><a href="#constructorkiddushlevanaevent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-signature tsd-anchor-link" id="constructorkiddushlevanaevent"><span class="tsd-signature-keyword">new</span> <span class="tsd-kind-constructor-signature">KiddushLevanaEvent</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">date</span><span class="tsd-signature-symbol">:</span> <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">eventTime</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">location</span><span class="tsd-signature-symbol">:</span> <a href="Location.html" class="tsd-signature-type tsd-kind-class">Location</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">molad</span><span class="tsd-signature-symbol">:</span> <a href="Molad.html" class="tsd-signature-type tsd-kind-class">Molad</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">?:</span> <a href="../types/CalOptions.html" class="tsd-signature-type tsd-kind-type-alias">CalOptions</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">adjustedTo</span><span class="tsd-signature-symbol">?:</span> <a href="../types/KiddushLevanaAdjustment.html" class="tsd-signature-type tsd-kind-type-alias">KiddushLevanaAdjustment</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type tsd-kind-class">KiddushLevanaEvent</a><a href="#constructorkiddushlevanaevent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Normally created by <a href="../functions/calendar.html" class="tsd-kind-function">calendar</a> rather than directly.</p>
 </div>
@@ -108,14 +109,26 @@ regular candle-lighting time before that Shabbat or Yom Tov.</li>
 </div></li>
 <li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">options</span>: <a href="../types/CalOptions.html" class="tsd-signature-type tsd-kind-type-alias">CalOptions</a></span>
 <div class="tsd-comment tsd-typography"><p>optional; <code>locale</code> and <code>hour12</code> affect the formatted times</p>
+</div></li>
+<li><span><code class="tsd-tag">Optional</code><span class="tsd-kind-parameter">adjustedTo</span>: <a href="../types/KiddushLevanaAdjustment.html" class="tsd-signature-type tsd-kind-type-alias">KiddushLevanaAdjustment</a></span>
+<div class="tsd-comment tsd-typography"><p>optional; why <code>eventTime</code> was moved earlier</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">KiddushLevanaEvent</a></h4><aside class="tsd-sources">
 <p>Overrides <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#constructor">constructor</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/KiddushLevanaEvent.ts#L44">src/KiddushLevanaEvent.ts:44</a></li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/KiddushLevanaEvent.ts#L58">src/KiddushLevanaEvent.ts:58</a></li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="properties-1">Properties<a href="#properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="adjustedto"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>adjusted<wbr/>To</span><a href="#adjustedto" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">adjustedTo</span><span class="tsd-signature-symbol">?:</span> <a href="../types/KiddushLevanaAdjustment.html" class="tsd-signature-type tsd-kind-type-alias">KiddushLevanaAdjustment</a></div>
+<div class="tsd-comment tsd-typography"><p>Why the event time was moved earlier than the Maharil's time,
+or <code>undefined</code> if it was not adjusted (apart from rounding down
+to the minute).</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/KiddushLevanaEvent.ts#L48">src/KiddushLevanaEvent.ts:48</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="alarm"><code class="tsd-tag">Optional</code><span>alarm</span><a href="#alarm" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">alarm</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">boolean</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">Date</span></div>
@@ -123,7 +136,7 @@ regular candle-lighting time before that Shabbat or Yom Tov.</li>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#alarm">alarm</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L139">src/event.ts:139</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L139">src/event.ts:139</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="date"><code class="tsd-tag">Readonly</code><span>date</span><a href="#date" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">date</span><span class="tsd-signature-symbol">:</span> <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a></div>
@@ -131,7 +144,7 @@ regular candle-lighting time before that Shabbat or Yom Tov.</li>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#date">date</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L124">src/event.ts:124</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L124">src/event.ts:124</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="desc"><code class="tsd-tag">Readonly</code><span>desc</span><a href="#desc" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">desc</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -142,7 +155,7 @@ To get the title of the event in another language, use the
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#desc">desc</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L131">src/event.ts:131</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L131">src/event.ts:131</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="duration"><code class="tsd-tag">Optional</code><span>duration</span><a href="#duration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">duration</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
@@ -154,7 +167,7 @@ duration was specified.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#duration">duration</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/TimedEvent.ts#L40">src/TimedEvent.ts:40</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/TimedEvent.ts#L40">src/TimedEvent.ts:40</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="emoji"><code class="tsd-tag">Optional</code><span>emoji</span><a href="#emoji" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">emoji</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -162,7 +175,7 @@ duration was specified.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#emoji">emoji</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L135">src/event.ts:135</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L135">src/event.ts:135</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="eventtime"><code class="tsd-tag">Readonly</code><span>event<wbr/>Time</span><a href="#eventtime" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">eventTime</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
@@ -170,7 +183,7 @@ duration was specified.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#eventtime">eventTime</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/TimedEvent.ts#L24">src/TimedEvent.ts:24</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/TimedEvent.ts#L24">src/TimedEvent.ts:24</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="eventtimestr"><code class="tsd-tag">Readonly</code><span>event<wbr/>Time<wbr/>Str</span><a href="#eventtimestr" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">eventTimeStr</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -178,7 +191,7 @@ duration was specified.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#eventtimestr">eventTimeStr</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/TimedEvent.ts#L28">src/TimedEvent.ts:28</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/TimedEvent.ts#L28">src/TimedEvent.ts:28</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="fmttime"><code class="tsd-tag">Readonly</code><span>fmt<wbr/>Time</span><a href="#fmttime" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">fmtTime</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -186,7 +199,7 @@ duration was specified.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#fmttime">fmtTime</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/TimedEvent.ts#L30">src/TimedEvent.ts:30</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/TimedEvent.ts#L30">src/TimedEvent.ts:30</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="linkedevent"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>linked<wbr/>Event</span><a href="#linkedevent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">linkedEvent</span><span class="tsd-signature-symbol">?:</span> <a href="Event.html" class="tsd-signature-type tsd-kind-class">Event</a></div>
@@ -194,7 +207,7 @@ duration was specified.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#linkedevent">linkedEvent</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/TimedEvent.ts#L32">src/TimedEvent.ts:32</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/TimedEvent.ts#L32">src/TimedEvent.ts:32</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="location"><code class="tsd-tag">Readonly</code><span>location</span><a href="#location" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">location</span><span class="tsd-signature-symbol">:</span> <a href="Location.html" class="tsd-signature-type tsd-kind-class">Location</a></div>
@@ -202,7 +215,7 @@ duration was specified.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#location">location</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/TimedEvent.ts#L26">src/TimedEvent.ts:26</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/TimedEvent.ts#L26">src/TimedEvent.ts:26</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="mask"><code class="tsd-tag">Readonly</code><span>mask</span><a href="#mask" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">mask</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
@@ -210,7 +223,7 @@ duration was specified.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#mask">mask</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L133">src/event.ts:133</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L133">src/event.ts:133</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="memo"><code class="tsd-tag">Optional</code><span>memo</span><a href="#memo" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">memo</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -218,14 +231,14 @@ duration was specified.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#memo">memo</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L137">src/event.ts:137</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L137">src/event.ts:137</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="molad"><code class="tsd-tag">Readonly</code><span>molad</span><a href="#molad" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">molad</span><span class="tsd-signature-symbol">:</span> <a href="Molad.html" class="tsd-signature-type tsd-kind-class">Molad</a></div>
 <div class="tsd-comment tsd-typography"><p>The molad of the month this event belongs to</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/KiddushLevanaEvent.ts#L35">src/KiddushLevanaEvent.ts:35</a></li></ul></aside></section></section></details>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/KiddushLevanaEvent.ts#L42">src/KiddushLevanaEvent.ts:42</a></li></ul></aside></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -250,7 +263,7 @@ For many events the basename and the event description are identical.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#basename">basename</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L291">src/event.ts:291</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L291">src/event.ts:291</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="flagnames"><span>flag<wbr/>Names</span><a href="#flagnames" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -269,7 +282,7 @@ Returns an empty array for an event with no flags.</p>
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#flagnames">flagNames</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L237">src/event.ts:237</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L237">src/event.ts:237</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getcategories"><span>get<wbr/>Categories</span><a href="#getcategories" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -291,7 +304,7 @@ by zero or more refinements (e.g. <code>'major'</code>, <code>'minor'</code>, <c
 </div></div><aside class="tsd-sources">
 <p>Overrides <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#getcategories">getCategories</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/KiddushLevanaEvent.ts#L68">src/KiddushLevanaEvent.ts:68</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/KiddushLevanaEvent.ts#L83">src/KiddushLevanaEvent.ts:83</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="getdate"><span>get<wbr/>Date</span><a href="#getdate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -303,7 +316,7 @@ by zero or more refinements (e.g. <code>'major'</code>, <code>'minor'</code>, <c
 <h4 class="tsd-returns-title">Returns <a href="HDate.html" class="tsd-signature-type tsd-kind-class">HDate</a></h4><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#getdate">getDate</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L164">src/event.ts:164</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L164">src/event.ts:164</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="getdesc"><span>get<wbr/>Desc</span><a href="#getdesc" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -318,7 +331,7 @@ To get the title of the event in another language, use the
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#getdesc">getDesc</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L179">src/event.ts:179</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L179">src/event.ts:179</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getemoji"><span>get<wbr/>Emoji</span><a href="#getemoji" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -332,7 +345,7 @@ Subclasses override this to provide holiday-specific emoji.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <p>Overrides <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#getemoji">getEmoji</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/KiddushLevanaEvent.ts#L64">src/KiddushLevanaEvent.ts:64</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/KiddushLevanaEvent.ts#L79">src/KiddushLevanaEvent.ts:79</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="getflags"><span class="deprecated">get<wbr/>Flags</span><a href="#getflags" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -350,7 +363,7 @@ raw bitmask can read <a href="Event.html#mask" class="tsd-kind-property">Event.m
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#getflags">getFlags</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L188">src/event.ts:188</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L188">src/event.ts:188</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="greg"><span>greg</span><a href="#greg" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -362,7 +375,7 @@ raw bitmask can read <a href="Event.html#mask" class="tsd-kind-property">Event.m
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#greg">greg</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L170">src/event.ts:170</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L170">src/event.ts:170</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="hasanyflag"><span>has<wbr/>Any<wbr/>Flag</span><a href="#hasanyflag" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -390,7 +403,7 @@ raw bitmask can read <a href="Event.html#mask" class="tsd-kind-property">Event.m
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#hasanyflag">hasAnyFlag</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L221">src/event.ts:221</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L221">src/event.ts:221</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="hasflag"><span>has<wbr/>Flag</span><a href="#hasflag" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -418,7 +431,7 @@ raw bitmask can read <a href="Event.html#mask" class="tsd-kind-property">Event.m
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#hasflag">hasFlag</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L205">src/event.ts:205</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L205">src/event.ts:205</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="observedin"><span>observed<wbr/>In</span><a href="#observedin" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -440,7 +453,7 @@ raw bitmask can read <a href="Event.html#mask" class="tsd-kind-property">Event.m
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#observedin">observedIn</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L338">src/event.ts:338</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L338">src/event.ts:338</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="observedindiaspora"><span>observed<wbr/>In<wbr/>Diaspora</span><a href="#observedindiaspora" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -458,7 +471,7 @@ raw bitmask can read <a href="Event.html#mask" class="tsd-kind-property">Event.m
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#observedindiaspora">observedInDiaspora</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L324">src/event.ts:324</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L324">src/event.ts:324</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="observedinisrael"><span>observed<wbr/>In<wbr/>Israel</span><a href="#observedinisrael" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -476,7 +489,7 @@ raw bitmask can read <a href="Event.html#mask" class="tsd-kind-property">Event.m
 </div></div><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#observedinisrael">observedInIsrael</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L313">src/event.ts:313</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L313">src/event.ts:313</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="render"><span>render</span><a href="#render" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -492,7 +505,7 @@ raw bitmask can read <a href="Event.html#mask" class="tsd-kind-property">Event.m
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#render">render</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/TimedEvent.ts#L74">src/TimedEvent.ts:74</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/TimedEvent.ts#L74">src/TimedEvent.ts:74</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="renderbrief"><span>render<wbr/>Brief</span><a href="#renderbrief" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -510,7 +523,7 @@ raw bitmask can read <a href="Event.html#mask" class="tsd-kind-property">Event.m
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#renderbrief">renderBrief</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/TimedEvent.ts#L81">src/TimedEvent.ts:81</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/TimedEvent.ts#L81">src/TimedEvent.ts:81</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited">
 <h3 class="tsd-anchor-link" id="url"><span>url</span><a href="#url" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -526,7 +539,7 @@ override this with their own URL patterns.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="TimedEvent.html">TimedEvent</a>.<a href="TimedEvent.html#url">url</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/event.ts#L302">src/event.ts:302</a></li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/event.ts#L302">src/event.ts:302</a></li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -545,7 +558,7 @@ override this with their own URL patterns.</p>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Constructors</summary>
 <div><a href="#constructor"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
-<div><a href="#alarm" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>alarm</span></a><a href="#date" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>date</span></a><a href="#desc" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>desc</span></a><a href="#duration" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>duration</span></a><a href="#emoji" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>emoji</span></a><a href="#eventtime" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>event<wbr/>Time</span></a><a href="#eventtimestr" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>event<wbr/>Time<wbr/>Str</span></a><a href="#fmttime" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>fmt<wbr/>Time</span></a><a href="#linkedevent" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>linked<wbr/>Event</span></a><a href="#location" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>location</span></a><a href="#mask" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>mask</span></a><a href="#memo" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>memo</span></a><a href="#molad"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>molad</span></a></div></details>
+<div><a href="#adjustedto"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>adjusted<wbr/>To</span></a><a href="#alarm" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>alarm</span></a><a href="#date" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>date</span></a><a href="#desc" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>desc</span></a><a href="#duration" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>duration</span></a><a href="#emoji" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>emoji</span></a><a href="#eventtime" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>event<wbr/>Time</span></a><a href="#eventtimestr" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>event<wbr/>Time<wbr/>Str</span></a><a href="#fmttime" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>fmt<wbr/>Time</span></a><a href="#linkedevent" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>linked<wbr/>Event</span></a><a href="#location" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>location</span></a><a href="#mask" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>mask</span></a><a href="#memo" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>memo</span></a><a href="#molad"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>molad</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
 <div><a href="#basename" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>basename</span></a><a href="#flagnames" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>flag<wbr/>Names</span></a><a href="#getcategories"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Categories</span></a><a href="#getdate" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Date</span></a><a href="#getdesc" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Desc</span></a><a href="#getemoji"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Emoji</span></a><a href="#getflags" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Flags</span></a><a href="#greg" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>greg</span></a><a href="#hasanyflag" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>has<wbr/>Any<wbr/>Flag</span></a><a href="#hasflag" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>has<wbr/>Flag</span></a><a href="#observedin" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>observed<wbr/>In</span></a><a href="#observedindiaspora" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>observed<wbr/>In<wbr/>Diaspora</span></a><a href="#observedinisrael" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>observed<wbr/>In<wbr/>Israel</span></a><a href="#render" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>render</span></a><a href="#renderbrief" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>render<wbr/>Brief</span></a><a href="#url" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>url</span></a></div></details></div></details></div>
 <div class="site-menu">

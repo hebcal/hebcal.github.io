@@ -16,12 +16,11 @@
 <div class="tsd-signature tsd-anchor-link" id="getmoladasdate"><span class="tsd-kind-call-signature">getMoladAsDate</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">molad</span><span class="tsd-signature-symbol">:</span> <a href="../types/MoladBase.html" class="tsd-signature-type tsd-kind-type-alias">MoladBase</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ZonedDateTime</span><a href="#getmoladasdate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Returns the moment of the molad as a <code>Temporal.ZonedDateTime</code> in the <code>UTC</code> zone.</p>
-<p>The molad is computed in Jerusalem <em>standard</em> time and then converted, so the
-returned instant is correct year-round; only the zone of the returned object
-is <code>UTC</code>. This method subtracts 20.94 minutes (20 minutes and 56.496 seconds)
-from the computed time — Har Habayis, at longitude 35.2354°, is 5.2354° away
-from the multiple-of-15 timezone longitude — to get to standard time. Daylight
-savings time is intentionally not applied; adjust when formatting for display.</p>
+<p>The molad is computed in Jerusalem local mean time — longitude 35.2354° at
+Har Habayis, 20.94 minutes (20 minutes and 56.496 seconds) ahead of Israel
+standard time — and then converted, so the returned instant is correct
+year-round; only the zone of the returned object is <code>UTC</code>. Daylight savings
+time is intentionally not applied; adjust when formatting for display.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -32,7 +31,7 @@ savings time is intentionally not applied; adjust when formatting for display.</
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ZonedDateTime</span></h4><p>the <code>Temporal.ZonedDateTime</code> representing the moment of the molad</p>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/ad2359d44eb2256ccd5c8e6ccc0e81ab587f3da6/src/moladDate.ts#L46">src/moladDate.ts:46</a></li></ul></aside></div></li></ul></section></div>
+<li>Defined in <a href="https://github.com/hebcal/hebcal-es6/blob/4a927a06fb6459339dad4af5fb55d8e22840183d/src/moladDate.ts#L39">src/moladDate.ts:39</a></li></ul></aside></div></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

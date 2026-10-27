@@ -207,7 +207,7 @@ doesn't cross the relevant angle — it returns an <code>Invalid Date</code>; th
 <code>Temporal</code>-returning ones return <code>null</code> instead.</p>
 <p>That split is transitional. The intent is to move the library to <code>Temporal</code>
 throughout, which is a breaking change and so is planned for <code>@hebcal/core</code> version 7.
-Until then, checking <code>isNaN(dt.getTime())</code> on <code>Date</code> results and <code>=== null</code> on
+Until then, checking <code>Number.isNaN(dt.getTime())</code> on <code>Date</code> results and <code>=== null</code> on
 <code>Temporal</code> results is the portable approach.</p>
 <h2 id="usage" class="tsd-anchor-link">Usage<a href="#usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
 <p>This package exports two categories of output:</p>
