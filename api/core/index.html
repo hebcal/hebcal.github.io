@@ -21,7 +21,7 @@ yahrzeits, birthdays and anniversaries.</p>
 <p>Most work starts with the <a href="https://hebcal.github.io/api/core/functions/calendar.html"><code>calendar()</code></a>
 function and the <a href="https://hebcal.github.io/api/hdate/classes/HDate.html"><code>HDate</code></a> class.</p>
 <p>Nearly everything is available as a standalone function — <code>calendar()</code>,
-<code>getHolidaysOnDate()</code>, <code>getSedra()</code>, <code>tachanun()</code>, <code>reformatTimeStr()</code> — and the
+<code>getHolidaysOnDate()</code>, <code>getSedra()</code>, <code>tachanun()</code>, <code>hallel()</code>, <code>reformatTimeStr()</code> — and the
 examples here use that form, since importing only what you need is what lets a
 bundler drop the rest. The same functions are also reachable as static methods on
 <a href="https://hebcal.github.io/api/core/classes/HebrewCalendar.html"><code>HebrewCalendar</code></a>.</p>
@@ -30,7 +30,7 @@ bundler drop the rest. The same functions are also reachable as static methods o
 <code>birthdayOrAnniversary()</code> from there directly.
 <code>HebrewCalendar.getYahrzeit()</code> and <code>.getBirthdayOrAnniversary()</code> are thin
 wrappers over them. A few odds and ends remain class-only:
-<code>eruvTavshilin()</code>, <code>hallel()</code> and <code>getHolidaysForYear()</code>.</p>
+<code>eruvTavshilin()</code> and <code>getHolidaysForYear()</code>.</p>
 <h2 id="installation" class="tsd-anchor-link">Installation<a href="#installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
 <pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">@hebcal/core</span>
 </code><button type="button">Copy</button></pre>
@@ -148,6 +148,18 @@ candle-lighting time on Friday, and regular Havdalah time on Saturday night.</p>
 sunset. Note that degree-based zmanim estimate the amount of light in the sky and
 so are unaffected by elevation by design; <code>chatzot</code> is also always computed at sea
 level.</p>
+<p><code>Zmanim.visibleSunrise()</code> and <code>visibleSunset()</code> (<em>netz ha-nireh</em> / <em>shkiah
+nireit</em>) return when the sun's upper limb clears the real terrain skyline rather
+than the flat sea-level horizon — the time many printed Israeli calendars list
+for mountainous locations. They take a horizon profile describing the apparent
+altitude of the skyline in each direction: a constant angle, a list of
+<code>{azimuth, elevation}</code> samples, or a function of azimuth. Refraction follows the
+Chai Tables (Sinclair/Bennett at standard atmosphere) and no safety cushion is
+added. Building a profile from terrain or digital-elevation-model data is outside
+this library.</p>
+<pre><code class="javascript"><span class="hl-3">import</span><span class="hl-1"> {</span><span class="hl-4">GeoLocation</span><span class="hl-1">, </span><span class="hl-4">Zmanim</span><span class="hl-1">} </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@hebcal/core&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">gloc</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">GeoLocation</span><span class="hl-1">(</span><span class="hl-2">&#39;Jerusalem&#39;</span><span class="hl-1">, </span><span class="hl-7">31.78</span><span class="hl-1">, </span><span class="hl-7">35.22</span><span class="hl-1">, </span><span class="hl-7">0</span><span class="hl-1">, </span><span class="hl-2">&#39;Asia/Jerusalem&#39;</span><span class="hl-1">);</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">zmanim</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Zmanim</span><span class="hl-1">(</span><span class="hl-4">gloc</span><span class="hl-1">, </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">(</span><span class="hl-7">2026</span><span class="hl-1">, </span><span class="hl-7">9</span><span class="hl-1">, </span><span class="hl-7">29</span><span class="hl-1">), </span><span class="hl-5">false</span><span class="hl-1">);</span><br/><span class="hl-8">// a 5° ridge to the east (azimuth 90° = due east), flat elsewhere</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">skyline</span><span class="hl-1"> = [</span><br/><span class="hl-1">  {</span><span class="hl-4">azimuth:</span><span class="hl-1"> </span><span class="hl-7">60</span><span class="hl-1">, </span><span class="hl-4">elevation:</span><span class="hl-1"> </span><span class="hl-7">0</span><span class="hl-1">},</span><br/><span class="hl-1">  {</span><span class="hl-4">azimuth:</span><span class="hl-1"> </span><span class="hl-7">80</span><span class="hl-1">, </span><span class="hl-4">elevation:</span><span class="hl-1"> </span><span class="hl-7">5</span><span class="hl-1">},</span><br/><span class="hl-1">  {</span><span class="hl-4">azimuth:</span><span class="hl-1"> </span><span class="hl-7">100</span><span class="hl-1">, </span><span class="hl-4">elevation:</span><span class="hl-1"> </span><span class="hl-7">5</span><span class="hl-1">},</span><br/><span class="hl-1">  {</span><span class="hl-4">azimuth:</span><span class="hl-1"> </span><span class="hl-7">120</span><span class="hl-1">, </span><span class="hl-4">elevation:</span><span class="hl-1"> </span><span class="hl-7">0</span><span class="hl-1">},</span><br/><span class="hl-1">];</span><br/><span class="hl-4">zmanim</span><span class="hl-1">.</span><span class="hl-0">visibleSunrise</span><span class="hl-1">(</span><span class="hl-4">skyline</span><span class="hl-1">); </span><span class="hl-8">// about 17 minutes after zmanim.sunrise()</span><br/><span class="hl-4">zmanim</span><span class="hl-1">.</span><span class="hl-0">visibleSunset</span><span class="hl-1">(</span><span class="hl-7">0</span><span class="hl-1">); </span><span class="hl-8">// flat horizon: matches zmanim.sunset() to the second</span>
+</code><button type="button">Copy</button></pre>
+
 <p>For zmanim outside the calendar-generation flow, use the
 <a href="https://hebcal.github.io/api/core/classes/Zmanim.html"><code>Zmanim</code></a> class directly.</p>
 <h2 id="yahrzeits-birthdays-and-anniversaries" class="tsd-anchor-link">Yahrzeits, birthdays, and anniversaries<a href="#yahrzeits-birthdays-and-anniversaries" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
